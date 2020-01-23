@@ -1,0 +1,42 @@
+.wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #f8faff;
+  border: 1px solid #eff2f8;
+  border-radius: 3px;
+  color: #8f9bb3;
+  .dropzone {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border: 3px linear #edf1f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    button {
+      margin-bottom: 15px;
+    }
+  }
+
+  .image {
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    object-fit: contain;
+    object-position: center;
+    background: #edf1f6;
+    transition: 0.5s ease-in-out;
+    &.uploaded {
+      opacity: 1;
+      z-index: 3;
+    }
+  }
+}

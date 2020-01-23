@@ -1,0 +1,150 @@
+<div class="row">
+  <div class="col-12">
+    <nb-card>
+      <nb-card-body>
+        <nb-actions size="small" fullWidth>
+          <nb-action (click)="navigate('alumnos')">
+            <nb-icon
+              icon="arrow-ios-back-outline"
+              status="basic"
+              [options]="{ animation: { type: 'pulse' } }"
+            ></nb-icon>
+            <span> Regresar</span>
+          </nb-action>
+          <nb-action (click)="navigate('pagos/' + student._id)">
+            <nb-icon
+              icon="credit-card-outline"
+              status="basic"
+              [options]="{ animation: { type: 'pulse' } }"
+            ></nb-icon>
+            <span> Pagos</span>
+          </nb-action>
+          <nb-action (click)="navigate('calificaciones/' + student._id)">
+            <nb-icon
+              icon="file-text-outline"
+              status="basic"
+              [options]="{ animation: { type: 'pulse' } }"
+            ></nb-icon>
+            <span>Calificaciones</span>
+          </nb-action>
+          <nb-action (click)="navigate('notas/' + student._id)">
+            <nb-icon
+              icon="archive-outline"
+              status="basic"
+              [options]="{ animation: { type: 'pulse' } }"
+            ></nb-icon>
+            <span>Ver notas</span>
+          </nb-action>
+          <nb-action (click)="navigate('alumnos/editar/' + student._id)">
+            <nb-icon
+              icon="edit-2-outline"
+              status="basic"
+              [options]="{ animation: { type: 'pulse' } }"
+            ></nb-icon>
+            <span>Editar</span>
+          </nb-action>
+          <nb-action class="danger">
+            <nb-icon
+              icon="trash-outline"
+              status="basic"
+              [options]="{ animation: { type: 'pulse' } }"
+            ></nb-icon>
+            <span>Eliminar</span>
+          </nb-action>
+        </nb-actions>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-4">
+    <nb-card>
+      <nb-card-header>
+        Fotografia de Alumno
+      </nb-card-header>
+      <nb-card-body>
+        <img class="profile-pic" [src]="student.avatarUrl" />
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-8">
+    <nb-card>
+      <nb-card-header>
+        Informacion de Alumno
+      </nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-6"><b>Nombre: </b> {{ student.name }}</div>
+
+          <div class="col-6">
+            <b>Fecha de Nacimiento: </b> {{ student.dob | date }}
+          </div>
+          <div class="col-6"><b>Genero: </b> {{ student.gender }}</div>
+          <div class="col-6"><b>Egresado: </b> {{ student.lastSchool }}</div>
+          <div class="col-6"><b>Correo: </b> {{ student.email }}</div>
+          <div class="col-6"><b>Telefono: </b> {{ student.phone }}</div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>
+        Direccion de Alumno
+      </nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-6"><b>Estado: </b> {{ student.state }}</div>
+          <div class="col-6"><b>Municipio: </b> {{ student.municipality }}</div>
+          <div class="col-6"><b>Ciudad: </b> {{ student.city }}</div>
+          <div class="col-6"><b>Calle: </b> {{ student.street }}</div>
+          <div class="col-6"><b>Codigo Postal: </b> {{ student.zipCode }}</div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-12">
+    <nb-card>
+      <nb-card-header>
+        Informacion de Emergencia
+      </nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-4">
+            <b>Telefono: </b> {{ student.emergencyPhone }}
+          </div>
+          <div class="col-4">
+            <b>Parentesco: </b> {{ student.emergencyRelation }}
+          </div>
+          <div class="col-4">
+            <b>Contacto: </b> {{ student.emergencyContact }}
+          </div>
+          <div class="col-4">
+            <b>Grupo Sanguineo: </b> {{ student.bloodGroup }}
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>
+        Escuela
+      </nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-4"><b>Sede: </b> {{ student.school }}</div>
+          <div class="col-4"><b>Matricula: </b> {{ student.enrollmentId }}</div>
+          <div class="col-4"><b>Carrera: </b> {{ student.carreer }}</div>
+          <div class="col-4"><b>Grupo: </b> {{ student.group }}</div>
+          <div class="col-4">
+            <b>Inscrito: </b> {{ student.enrolled | date }}
+          </div>
+          <div class="col-4">
+            <b>Graduado: </b>
+            <span *ngIf="student.graduated">
+              Si
+            </span>
+            <span *ngIf="!student.graduated">
+              No
+            </span>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

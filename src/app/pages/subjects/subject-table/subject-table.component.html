@@ -1,0 +1,18 @@
+<div *ngIf="subjects?.length != 0">
+  <nb-list>
+    <nb-list-item *ngFor="let subject of subjects">
+      <app-subject-item
+        [academicId]="academicId"
+        [subject]="subject"
+        [mode]="mode"
+        (reload)="handleReload($event)"
+      >
+      </app-subject-item>
+    </nb-list-item>
+  </nb-list>
+</div>
+<p *ngIf="subjects?.length == 0">
+  No hay Materias {{ mode == "view" ? "para mostar" : "" }}
+  {{ mode == "add" ? "para agregar" : "" }}
+  {{ mode == "remove" ? "agregadas" : "" }}
+</p>

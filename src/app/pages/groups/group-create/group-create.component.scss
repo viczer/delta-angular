@@ -1,0 +1,46 @@
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.info {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column;
+
+  .upload {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 30px;
+  }
+}
+
+.controls {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 150px 150px;
+  column-gap: 20px;
+  width: 100%;
+  padding: 30px;
+  height: 100px;
+}
+
+nb-step {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+textarea {
+  resize: none !important;
+}
+
+p {
+  margin-bottom: 50px;
+  color: #9da7ba;
+}

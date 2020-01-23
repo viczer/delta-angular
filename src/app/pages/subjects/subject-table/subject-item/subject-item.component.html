@@ -1,0 +1,71 @@
+<div class="subject-item" [ngClass]="{ view: mode == 'view' }">
+  <div>
+    <b> {{ subject.folio }}</b>
+  </div>
+  <div>
+    <nb-user [name]="subject.name" [picture]="subject.avatarUrl"></nb-user>
+  </div>
+  <div *ngIf="mode == 'view'">{{ subject.grades.length }} calificaciones</div>
+  <nb-icon
+    *ngIf="!editEnabled && mode == 'view'"
+    icon="edit-2-outline"
+    status="basic"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="enableModsHandler(true)"
+  ></nb-icon>
+  <nb-icon
+    *ngIf="editEnabled && mode == 'view'"
+    icon="edit-2-outline"
+    status="warning"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="navigate(subject._id, true)"
+  ></nb-icon>
+  <nb-icon
+    *ngIf="!deleteEnabled && mode == 'view'"
+    icon="trash-outline"
+    status="basic"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="enableModsHandler(false)"
+  ></nb-icon>
+  <nb-icon
+    *ngIf="deleteEnabled && mode == 'view'"
+    icon="trash-outline"
+    status="danger"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="deleteHandler(subject._id)"
+  ></nb-icon>
+  <button
+    *ngIf="mode == 'view'"
+    nbButton
+    shape="round"
+    status="basic"
+    size="small"
+    (click)="navigate(subject._id)"
+  >
+    Ver Mas
+  </button>
+  <button
+    *ngIf="mode == 'add'"
+    (click)="addSubject(subject._id)"
+    nbButton
+    shape="round"
+    [status]="isAdded ? 'basic' : 'primary'"
+    size="small"
+    type="button"
+  >
+    {{ !isAdded && !isAdding ? "Agregar" : "" }}
+    {{ !isAdded && isAdding ? "Agregando" : "" }}
+    {{ isAdded ? "Agregada" : "" }}
+  </button>
+  <button
+    *ngIf="mode == 'remove'"
+    (click)="navigate(subject._id)"
+    nbButton
+    shape="round"
+    status="basic"
+    size="small"
+    type="button"
+  >
+    Remover
+  </button>
+</div>

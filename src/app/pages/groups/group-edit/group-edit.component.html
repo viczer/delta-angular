@@ -1,0 +1,98 @@
+<nb-card class="members">
+  <nb-card-header>
+    Editando Grupo
+  </nb-card-header>
+  <nb-card-body>
+    <div class="col-12 actions">
+      <nb-actions size="small" fullWidth>
+        <nb-action (click)="navigate('grupos')">
+          <nb-icon
+            icon="arrow-ios-back-outline"
+            status="basic"
+            [options]="{ animation: { type: 'pulse' } }"
+          ></nb-icon>
+          <span>
+            Regresar
+          </span>
+        </nb-action>
+        <nb-action class="danger">
+          <nb-icon
+            icon="trash-outline"
+            status="basic"
+            [options]="{ animation: { type: 'pulse' } }"
+          ></nb-icon>
+          <span>
+            Eliminar
+          </span>
+        </nb-action>
+        <nb-action (click)="handleUpdateMetadata()">
+          <nb-icon
+            icon="cloud-upload-outline"
+            status="basic"
+            [options]="{ animation: { type: 'pulse' } }"
+          ></nb-icon>
+          <span>
+            Guardar
+          </span>
+        </nb-action>
+      </nb-actions>
+    </div>
+    <form class="row editor" [formGroup]="group">
+      <div class="col-4">
+        <div class="profile-pic">
+          <app-upload (upload)="handleFileUpload($event)"></app-upload>
+        </div>
+      </div>
+      <div class="col-8">
+        <input
+          formControlName="name"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Nombre del Grupo"
+          class="mb-3"
+        />
+        <textarea
+          formControlName="description"
+          nbInput
+          fullWidth
+          placeholder="Misión"
+          shape="round"
+        ></textarea>
+      </div>
+    </form>
+    <div class="row filter-bar">
+      <input
+        type="text"
+        nbInput
+        fullWidth
+        shape="round"
+        placeholder="Busqueda..."
+      />
+      <nb-select fullWidth placeholder="Buscar Por" shape="round">
+        <nb-option value="1">Matricula </nb-option>
+        <nb-option value="2">Usuario </nb-option>
+        <nb-option value="3">Nombre </nb-option>
+        <nb-option value="3">Teléfono </nb-option>
+        <nb-option value="3">Pagos </nb-option>
+      </nb-select>
+    </div>
+    <div class="wrapper">
+      <nb-tabset fullWidth>
+        <nb-tab tabTitle="Miembros">
+          <app-students-table
+            [students]="members"
+            mode="remove"
+          ></app-students-table>
+        </nb-tab>
+        <nb-tab tabTitle="Agregar">
+          <app-students-table
+            [students]="students"
+            mode="add"
+          ></app-students-table>
+        </nb-tab>
+      </nb-tabset>
+    </div>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,20 @@
+<nb-user
+  *ngIf="(user && !user.avatarUrl) || user.avatarUrl == null"
+  size="large"
+  [name]="user.name"
+  title="Director"
+  badgeText=""
+  badgeStatus="success"
+  badgePosition="bottom right"
+>
+</nb-user>
+<nb-user
+  *ngIf="(user && user.avatarUrl) || user.avatarUrl != null"
+  size="large"
+  [name]="user.name"
+  title="Director"
+  [picture]="user.avatarUrl"
+  badgeStatus="success"
+  badgePosition="bottom right"
+>
+</nb-user>

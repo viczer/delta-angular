@@ -1,0 +1,38 @@
+nb-card .row {
+  .col-4,
+  .col-3,
+  .col-6,
+  .col-8,
+  .col-9,
+  .col-12 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+.profile-pic {
+  height: 475px;
+  width: 100%;
+}
+
+nb-action {
+  cursor: pointer;
+  &:hover:not(.danger) {
+    color: #3561f7;
+
+    nb-icon {
+      color: #3561f7;
+    }
+  }
+
+  nb-icon {
+    margin-right: 15px;
+  }
+
+  &.danger:hover {
+    color: #fe1874;
+
+    nb-icon {
+      color: #fe1874;
+    }
+  }
+}

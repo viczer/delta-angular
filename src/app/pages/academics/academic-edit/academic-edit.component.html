@@ -1,0 +1,157 @@
+<nb-card class="members">
+  <nb-card-header>
+    Editando Programa
+  </nb-card-header>
+  <nb-card-body>
+    <div class="col-12 actions">
+      <nb-actions size="small" fullWidth>
+        <nb-action (click)="navigate('grupos')">
+          <nb-icon
+            icon="arrow-ios-back-outline"
+            status="basic"
+            [options]="{ animation: { type: 'pulse' } }"
+          ></nb-icon>
+          <span>
+            Regresar
+          </span>
+        </nb-action>
+        <nb-action class="danger">
+          <nb-icon
+            icon="trash-outline"
+            status="basic"
+            [options]="{ animation: { type: 'pulse' } }"
+          ></nb-icon>
+          <span>
+            Eliminar
+          </span>
+        </nb-action>
+        <nb-action (click)="handleUpdateMetadata()">
+          <nb-icon
+            icon="cloud-upload-outline"
+            status="basic"
+            [options]="{ animation: { type: 'pulse' } }"
+          ></nb-icon>
+          <span>
+            Guardar
+          </span>
+        </nb-action>
+      </nb-actions>
+    </div>
+    <div class="row editor" [formGroup]="program">
+      <div class="col-4">
+        <div class="profile-pic">
+          <app-upload (upload)="handleUpload($event)"></app-upload>
+        </div>
+      </div>
+      <div class="col-8 mb-3">
+        <input
+          formControlName="name"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Nombre de la Materia"
+          class="mb-3"
+        />
+
+        <input
+          formControlName="folio"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Folio de la Materia"
+          class="mb-3"
+        />
+        <input
+          formControlName="inscription"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Costo de Inscripción de la Materia"
+          class="mb-3"
+        />
+        <input
+          formControlName="monthlyRate"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Costo de Mensualidad de la Materia"
+          class="mb-3"
+        />
+        <input
+          formControlName="startDate"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Fecha de Inicio"
+          class="mb-3"
+          [nbDatepicker]="startpicker"
+        />
+        <nb-datepicker #startpicker></nb-datepicker>
+
+        <input
+          formControlName="endDate"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Fecha Terminación"
+          class="mb-3"
+          [nbDatepicker]="endpicker"
+        />
+        <nb-datepicker #endpicker></nb-datepicker>
+
+        <input
+          formControlName="email"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Contacto de la Materia"
+          class="mb-3"
+        />
+        <textarea
+          formControlName="description"
+          nbInput
+          fullWidth
+          placeholder="Objetivo"
+          shape="round"
+        ></textarea>
+      </div>
+    </div>
+    <div class="row filter-bar">
+      <input
+        type="text"
+        nbInput
+        fullWidth
+        shape="round"
+        placeholder="Busqueda..."
+      />
+      <nb-select fullWidth placeholder="Buscar Por" shape="round">
+        <nb-option value="1">Matricula </nb-option>
+        <nb-option value="2">Usuario </nb-option>
+        <nb-option value="3">Nombre </nb-option>
+        <nb-option value="3">Teléfono </nb-option>
+        <nb-option value="3">Pagos </nb-option>
+      </nb-select>
+    </div>
+    <div class="wrapper">
+      <nb-tabset fullWidth>
+        <nb-tab tabTitle="Materias">
+          <app-subject-table
+            [subjects]="subjects"
+            mode="remove"
+          ></app-subject-table>
+        </nb-tab>
+        <nb-tab tabTitle="Agregar">
+          <app-subject-table
+            [subjects]="subjects"
+            mode="add"
+          ></app-subject-table>
+        </nb-tab>
+      </nb-tabset>
+    </div>
+  </nb-card-body>
+</nb-card>

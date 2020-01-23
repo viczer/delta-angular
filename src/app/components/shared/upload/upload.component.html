@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div class="dropzone">
+    <input
+      #upload
+      type="file"
+      id="file"
+      style="display:none;"
+      accept=".tiff,.jpeg, .jpg, .png, .gifm, .svg"
+      (change)="handleFiles($event)"
+    />
+    <button
+      *ngIf="!uploaded"
+      class="upload-btn"
+      nbButton
+      status="basic"
+      type="button"
+      (click)="handleUpload()"
+    >
+      Subir Imagen
+    </button>
+    (Opcional)
+  </div>
+  <img #image class="image" [ngClass]="{ uploaded: uploaded }" />
+</div>

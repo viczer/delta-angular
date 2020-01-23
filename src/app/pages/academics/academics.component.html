@@ -1,0 +1,40 @@
+<nb-card>
+  <nb-card-header>
+    Programas
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row filter-bar">
+      <div class="col-9">
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Busqueda..."
+        />
+      </div>
+      <div class="col-3">
+        <nb-select fullWidth placeholder="Buscar Por" shape="round">
+          <nb-option value="folio">Folio</nb-option>
+          <nb-option value="subjects">Materias</nb-option>
+          <nb-option value="name">Nombre</nb-option>
+        </nb-select>
+      </div>
+    </div>
+    <div class="wrapper">
+      <nb-tabset fullWidth #tabset>
+        <nb-tab tabTitle="Programas" #tableTab>
+          <app-academic-table
+            [academics]="academics"
+            (reload)="handleReload()"
+          ></app-academic-table>
+        </nb-tab>
+        <nb-tab tabTitle="Crear Programa">
+          <app-academic-create
+            (back)="tabset.selectTab(tableTab)"
+          ></app-academic-create>
+        </nb-tab>
+      </nb-tabset>
+    </div>
+  </nb-card-body>
+</nb-card>

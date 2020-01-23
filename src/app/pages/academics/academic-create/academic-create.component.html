@@ -1,0 +1,145 @@
+<nb-stepper orientation="horizontal">
+  <nb-step label="Informacion" [stepControl]="informationForm">
+    <form class="row" [formGroup]="informationForm">
+      <div class="col-12">
+        <h3>Informacion del Programa</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ratione
+          est ipsum quam deleniti assumenda recusandae laboriosam a enim minima,
+          facere aliquam, vel maxime optio, repellendus asperiores autem
+          pariatur ad.
+        </p>
+      </div>
+      <div class="col-6 mb-3">
+        <input
+          formControlName="name"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Nombre del Programa"
+        />
+      </div>
+      <div class="col-6 mb-3">
+        <input
+          formControlName="folio"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Folio del Programa"
+        />
+      </div>
+      <div class="col-6 mb-3">
+        <input
+          formControlName="inscriptionFee"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Costo de Inscripción"
+        />
+      </div>
+      <div class="col-6 mb-3">
+        <input
+          formControlName="monthlyFee"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Costo de mensualidad"
+        />
+      </div>
+      <div class="col-6 mb-3">
+        <input
+          formControlName="academicStart"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Fecha de Inicio"
+          [nbDatepicker]="startpicker"
+        />
+        <nb-datepicker #startpicker></nb-datepicker>
+      </div>
+      <div class="col-6 mb-3">
+        <input
+          formControlName="academicEnd"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Fecha Terminación"
+          [nbDatepicker]="endpicker"
+        />
+        <nb-datepicker #endpicker></nb-datepicker>
+      </div>
+      <div class="controls">
+        <button nbButton status="basic" (click)="cancelAcademic()">
+          Cancelar
+        </button>
+        <button nbButton nbStepperNext>Continuar</button>
+      </div>
+    </form>
+  </nb-step>
+
+  <nb-step label="Objetivo" [stepControl]="descriptionForm">
+    <form [formGroup]="descriptionForm" class="row">
+      <div class="col-12">
+        <h3>Escribiendo Objetivo</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ratione
+          est ipsum quam deleniti assumenda recusandae laboriosam a enim minima,
+          facere aliquam, vel maxime optio, repellendus asperiores autem
+          pariatur ad.
+        </p>
+        <textarea
+          formControlName="description"
+          nbInput
+          fullWidth
+          placeholder="Objetivo del Programa"
+          rows="7"
+        ></textarea>
+      </div>
+      <div class="controls">
+        <button nbButton nbStepperPrevious status="basic">Regresar</button>
+        <button nbButton nbStepperNext>Continuar</button>
+      </div>
+    </form>
+  </nb-step>
+  <nb-step label="Insignia">
+    <div class="col-12 info">
+      <div class="upload">
+        <app-upload (upload)="handleFileUpload($event)"></app-upload>
+      </div>
+    </div>
+    <div class="controls">
+      <button nbButton nbStepperPrevious status="basic">Regresar</button>
+      <button nbButton nbStepperNext>Continuar</button>
+    </div>
+  </nb-step>
+
+  <nb-step label="Contacto" [stepControl]="contactForm">
+    <form [formGroup]="contactForm" class="row">
+      <div class="info col-12">
+        <h3>Contacto del Programa</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ratione
+          est ipsum quam deleniti assumenda recusandae laboriosam a enim minima,
+          facere aliquam, vel maxime optio, repellendus asperiores autem
+          pariatur ad.
+        </p>
+        <input
+          formControlName="email"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Correo"
+        />
+      </div>
+      <div class="controls">
+        <button nbButton nbStepperPrevious status="basic">Regresar</button
+        ><button nbButton (click)="saveAcademic()">Guardar</button>
+      </div>
+    </form>
+  </nb-step>
+</nb-stepper>

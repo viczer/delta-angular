@@ -1,0 +1,57 @@
+.auth {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 76px);
+
+  nb-card {
+    background: #ffffffd8;
+    backdrop-filter: blur(10px);
+  }
+}
+
+.background {
+  &.airport {
+    background: url(/assets/login/0.jpeg) 0 -200px / cover;
+  }
+  &.plane {
+    background: url(/assets/login/1.jpeg) top / cover; //plane
+  }
+  &.city {
+    background: url(/assets/login/2.jpeg) 0 -300px / cover; //city
+  }
+  &.forest {
+    background: url(/assets/login/3.jpeg) center / cover; // forest
+  }
+  &.snow {
+    background: url(/assets/login/4.jpeg) center / cover; // snow
+  }
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  // transform: scale(1.1);
+  height: calc(100vh - 76px);
+  transition: filter 0.3s ease-in-out;
+
+  &.blurred {
+    filter: blur(50px);
+  }
+}
+
+.wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: calc(100vh - 76px);
+  overflow: hidden;
+}

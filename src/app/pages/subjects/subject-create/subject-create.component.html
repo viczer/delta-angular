@@ -1,0 +1,100 @@
+<nb-stepper orientation="horizontal">
+  <nb-step label="Informacion" [stepControl]="informationForm">
+    <form class="row" [formGroup]="informationForm">
+      <div class="info col-12 mb-3">
+        <h3>Informacion del la Materia</h3>
+        <p>
+          El nombre y folio de la materia son importantes, escribe cualquier
+          nombre sin importar si es igual al de otras materias; importante, el
+          folio no se puede repetir.
+        </p>
+        <input
+          formControlName="name"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Nombre de la materia"
+        />
+      </div>
+      <div class="info col-12">
+        <input
+          formControlName="folio"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Folio de la materia"
+        />
+      </div>
+      <div class="controls">
+        <button nbButton status="basic" (click)="cancelSubject()">
+          Cancelar
+        </button>
+        <button nbButton nbStepperNext>Continuar</button>
+      </div>
+    </form>
+  </nb-step>
+
+  <nb-step label="Objetivo" [stepControl]="descriptionForm">
+    <form [formGroup]="descriptionForm" class="row">
+      <div class="col-12">
+        <h3>Escribiendo Objetivo</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ratione
+          est ipsum quam deleniti assumenda recusandae laboriosam a enim minima,
+          facere aliquam, vel maxime optio, repellendus asperiores autem
+          pariatur ad.
+        </p>
+        <textarea
+          formControlName="description"
+          nbInput
+          fullWidth
+          placeholder="Objetivo de la materia"
+          rows="7"
+        ></textarea>
+      </div>
+      <div class="controls">
+        <button nbButton nbStepperPrevious status="basic">Regresar</button>
+        <button nbButton nbStepperNext>Continuar</button>
+      </div>
+    </form>
+  </nb-step>
+  <nb-step label="Insignia">
+    <div class="col-12 info">
+      <div class="upload">
+        <app-upload (upload)="handleFileUpload($event)"></app-upload>
+      </div>
+    </div>
+    <div class="controls">
+      <button nbButton nbStepperPrevious status="basic">Regresar</button>
+      <button nbButton nbStepperNext>Continuar</button>
+    </div>
+  </nb-step>
+
+  <nb-step label="Contacto" [stepControl]="contactForm">
+    <form [formGroup]="contactForm" class="row">
+      <div class="info col-12">
+        <h3>Contacto del la Materia</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ratione
+          est ipsum quam deleniti assumenda recusandae laboriosam a enim minima,
+          facere aliquam, vel maxime optio, repellendus asperiores autem
+          pariatur ad.
+        </p>
+        <input
+          formControlName="email"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Correo"
+        />
+      </div>
+      <div class="controls">
+        <button nbButton nbStepperPrevious status="basic">Regresar</button
+        ><button nbButton (click)="saveSubject()">Guardar</button>
+      </div>
+    </form>
+  </nb-step>
+</nb-stepper>

@@ -1,0 +1,73 @@
+<nb-card>
+  <nb-card-body>
+    <nb-actions size="small" fullWidth>
+      <nb-action (click)="navigate('alumnos/' + student._id)">
+        <nb-icon
+          icon="arrow-ios-back-outline"
+          status="basic"
+          [options]="{ animation: { type: 'pulse' } }"
+        >
+        </nb-icon>
+        <span> Regresar</span>
+      </nb-action>
+      <nb-action disabled>
+        <nb-icon
+          icon="credit-card-outline"
+          status="basic"
+          [options]="{ animation: { type: 'pulse' } }"
+        >
+        </nb-icon>
+        <span> Pagos</span>
+      </nb-action>
+      <nb-action (click)="navigate('calificaciones/' + student._id)">
+        <nb-icon
+          icon="file-text-outline"
+          status="basic"
+          [options]="{ animation: { type: 'pulse' } }"
+        ></nb-icon>
+        <span>Calificaciones</span>
+      </nb-action>
+      <nb-action (click)="navigate('notas/' + student._id)">
+        <nb-icon
+          icon="archive-outline"
+          status="basic"
+          [options]="{ animation: { type: 'pulse' } }"
+        ></nb-icon>
+        <span>Ver notas</span>
+      </nb-action>
+      <nb-action (click)="navigate('alumnos/editar/' + student._id)">
+        <nb-icon
+          icon="edit-2-outline"
+          status="basic"
+          [options]="{ animation: { type: 'pulse' } }"
+        ></nb-icon>
+        <span>Editar</span>
+      </nb-action>
+      <nb-action class="danger">
+        <nb-icon
+          icon="trash-outline"
+          status="basic"
+          [options]="{ animation: { type: 'pulse' } }"
+        ></nb-icon>
+        <span>Eliminar</span>
+      </nb-action>
+    </nb-actions>
+  </nb-card-body>
+</nb-card>
+<nb-card>
+  <nb-card-header>
+    Pagos
+  </nb-card-header>
+  <nb-card-body>
+    <div class="filter-bar">
+      <app-payment-item mode="create"></app-payment-item>
+    </div>
+    <div class="wrapper">
+      <nb-list>
+        <nb-list-item *ngFor="let payment of payments">
+          <app-payment-item [payment]="payment" mode="view"></app-payment-item>
+        </nb-list-item>
+      </nb-list>
+    </div>
+  </nb-card-body>
+</nb-card>

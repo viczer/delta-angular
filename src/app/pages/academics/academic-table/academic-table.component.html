@@ -1,0 +1,11 @@
+<div *ngIf="academics?.length != 0">
+  <nb-list>
+    <nb-list-item *ngFor="let academic of academics">
+      <app-academic-item
+        [academic]="academic"
+        (reload)="handleReload($event)"
+      ></app-academic-item>
+    </nb-list-item>
+  </nb-list>
+</div>
+<p *ngIf="academics?.length == 0">No hay programas</p>

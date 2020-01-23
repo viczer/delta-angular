@@ -1,0 +1,10 @@
+.wrapper {
+  display: none;
+  width: 100%;
+  display: grid;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  grid-template-columns: 150px auto 150px 150px 100px;
+  column-gap: 10px;
+  align-items: center;
+}

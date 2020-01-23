@@ -1,0 +1,43 @@
+<div class="group-item">
+  <div>
+    <nb-user [name]="group.name" [picture]="group.avatarUrl"></nb-user>
+  </div>
+  <div>{{ group.members.length }} miembros</div>
+  <nb-icon
+    *ngIf="!editEnabled"
+    icon="edit-2-outline"
+    status="basic"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="enableModsHandler(true)"
+  ></nb-icon>
+  <nb-icon
+    *ngIf="editEnabled"
+    icon="edit-2-outline"
+    status="warning"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="navigate(group._id, true)"
+  ></nb-icon>
+  <nb-icon
+    *ngIf="!deleteEnabled"
+    icon="trash-outline"
+    status="basic"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="enableModsHandler(false)"
+  ></nb-icon>
+  <nb-icon
+    *ngIf="deleteEnabled"
+    icon="trash-outline"
+    status="danger"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="deleteHandler(group._id)"
+  ></nb-icon>
+  <button
+    nbButton
+    shape="round"
+    status="basic"
+    size="small"
+    (click)="navigate(group._id)"
+  >
+    Ver Mas
+  </button>
+</div>

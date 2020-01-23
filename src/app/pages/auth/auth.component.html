@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <div class="background" #auth [ngClass]="{ blurred: isBlurred }"></div>
+</div>
+<section class="auth">
+  <nb-card (mouseenter)="toggleBlur()" (mouseleave)="toggleBlur()">
+    <nb-card-body>
+      <nb-tabset>
+        <nb-tab tabTitle="Iniciar Session">
+          <app-login></app-login>
+        </nb-tab>
+        <nb-tab tabTitle="Activar Cuenta">
+          <app-register></app-register>
+        </nb-tab>
+      </nb-tabset>
+    </nb-card-body>
+  </nb-card>
+</section>

@@ -1,0 +1,49 @@
+<nb-card class="members">
+  <nb-card-header>
+    Grupo
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row editor">
+      <div class="col-4">
+        <img class="profile-pic" [src]="group?.avatarUrl" />
+      </div>
+      <div class="col-8">
+        <div class="mb-3"><b>Nombre: </b> {{ group?.name }}</div>
+        <div class="mb-3"><b>Miembros: </b> {{ group?.members.length }}</div>
+        <div class="mb-3"><b>Misión: </b> {{ group?.description }}</div>
+      </div>
+    </div>
+    <div class="row filter-bar">
+      <input
+        type="text"
+        nbInput
+        fullWidth
+        shape="round"
+        placeholder="Busqueda..."
+      />
+      <nb-select fullWidth placeholder="Buscar Por" shape="round">
+        <nb-option value="1">Matricula </nb-option>
+        <nb-option value="2">Usuario </nb-option>
+        <nb-option value="3">Nombre </nb-option>
+        <nb-option value="3">Teléfono </nb-option>
+        <nb-option value="3">Pagos </nb-option>
+      </nb-select>
+    </div>
+    <div class="wrapper">
+      <nb-tabset fullWidth>
+        <nb-tab tabTitle="Miembros">
+          <app-students-table
+            [students]="members"
+            mode="remove"
+          ></app-students-table>
+        </nb-tab>
+        <nb-tab tabTitle="Agregar">
+          <app-students-table
+            [students]="students"
+            mode="add"
+          ></app-students-table>
+        </nb-tab>
+      </nb-tabset>
+    </div>
+  </nb-card-body>
+</nb-card>

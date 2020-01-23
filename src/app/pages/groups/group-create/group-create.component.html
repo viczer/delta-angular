@@ -1,0 +1,62 @@
+<nb-stepper orientation="horizontal">
+  <nb-step label="Misión" [stepControl]="descriptionForm">
+    <form [formGroup]="descriptionForm" class="row">
+      <div class="col-12">
+        <h3>Escribiendo Misión</h3>
+        <p>
+          Las misiones de los grupos son públicas para los estudiantes, tienen
+          un limite de 500 charácteres. Los la información de los grupos también
+          pueden ser observada desde la app y la página web.
+        </p>
+        <textarea
+          formControlName="description"
+          nbInput
+          fullWidth
+          placeholder="Mision"
+          rows="7"
+        ></textarea>
+      </div>
+      <div class="controls">
+        <button nbButton status="basic" (click)="cancelGroup()">
+          Cancelar
+        </button>
+        <button nbButton nbStepperNext>Continuar</button>
+      </div>
+    </form>
+  </nb-step>
+  <nb-step label="Insignia">
+    <div class="col-12 info">
+      <div class="upload">
+        <app-upload (upload)="handleFileUpload($event)"></app-upload>
+      </div>
+    </div>
+    <div class="controls">
+      <button nbButton nbStepperPrevious status="basic">Regresar</button>
+      <button nbButton nbStepperNext>Continuar</button>
+    </div>
+  </nb-step>
+  <nb-step label="Nombre" [stepControl]="nameForm">
+    <form [formGroup]="nameForm" class="row">
+      <div class="info col-12">
+        <h3>Nombre del Grupo</h3>
+        <p>
+          Las nombres en grupos son públicos para los estudiantes, tienen un
+          limite de 50 charácteres. Recuerda que tanto el nombre del grupo como
+          la misión pueden ser observados desde la app y la página web.
+        </p>
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Nombre del Grupo"
+          formControlName="name"
+        />
+      </div>
+      <div class="controls">
+        <button nbButton nbStepperPrevious status="basic">Regresar</button>
+        <button nbButton (click)="saveGroup()">Guardar</button>
+      </div>
+    </form>
+  </nb-step>
+</nb-stepper>

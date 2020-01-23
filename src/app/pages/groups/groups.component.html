@@ -1,0 +1,43 @@
+<nb-card>
+  <nb-card-header>
+    Grupos
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row filter-bar">
+      <div class="col-9">
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Busqueda por nombre..."
+          (keyup)="handleSearch($event)"
+        />
+      </div>
+      <div class="col-3">
+        <nb-select
+          fullWidth
+          placeholder="Ordenar Por"
+          shape="round"
+          (selectedChange)="handleFilter($event)"
+        >
+          <nb-option selected value="members">Tamaño </nb-option>
+          <nb-option selected value="updatedAt">Fecha</nb-option>
+        </nb-select>
+      </div>
+    </div>
+    <div class="wrapper">
+      <nb-tabset fullWidth #tabset>
+        <nb-tab tabTitle="Grupos" #tableTab>
+          <app-group-table
+            [groups]="groups"
+            (tableChange)="handleReload()"
+          ></app-group-table>
+        </nb-tab>
+        <nb-tab tabTitle="Crear Grupo">
+          <app-group-create (back)="handleReload()"></app-group-create>
+        </nb-tab>
+      </nb-tabset>
+    </div>
+  </nb-card-body>
+</nb-card>

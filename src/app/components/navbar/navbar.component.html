@@ -1,0 +1,25 @@
+<div class="navbar">
+  <div class="left-side">
+    <nb-actions size="medium">
+      <nb-action *ngIf="isAuthenticated">
+        <nb-icon
+          icon="menu-2-outline"
+          status="basic"
+          [options]="{ animation: { type: 'pulse' } }"
+          (click)="toggleCompact()"
+        >
+        </nb-icon>
+      </nb-action>
+      <nb-action>
+        <app-brand></app-brand>
+      </nb-action>
+    </nb-actions>
+  </div>
+  <div *ngIf="isAuthenticated" class="right-side">
+    <nb-actions size="medium">
+      <nb-action>
+        <app-user [user]="user"></app-user>
+      </nb-action>
+    </nb-actions>
+  </div>
+</div>

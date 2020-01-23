@@ -1,0 +1,13 @@
+<div *ngIf="students?.length != 0">
+  <nb-list>
+    <nb-list-item *ngFor="let student of students">
+      <app-student-item [student]="student" [mode]="mode"></app-student-item>
+    </nb-list-item>
+  </nb-list>
+</div>
+<p *ngIf="students?.length == 0">
+  No hay estudiantes para
+  {{ mode == "view" || mode == "remove" ? "mostar" : "" }}
+  {{ mode == "add" ? "agregar" : "" }}
+  {{ mode == "grade" ? "calificar" : "" }}
+</p>

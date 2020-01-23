@@ -1,0 +1,46 @@
+<div class="academic-item">
+  <div>
+    <b> {{ academic.folio }}</b>
+  </div>
+  <div>
+    <nb-user [name]="academic.name" [picture]="academic.avatarUrl"></nb-user>
+  </div>
+  <div>{{ academic.subjects.length }} materias</div>
+  <nb-icon
+    *ngIf="!editEnabled"
+    icon="edit-2-outline"
+    status="basic"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="enableModsHandler(true)"
+  ></nb-icon>
+  <nb-icon
+    *ngIf="editEnabled"
+    icon="edit-2-outline"
+    status="warning"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="navigate(academic._id, true)"
+  ></nb-icon>
+  <nb-icon
+    *ngIf="!deleteEnabled"
+    icon="trash-outline"
+    status="basic"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="enableModsHandler(false)"
+  ></nb-icon>
+  <nb-icon
+    *ngIf="deleteEnabled"
+    icon="trash-outline"
+    status="danger"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="deleteHandler(academic._id)"
+  ></nb-icon>
+  <button
+    nbButton
+    shape="round"
+    status="basic"
+    size="small"
+    (click)="navigate(academic._id)"
+  >
+    Ver Mas
+  </button>
+</div>

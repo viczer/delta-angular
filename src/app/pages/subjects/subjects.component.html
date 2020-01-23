@@ -1,0 +1,44 @@
+<nb-card>
+  <nb-card-header>
+    Materias
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row filter-bar">
+      <div class="col-9">
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Busqueda..."
+          (keyup)="handleSearch($event)"
+        />
+      </div>
+      <div class="col-3">
+        <nb-select
+          fullWidth
+          placeholder="Buscar Por"
+          shape="round"
+          (selectedChange)="handleFilter($event)"
+        >
+          <nb-option selected value="grades">Calificaciones </nb-option>
+          <nb-option selected value="updatedAt">Fecha</nb-option>
+        </nb-select>
+      </div>
+    </div>
+    <div class="wrapper">
+      <nb-tabset fullWidth #tabset>
+        <nb-tab tabTitle="Materias" #tableTab>
+          <app-subject-table
+            [subjects]="subjects"
+            mode="view"
+            (reload)="handleReload()"
+          ></app-subject-table>
+        </nb-tab>
+        <nb-tab tabTitle="Crear Materia">
+          <app-subject-create (back)="handleReload()"></app-subject-create
+        ></nb-tab>
+      </nb-tabset>
+    </div>
+  </nb-card-body>
+</nb-card>

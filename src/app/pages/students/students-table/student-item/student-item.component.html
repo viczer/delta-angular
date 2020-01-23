@@ -1,0 +1,68 @@
+<div class="student-item" [ngClass]="{ view: mode == 'view' }">
+  <div>
+    <strong>
+      {{ student.enrollmentId }}
+    </strong>
+  </div>
+  <div *ngIf="mode == 'view'">
+    <strong>
+      {{ student.group.name }}
+    </strong>
+  </div>
+  <div *ngIf="student">
+    <nb-user
+      [name]="student?.name"
+      [title]="student?.username"
+      [picture]="student?.avatarUrl"
+    ></nb-user>
+  </div>
+  <div *ngIf="mode == 'view'">
+    {{ student.phone }}
+  </div>
+  <div *ngIf="mode == 'view'">{{ student?.payments.length }} Pagos</div>
+  <button
+    *ngIf="mode == 'view'"
+    (click)="navigate(student._id)"
+    nbButton
+    shape="round"
+    status="basic"
+    size="small"
+    type="button"
+  >
+    Ver mas
+  </button>
+
+  <button
+    *ngIf="mode == 'grade'"
+    (click)="navigate(student._id)"
+    nbButton
+    shape="round"
+    status="basic"
+    size="small"
+    type="button"
+  >
+    Calificar
+  </button>
+  <button
+    *ngIf="mode == 'add'"
+    (click)="navigate(student._id)"
+    nbButton
+    shape="round"
+    status="primary"
+    size="small"
+    type="button"
+  >
+    Agregar
+  </button>
+  <button
+    *ngIf="mode == 'remove'"
+    (click)="navigate(student._id)"
+    nbButton
+    shape="round"
+    status="basic"
+    size="small"
+    type="button"
+  >
+    Remover
+  </button>
+</div>

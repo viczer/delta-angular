@@ -1,0 +1,67 @@
+<nb-card>
+  <nb-card-body>
+    <nb-actions size="small" fullWidth>
+      <nb-action (click)="navigate('alumnos/' + student._id)">
+        <nb-icon
+          icon="arrow-ios-back-outline"
+          status="basic"
+          [options]="{ animation: { type: 'pulse' } }"
+        ></nb-icon>
+        <span> Regresar</span>
+      </nb-action>
+      <nb-action (click)="navigate('pagos/' + student._id)">
+        <nb-icon
+          icon="credit-card-outline"
+          status="basic"
+          [options]="{ animation: { type: 'pulse' } }"
+        ></nb-icon>
+        <span> Pagos</span>
+      </nb-action>
+      <nb-action (click)="navigate('calificaciones/' + student._id)">
+        <nb-icon
+          icon="file-text-outline"
+          status="basic"
+          [options]="{ animation: { type: 'pulse' } }"
+        ></nb-icon>
+        <span>Calificaciones</span>
+      </nb-action>
+      <nb-action (click)="saveNote()">
+        <nb-icon
+          icon="archive-outline"
+          status="basic"
+          [options]="{ animation: { type: 'pulse' } }"
+        ></nb-icon>
+        <span>Guardar Nota</span>
+      </nb-action>
+      <nb-action (click)="navigate('alumnos/editar/' + student._id)">
+        <nb-icon
+          icon="edit-2-outline"
+          status="basic"
+          [options]="{ animation: { type: 'pulse' } }"
+        ></nb-icon>
+        <span>Editar</span>
+      </nb-action>
+      <nb-action class="danger">
+        <nb-icon
+          icon="trash-outline"
+          status="basic"
+          [options]="{ animation: { type: 'pulse' } }"
+        ></nb-icon>
+        <span>Eliminar</span>
+      </nb-action>
+    </nb-actions>
+  </nb-card-body>
+</nb-card>
+<nb-card>
+  <nb-card-header>
+    Editor de Notas
+  </nb-card-header>
+
+  <nb-card-body>
+    <div class="row">
+      <div class="col-12">
+        <div class="editor" id="codex-editor"></div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

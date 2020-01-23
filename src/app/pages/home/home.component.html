@@ -1,0 +1,98 @@
+<div class="row">
+  <div class="col-3">
+    <nb-card>
+      <nb-card-header>
+        Grupos
+      </nb-card-header>
+      <nb-card-body>
+        <nb-actions size="large">
+          <nb-action>
+            <nb-icon icon="people-outline" status="basic"> </nb-icon>
+          </nb-action>
+          <nb-action *ngIf="school.groups">
+            {{ school?.groups.length }} Grupo{{
+              school.groups.length == 1 ? "" : "s"
+            }}
+          </nb-action>
+        </nb-actions>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-3">
+    <nb-card>
+      <nb-card-header>
+        Materias
+      </nb-card-header>
+      <nb-card-body>
+        <nb-actions size="large">
+          <nb-action>
+            <nb-icon icon="book-outline" status="basic"> </nb-icon>
+          </nb-action>
+          <nb-action *ngIf="school.subjects">
+            {{ school?.subjects.length }} Materia{{
+              school.subjects.length == 1 ? "" : "s"
+            }}
+          </nb-action>
+        </nb-actions>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-3">
+    <nb-card>
+      <nb-card-header>
+        Programas
+      </nb-card-header>
+      <nb-card-body>
+        <nb-actions size="large">
+          <nb-action>
+            <nb-icon icon="award-outline" status="basic"> </nb-icon>
+          </nb-action>
+          <nb-action *ngIf="school.programs">
+            {{ school?.programs.length }} Programa{{
+              school.programs.length == 1 ? "" : "s"
+            }}
+          </nb-action>
+        </nb-actions>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-3">
+    <nb-card>
+      <nb-card-header>
+        Alumnos
+      </nb-card-header>
+      <nb-card-body>
+        <nb-actions size="large">
+          <nb-action>
+            <nb-icon icon="person-outline" status="basic"> </nb-icon>
+          </nb-action>
+          <nb-action *ngIf="school.students">
+            {{ school?.students.length }} Alumno{{
+              school.students.length == 1 ? "" : "s"
+            }}
+          </nb-action>
+        </nb-actions>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-6">
+    <nb-card>
+      <nb-card-header>
+        Origen de Estudiantes
+      </nb-card-header>
+      <nb-card-body>
+        <canvas class="chart" #originChart></canvas>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-6">
+    <nb-card>
+      <nb-card-header>
+        Genero de Estudiantes
+      </nb-card-header>
+      <nb-card-body>
+        <canvas class="chart" #genderChart></canvas>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

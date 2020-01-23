@@ -1,0 +1,43 @@
+<nb-card>
+  <nb-card-header>
+    Alumnos
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row filter-bar">
+      <div class="col-9">
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Busqueda..."
+        />
+      </div>
+      <div class="col-3">
+        <nb-select fullWidth placeholder="Buscar Por" shape="round">
+          <nb-option value="1">Matricula </nb-option>
+          <nb-option value="2">Grupo </nb-option>
+          <nb-option value="3">Nombre </nb-option>
+          <nb-option value="3">Teléfono </nb-option>
+          <nb-option value="3">Pagos </nb-option>
+        </nb-select>
+      </div>
+    </div>
+    <div class="wrapper">
+      <nb-tabset fullWidth>
+        <nb-tab tabTitle="Alumnos">
+          <app-students-table
+            [students]="students"
+            mode="view"
+          ></app-students-table>
+        </nb-tab>
+        <nb-tab tabTitle="Egresados">
+          <app-students-table
+            [students]="graduates"
+            mode="view"
+          ></app-students-table>
+        </nb-tab>
+      </nb-tabset>
+    </div>
+  </nb-card-body>
+</nb-card>

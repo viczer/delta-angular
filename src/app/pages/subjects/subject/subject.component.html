@@ -1,0 +1,45 @@
+<nb-card class="members">
+  <nb-card-header>
+    Materia
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row editor">
+      <div class="col-4">
+        <div class="profile-pic">
+          <img class="col-12 profile-pic" [src]="subject?.avatarUrl" />
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="col-12"><b>Folio: </b> {{ subject?.folio }}</div>
+        <div class="col-12"><b>Materia: </b> {{ subject?.name }}</div>
+        <div class="col-12">
+          <b>Calificaciones: </b> {{ subject?.grades.length }}
+        </div>
+        <div class="col-12"><b>Contacto: </b> {{ subject?.email }}</div>
+        <div class="col-12"><b>Objetivo: </b> {{ subject?.description }}</div>
+      </div>
+    </div>
+    <div class="row filter-bar">
+      <input
+        type="text"
+        nbInput
+        fullWidth
+        shape="round"
+        placeholder="Busqueda..."
+      />
+      <nb-select fullWidth placeholder="Buscar Por" shape="round">
+        <nb-option value="1">Matricula </nb-option>
+        <nb-option value="2">Usuario </nb-option>
+        <nb-option value="3">Nombre </nb-option>
+        <nb-option value="3">Teléfono </nb-option>
+        <nb-option value="3">Pagos </nb-option>
+      </nb-select>
+    </div>
+    <div class="wrapper">
+      <app-students-table
+        [students]="students"
+        mode="grade"
+      ></app-students-table>
+    </div>
+  </nb-card-body>
+</nb-card>

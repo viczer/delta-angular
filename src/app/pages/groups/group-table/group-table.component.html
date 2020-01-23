@@ -1,0 +1,11 @@
+<div *ngIf="groups?.length != 0">
+  <nb-list>
+    <nb-list-item *ngFor="let group of groups">
+      <app-group-item
+        [group]="group"
+        (itemChange)="handleItemChange()"
+      ></app-group-item>
+    </nb-list-item>
+  </nb-list>
+</div>
+<p *ngIf="groups?.length == 0">No hay grupos</p>

@@ -1,1 +1,47 @@
+@import "themes";
+
+@import "~@nebular/theme/styles/globals";
+@import "~@nebular/bootstrap/styles/globals";
+
+@include nb-install() {
+  @include nb-theme-global();
+  @include nb-bootstrap-global();
+}
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+textarea.ng-touched.ng-invalid,
+input.ng-touched.ng-invalid {
+  border: 1px solid #ff3d71 !important;
+}
+
+.before-separator {
+  margin-left: 15px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    background: #edf1f7;
+    height: 80%;
+    width: 1px;
+  }
+}
+.ce-block__content {
+  max-width: calc(100% - 60px) !important;
+}
+.ce-toolbar__content {
+  max-width: calc(100% - 60px) !important;
+}
+
+::-webkit-scrollbar {
+  background: #f7f9fc;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e4e9f2;
+}

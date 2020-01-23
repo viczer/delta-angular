@@ -1,0 +1,55 @@
+<div class="wrapper" *ngIf="mode == 'create'">
+  <input type="text" nbInput fullWidth shape="round" placeholder="Folio" />
+  <input
+    type="text"
+    nbInput
+    fullWidth
+    shape="round"
+    placeholder="Descripcion"
+  />
+  <input type="text" nbInput fullWidth shape="round" placeholder="Monto" />
+  <input
+    nbInput
+    fullWidth
+    shape="round"
+    placeholder="Fecha de limite"
+    [nbDatepicker]="endpicker"
+  />
+  <button nbButton shape="round" status="primary" fullWidth>
+    Crear
+  </button>
+</div>
+
+<div class="wrapper" *ngIf="mode == 'view'">
+  <div>
+    <b>{{ payment.folio }}</b>
+  </div>
+  <div>
+    {{ payment.description }}
+  </div>
+  <div>{{ payment.charge | currency }} mxn</div>
+  <div>
+    {{ payment.deadLine | date }}
+  </div>
+  <button
+    *ngIf="payment.completed == false"
+    nbButton
+    shape="round"
+    status="basic"
+    size="small"
+    fullWidth
+  >
+    Pagar
+  </button>
+  <button
+    *ngIf="payment.completed == true"
+    nbButton
+    shape="round"
+    status="basic"
+    size="small"
+    fullWidth
+  >
+    Pagado
+  </button>
+</div>
+<nb-datepicker #endpicker></nb-datepicker>

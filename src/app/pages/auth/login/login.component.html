@@ -1,0 +1,29 @@
+<form [formGroup]="user">
+  <div class="wrapper">
+    <div *ngIf="!avatarUrl || avatarUrl == null" class="no-profile-pic"></div>
+    <img
+      *ngIf="avatarUrl || avatarUrl != null"
+      [src]="avatarUrl"
+      class="profile-pic"
+    />
+  </div>
+  <input
+    formControlName="username"
+    type="text"
+    nbInput
+    fullWidth
+    shape="round"
+    placeholder="Usuario"
+    (blur)="handleUsernameBlur()"
+  />
+  <input
+    formControlName="password"
+    type="password"
+    nbInput
+    fullWidth
+    shape="round"
+    placeholder="Contraseña"
+  />
+
+  <button nbButton type="button" (click)="login()">Iniciar</button>
+</form>

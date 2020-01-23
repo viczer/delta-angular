@@ -1,0 +1,382 @@
+<form class="row" [formGroup]="user">
+  <div class="col-12">
+    <nb-card>
+      <nb-card-body>
+        <nb-actions size="small" fullWidth>
+          <nb-action (click)="navigate('alumnos')">
+            <nb-icon
+              icon="arrow-ios-back-outline"
+              status="basic"
+              [options]="{ animation: { type: 'pulse' } }"
+            ></nb-icon>
+            <span>
+              Regresar
+            </span>
+          </nb-action>
+          <nb-action class="danger" *ngIf="!isCreatingStudent">
+            <nb-icon
+              icon="trash-outline"
+              status="basic"
+              [options]="{ animation: { type: 'pulse' } }"
+            ></nb-icon>
+            <span>
+              Eliminar
+            </span>
+          </nb-action>
+          <nb-action (click)="saveStudent()">
+            <nb-icon
+              icon="cloud-upload-outline"
+              status="basic"
+              [options]="{ animation: { type: 'pulse' } }"
+            ></nb-icon>
+            <span>
+              Guardar
+            </span>
+          </nb-action>
+        </nb-actions>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-4">
+    <nb-card>
+      <nb-card-header>
+        Fotografia de Alumno
+      </nb-card-header>
+      <nb-card-body>
+        <div class="profile-pic">
+          <app-upload (upload)="handleFileUpload($event)"></app-upload>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-8">
+    <nb-card>
+      <nb-card-header>
+        Informacion de Alumno
+      </nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-12">
+            <input
+              formControlName="name"
+              type="text"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Nombre Completo"
+            />
+          </div>
+          <div class="col-6">
+            <input
+              formControlName="dob"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Fecha de Nacimiento"
+              [nbDatepicker]="formpicker"
+            />
+            <nb-datepicker #formpicker></nb-datepicker>
+          </div>
+          <div class="col-6">
+            <nb-select
+              formControlName="gender"
+              fullWidth
+              placeholder="Genero"
+              shape="round"
+              [status]="
+                user.controls.gender.invalid && user.controls.gender.touched
+                  ? 'danger'
+                  : 'basic'
+              "
+            >
+              <nb-option value="1">Femenino</nb-option>
+              <nb-option value="2">Masculino</nb-option>
+              <nb-option value="3">Otro</nb-option>
+            </nb-select>
+          </div>
+          <div class="col-6">
+            <input
+              formControlName="lastSchool"
+              type="text"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Escuela de Egreso"
+            />
+          </div>
+          <div class="col-6">
+            <input
+              formControlName="email"
+              type="text"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Correo"
+            />
+          </div>
+          <div class="col-6">
+            <input
+              appPhoneMask
+              formControlName="phone"
+              type="text"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Telefono"
+            />
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+    <nb-card formGroupName="emergency">
+      <nb-card-header>
+        Informacion de Emergencia
+      </nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-4">
+            <input
+              formControlName="phone"
+              appPhoneMask
+              type="text"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Telefono"
+            />
+          </div>
+          <div class="col-4">
+            <input
+              formControlName="name"
+              type="text"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Nombre del Contacto"
+            />
+          </div>
+          <div class="col-4">
+            <input
+              formControlName="relation"
+              type="text"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Parentesco"
+            />
+          </div>
+          <div class="col-4">
+            <nb-select
+              formControlName="bloodType"
+              fullWidth
+              placeholder="Grupo Sanguineo"
+              shape="round"
+              [status]="
+                user.controls.emergency.controls.bloodType.invalid &&
+                user.controls.emergency.controls.bloodType.touched
+                  ? 'danger'
+                  : 'basic'
+              "
+            >
+              <nb-option
+                [value]="bloodGroupItem"
+                *ngFor="let bloodGroupItem of bloodGroups"
+                >{{ bloodGroupItem }}
+              </nb-option>
+            </nb-select>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-12">
+    <nb-card formGroupName="address">
+      <nb-card-header>
+        Direccion de Alumno
+      </nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-4">
+            <nb-select
+              formControlName="state"
+              fullWidth
+              placeholder="Estado"
+              shape="round"
+              [status]="
+                user.controls.address.controls.state.invalid &&
+                user.controls.address.controls.state.touched
+                  ? 'danger'
+                  : 'basic'
+              "
+            >
+              <nb-option [value]="stateItem" *ngFor="let stateItem of states">
+                {{ stateItem }}
+              </nb-option>
+            </nb-select>
+          </div>
+          <div class="col-4">
+            <nb-select
+              formControlName="municipality"
+              fullWidth
+              placeholder="Municipio"
+              shape="round"
+              [status]="
+                user.controls.address?.controls.municipality.invalid &&
+                user.controls.address?.controls.municipality.touched
+                  ? 'danger'
+                  : 'basic'
+              "
+            >
+              <nb-option
+                [value]="municipalityItem"
+                *ngFor="let municipalityItem of municipalities"
+              >
+                {{ municipalityItem }}
+              </nb-option>
+            </nb-select>
+          </div>
+          <div class="col-4">
+            <nb-select
+              formControlName="colony"
+              fullWidth
+              placeholder="Ciudad o Poblado"
+              shape="round"
+              [status]="
+                user.controls.address.controls.colony.invalid &&
+                user.controls.address.controls.colony.touched
+                  ? 'danger'
+                  : 'basic'
+              "
+            >
+              <nb-option [value]="cityItem" *ngFor="let cityItem of cities">
+                {{ cityItem }}
+              </nb-option>
+            </nb-select>
+          </div>
+          <div class="col-8">
+            <input
+              formControlName="street"
+              type="text"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Calle"
+            />
+          </div>
+          <div class="col-4">
+            <input
+              formControlName="zipCode"
+              type="text"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Codigo Postal"
+            />
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>
+        Escuela
+      </nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-4">
+            <input
+              formControlName="username"
+              type="text"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Usuario"
+            />
+          </div>
+          <div class="col-4">
+            <input
+              formControlName="password"
+              type="text"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Contraseña"
+            />
+          </div>
+          <div class="col-4">
+            <nb-select
+              formControlName="school"
+              fullWidth
+              placeholder="Sede"
+              shape="round"
+              [status]="
+                user.controls.school.invalid && user.controls.school.touched
+                  ? 'danger'
+                  : 'basic'
+              "
+            >
+              <nb-option value="1">Aguascalientes </nb-option>
+              <nb-option value="2">Guadalajara </nb-option>
+            </nb-select>
+          </div>
+          <div class="col-4">
+            <nb-select
+              formControlName="program"
+              fullWidth
+              placeholder="Programa"
+              shape="round"
+              [status]="
+                user.controls.program.invalid && user.controls.program.touched
+                  ? 'danger'
+                  : 'basic'
+              "
+            >
+              <nb-option
+                [value]="academic._id"
+                *ngFor="let academic of academics"
+                >{{ academic.name }}
+              </nb-option>
+            </nb-select>
+          </div>
+          <div class="col-4">
+            <nb-select
+              formControlName="group"
+              fullWidth
+              placeholder="Grupo"
+              shape="round"
+              [status]="
+                user.controls.group.invalid && user.controls.group.touched
+                  ? 'danger'
+                  : 'basic'
+              "
+            >
+              <nb-option [value]="group._id" *ngFor="let group of groups"
+                >{{ group.name }}
+              </nb-option>
+            </nb-select>
+          </div>
+          <div class="col-4">
+            <input
+              formControlName="enrolled"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Fecha de Ingreso"
+              [nbDatepicker]="enrolled"
+            />
+            <nb-datepicker #enrolled></nb-datepicker>
+          </div>
+          <div class="col-4">
+            <input
+              formControlName="enrollmentId"
+              type="text"
+              nbInput
+              fullWidth
+              shape="round"
+              placeholder="Matricula"
+            />
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</form>

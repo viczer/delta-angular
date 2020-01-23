@@ -1,0 +1,144 @@
+<div class="wrapper">
+  <nb-stepper #stepper>
+    <nb-step label="Registro" [stepControl]="meta">
+      <form [formGroup]="meta">
+        <nb-select
+          formControlName="school"
+          placeholder="Sede"
+          shape="round"
+          fullWidth
+          [status]="
+            meta.controls.school.invalid && meta.controls.school.touched
+              ? 'danger'
+              : 'basic'
+          "
+        >
+          <nb-option [value]="school._id" *ngFor="let school of schools">{{
+            school.name
+          }}</nb-option>
+        </nb-select>
+        <input
+          formControlName="name"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Nombre"
+        />
+        <input
+          appPhoneMask
+          formControlName="phone"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Telefono"
+        />
+        <nb-select
+          formControlName="gender"
+          placeholder="Genero"
+          shape="round"
+          fullWidth
+          [status]="
+            meta.controls.gender.invalid && meta.controls.gender.touched
+              ? 'danger'
+              : 'basic'
+          "
+        >
+          <nb-option value="Masculino">Masculino</nb-option>
+          <nb-option value="Femenino">Femenino</nb-option>
+          <nb-option value="Otro">Otro</nb-option>
+        </nb-select>
+        <div class="row">
+          <div class="col-6">
+            <button fullWidth nbButton disabled status="basic">
+              Regresar
+            </button>
+          </div>
+          <div class="col-6">
+            <button fullWidth nbButton nbStepperNext>Continuar</button>
+          </div>
+        </div>
+      </form>
+    </nb-step>
+
+    <nb-step label="Usuario" [stepControl]="user">
+      <form [formGroup]="user">
+        <input
+          formControlName="email"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Correo"
+        />
+        <input
+          formControlName="username"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Usuario"
+        />
+        <input
+          formControlName="password"
+          type="password"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Contraseña"
+        />
+        <input
+          formControlName="conPassword"
+          type="password"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Repetir Contraseña"
+        />
+        <div class="row">
+          <div class="col-6">
+            <button fullWidth nbButton nbStepperPrevious status="basic">
+              Regresar
+            </button>
+          </div>
+          <div class="col-6">
+            <button fullWidth nbButton nbStepperNext>Continuar</button>
+          </div>
+        </div>
+      </form>
+    </nb-step>
+    <nb-step label="Autorización" [stepControl]="auth">
+      <form [formGroup]="auth">
+        <input
+          formControlName="username"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Usuario Director"
+        />
+        <input
+          formControlName="password"
+          type="password"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Contraseña Director"
+        />
+        <div class="row">
+          <div class="col-6">
+            <button fullWidth nbButton nbStepperPrevious status="basic">
+              Regresar
+            </button>
+          </div>
+          <div class="col-6">
+            <button fullWidth nbButton (click)="handleRegister()">
+              Registarse
+            </button>
+          </div>
+        </div>
+      </form>
+    </nb-step>
+  </nb-stepper>
+</div>
