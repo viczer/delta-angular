@@ -6,14 +6,12 @@ import {
   AfterViewInit
 } from "@angular/core";
 import { ISchool } from "../../interfaces/school.interface";
-import * as Chart from "chart.js";
 import { SchoolService } from "../../services/schools.service";
 import { IResponse } from "../../interfaces/response.interface";
-import { IUser } from "src/app/interfaces/user.interface";
 import { StudentService } from "src/app/services/student.service";
 import { GroupService } from "src/app/services/group.service";
-import { IGroup } from "src/app/interfaces/group.interface";
-
+import * as Chart from "chart.js";
+import * as _ from "lodash";
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -28,8 +26,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   groupChart: ElementRef;
 
   public school: ISchool = {};
-  public students: [{ labels?: string[]; data?: number[] }?] = [];
-  public groups: [{ labels?: string[]; data?: number[] }?] = [];
 
   constructor(
     private schoolService: SchoolService,
@@ -39,26 +35,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.schoolService.findOne().subscribe((response: IResponse) => {
       this.school = response.data;
     });
-    this.studentService.findAll().subscribe((response: IResponse) => {
-      this.students = response.data;
-    });
-    this.groupService.findAll().subscribe((response: IResponse) => {
-      this.groups = response.data;
-    });
   }
-  public getOriginStudentStats() {}
-  public getGenderStudentStats() {}
 
-  public getGroupStats() {
+  public getData(data: { labels?: string[]; data?: number[] }) {
     return {
-      labels: [
-        "Africa",
-        "Asia",
-        "Europe",
-        "Latin America",
-        "North America",
-        "Others"
-      ],
+      labels: data.labels,
       datasets: [
         {
           backgroundColor: [
@@ -74,34 +55,87 @@ export class HomeComponent implements OnInit, AfterViewInit {
             "#c45850"
           ],
           borderWidth: 5,
-          data: [2478, 5267, 734, 784, 433, 442]
+          data: data.data
         }
       ]
     };
   }
 
   ngOnInit() {}
-  ngAfterViewInit(): void {
-    new Chart(this.originChart.nativeElement, {
-      type: "doughnut",
-      data: this.getGroupStats(),
-      options: {
-        cutoutPercentage: 70
+  ngAfterViewInit() {
+    this.studentService.findAll().subscribe((response: IResponse) => {
+      const gendersGroup = _.groupBy(response.data, "gender");
+      const originGroup = _.groupBy(response.data, "address.state");
+
+      let genderData = [];
+
+      for (const key in gendersGroup) {
+        genderData.push(gendersGroup[key].length);
       }
+      new Chart(this.genderChart.nativeElement, {
+        type: "doughnut",
+        data: this.getData({
+          labels: Object.keys(gendersGroup),
+          data: genderData
+        }),
+        options: {
+          cutoutPercentage: 60,
+          legend: {
+            align: "start",
+            position: "left"
+          }
+        }
+      });
+
+      let origenData = [];
+
+      for (const key in originGroup) {
+        origenData.push(originGroup[key].length);
+      }
+
+      new Chart(this.originChart.nativeElement, {
+        type: "doughnut",
+        data: this.getData({
+          labels: Object.keys(originGroup),
+          data: origenData
+        }),
+        options: {
+          cutoutPercentage: 50,
+          legend: {
+            align: "start",
+            position: "left"
+          }
+        }
+      });
     });
-    new Chart(this.genderChart.nativeElement, {
-      type: "doughnut",
-      data: this.getGroupStats(),
-      options: {
-        cutoutPercentage: 70
+
+    this.groupService.findAll().subscribe((response: IResponse) => {
+      const nameGroup = _.groupBy(response.data, "name");
+      let data = [];
+
+      for (const group of response.data) {
+        data.push(group.members.length);
       }
-    });
-    new Chart(this.groupChart.nativeElement, {
-      type: "bar",
-      data: this.getGroupStats(),
-      options: {
-        legend: { display: false }
-      }
+
+      new Chart(this.groupChart.nativeElement, {
+        type: "bar",
+        data: this.getData({
+          labels: Object.keys(nameGroup),
+          data
+        }),
+        options: {
+          legend: { display: false },
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true
+                }
+              }
+            ]
+          }
+        }
+      });
     });
   }
 }

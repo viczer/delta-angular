@@ -13,16 +13,7 @@ import * as _ from "lodash";
 export class AuthService {
   public authenticated$: BehaviorSubject<IUser> = new BehaviorSubject({});
 
-  constructor(private http: HttpClient) {
-    const loadedStatus = localStorage.getItem("auth_user") != "";
-    if (loadedStatus) {
-      this.authenticated$.next(JSON.parse(localStorage.getItem("auth_user")));
-    }
-
-    this.authenticated$.subscribe(status => {
-      localStorage.setItem("auth", JSON.stringify(status));
-    });
-  }
+  constructor(private http: HttpClient) {}
 
   public login(username: string, password: string) {
     let configUrl = `${server.SERVER_URL}auth/login`;

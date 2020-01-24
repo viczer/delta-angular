@@ -5,6 +5,7 @@ import {
   AfterViewInit,
   ElementRef
 } from "@angular/core";
+import { AuthService } from "src/app/services/auth.service";
 
 @Component({
   selector: "app-auth",
@@ -16,7 +17,18 @@ export class AuthComponent implements OnInit, AfterViewInit {
   auth?: ElementRef;
   private isBlurred = false;
 
-  constructor() {}
+  constructor(private authService: AuthService) {
+    let loadedStatus = localStorage.getItem("auth_user") != "";
+    if (loadedStatus) {
+      this.authService.authenticated$.next(
+        JSON.parse(localStorage.getItem("auth_user"))
+      );
+    }
+
+    this.authService.authenticated$.subscribe(status => {
+      localStorage.setItem("auth", JSON.stringify(status));
+    });
+  }
   public toggleBlur() {
     this.isBlurred = !this.isBlurred;
   }
