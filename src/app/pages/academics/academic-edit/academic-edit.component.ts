@@ -41,6 +41,12 @@ export class AcademicEditComponent implements OnInit {
         .findById(this.id)
         .subscribe((response: IResponse) => {
           this.program.patchValue(response.data);
+          this.program.controls.startDate.patchValue(
+            new Date(response.data.startDate)
+          );
+          this.program.controls.endDate.patchValue(
+            new Date(response.data.endDate)
+          );
         });
     });
   }

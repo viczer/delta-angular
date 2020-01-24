@@ -19,9 +19,7 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private toastrService: NbToastrService
-  ) {
-    this.authService.authenticated$.next({});
-  }
+  ) {}
 
   ngOnInit() {
     this.user = new FormGroup({
@@ -46,6 +44,10 @@ export class LoginComponent implements OnInit {
                   destroyByClick: true,
                   icon: "unlock-outline"
                 }
+              );
+              localStorage.setItem(
+                "token",
+                JSON.stringify(response.data.access_token)
               );
               this.router.navigate(["inicio"]);
               this.authService.authenticated$.next(response.data);

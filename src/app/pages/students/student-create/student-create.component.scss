@@ -2,6 +2,7 @@ nb-card .row {
   .col-4,
   .col-3,
   .col-6,
+  .col-8,
   .col-9,
   .col-12 {
     margin-top: 10px;
@@ -9,13 +10,8 @@ nb-card .row {
   }
 }
 .profile-pic {
-  height: 355px;
-  min-height: 355px;
+  height: 475px;
   width: 100%;
-  min-width: 100%;
-  object-fit: cover;
-  border-radius: 3px;
-  background: #233445;
 }
 
 nb-action {
@@ -27,9 +23,11 @@ nb-action {
       color: #3561f7;
     }
   }
+
   nb-icon {
     margin-right: 15px;
   }
+
   &.danger:hover {
     color: #fe1874;
 

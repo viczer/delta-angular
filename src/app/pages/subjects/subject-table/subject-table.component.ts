@@ -19,5 +19,8 @@ export class SubjectTableComponent implements OnInit {
 
   @Output("reload") reload: EventEmitter<boolean> = new EventEmitter(false);
 
+  public handleReload() {
+    this.reload.emit(true);
+  }
   ngOnInit(): void {}
 }

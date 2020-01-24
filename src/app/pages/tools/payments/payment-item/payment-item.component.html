@@ -1,48 +1,87 @@
-<div class="wrapper" *ngIf="mode == 'create'">
-  <input type="text" nbInput fullWidth shape="round" placeholder="Folio" />
+<div class="wrapper create" *ngIf="mode == 'create'" [formGroup]="payment">
   <input
+    formControlName="folio"
     type="text"
     nbInput
     fullWidth
     shape="round"
-    placeholder="Descripcion"
+    placeholder="Folio"
   />
-  <input type="text" nbInput fullWidth shape="round" placeholder="Monto" />
   <input
+    formControlName="name"
+    type="text"
+    nbInput
+    fullWidth
+    shape="round"
+    placeholder="Titulo"
+  />
+  <input
+    formControlName="charge"
+    type="text"
+    nbInput
+    fullWidth
+    shape="round"
+    placeholder="Monto"
+  />
+  <input
+    formControlName="deadLine"
     nbInput
     fullWidth
     shape="round"
     placeholder="Fecha de limite"
     [nbDatepicker]="endpicker"
   />
-  <button nbButton shape="round" status="primary" fullWidth>
+  <button
+    (click)="handleCreate()"
+    nbButton
+    shape="round"
+    status="primary"
+    fullWidth
+  >
     Crear
   </button>
 </div>
 
 <div class="wrapper" *ngIf="mode == 'view'">
+  <nb-icon
+    *ngIf="!deleteEnabled"
+    icon="trash-outline"
+    status="basic"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="enableModsHandler()"
+  ></nb-icon>
+  <nb-icon
+    *ngIf="deleteEnabled"
+    icon="trash-outline"
+    status="danger"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="handleDelete()"
+  ></nb-icon>
   <div>
-    <b>{{ payment.folio }}</b>
+    <b>{{ paymentInput.folio }}</b>
   </div>
   <div>
-    {{ payment.description }}
+    {{ paymentInput.name }}
   </div>
-  <div>{{ payment.charge | currency }} mxn</div>
+  <div>{{ paymentInput.charge | currency }} mxn</div>
   <div>
-    {{ payment.deadLine | date }}
+    {{ paymentInput.deadLine | date }}
   </div>
   <button
-    *ngIf="payment.completed == false"
+    *ngIf="paymentInput.completed == false"
     nbButton
     shape="round"
-    status="basic"
+    [status]="isPayed ? 'basic' : 'primary'"
     size="small"
     fullWidth
+    (click)="handlePay()"
   >
-    Pagar
+    {{ !isPaying && !isPayed ? "Pagar" : "" }}
+    {{ isPaying && !isPayed ? "Pagando" : "" }}
+    {{ isPayed ? "Pagado" : "" }}
   </button>
   <button
-    *ngIf="payment.completed == true"
+    *ngIf="paymentInput.completed == true"
     nbButton
     shape="round"
     status="basic"

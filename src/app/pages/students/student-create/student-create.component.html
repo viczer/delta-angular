@@ -3,53 +3,26 @@
     <nb-card>
       <nb-card-body>
         <nb-actions size="small" fullWidth>
-          <nb-action (click)="navigate('alumnos/' + id)">
+          <nb-action (click)="navigate('alumnos')">
             <nb-icon
               icon="arrow-ios-back-outline"
               status="basic"
               [options]="{ animation: { type: 'pulse' } }"
             ></nb-icon>
-            <span> Regresar</span>
+            <span>
+              Regresar
+            </span>
           </nb-action>
-          <nb-action (click)="navigate('pagos/' + id)">
-            <nb-icon
-              icon="credit-card-outline"
-              status="basic"
-              [options]="{ animation: { type: 'pulse' } }"
-            ></nb-icon>
-            <span> Pagos</span>
-          </nb-action>
-          <nb-action (click)="navigate('calificaciones/' + id)">
-            <nb-icon
-              icon="file-text-outline"
-              status="basic"
-              [options]="{ animation: { type: 'pulse' } }"
-            ></nb-icon>
-            <span>Calificaciones</span>
-          </nb-action>
-          <nb-action (click)="navigate('notas/' + id)">
-            <nb-icon
-              icon="archive-outline"
-              status="basic"
-              [options]="{ animation: { type: 'pulse' } }"
-            ></nb-icon>
-            <span>Ver notas</span>
-          </nb-action>
+
           <nb-action (click)="saveStudent()">
             <nb-icon
               icon="cloud-upload-outline"
               status="basic"
               [options]="{ animation: { type: 'pulse' } }"
             ></nb-icon>
-            <span>Guardar Edicion</span>
-          </nb-action>
-          <nb-action class="danger" (click)="handleDelete()">
-            <nb-icon
-              icon="trash-outline"
-              status="basic"
-              [options]="{ animation: { type: 'pulse' } }"
-            ></nb-icon>
-            <span>Eliminar</span>
+            <span>
+              Guardar
+            </span>
           </nb-action>
         </nb-actions>
       </nb-card-body>

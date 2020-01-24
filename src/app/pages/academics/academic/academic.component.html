@@ -42,6 +42,7 @@
             [academicId]="id"
             [subjects]="programSubjects"
             mode="remove"
+            (reload)="handleReload()"
           ></app-subject-table>
         </nb-tab>
         <nb-tab tabTitle="Agregar">
@@ -49,6 +50,7 @@
             [academicId]="id"
             [subjects]="subjects"
             mode="add"
+            (reload)="handleReload()"
           ></app-subject-table>
         </nb-tab>
       </nb-tabset>

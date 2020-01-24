@@ -12,6 +12,7 @@ import {
 import { Router } from "@angular/router";
 import { AcademicsService } from "src/app/services/academics.service";
 import { IResponse } from "src/app/interfaces/response.interface";
+import { AuthService } from "src/app/services/auth.service";
 
 @Component({
   selector: "app-subject-item",
@@ -29,11 +30,15 @@ export class SubjectItemComponent implements OnInit, AfterViewInit {
   addButton: ElementRef;
   public editEnabled = false;
   public deleteEnabled = false;
+
   public isAdded = false;
   public isAdding = false;
+  public isRemoving = false;
+
   constructor(
     private router: Router,
-    private academicsService: AcademicsService
+    private academicsService: AcademicsService,
+    private authService: AuthService
   ) {}
 
   public enableModsHandler(isEdit) {
@@ -50,6 +55,18 @@ export class SubjectItemComponent implements OnInit, AfterViewInit {
         .addSubject(this.academicId, subjectId)
         .subscribe((response: IResponse) => {
           this.isAdded = true;
+          this.reload.emit(true);
+        });
+    }
+  }
+
+  public removeSubject(subjectId: string) {
+    if (!this.isRemoving) {
+      this.isRemoving = true;
+      this.academicsService
+        .removeSubject(this.academicId, subjectId)
+        .subscribe((response: IResponse) => {
+          this.reload.emit(true);
         });
     }
   }
@@ -62,7 +79,11 @@ export class SubjectItemComponent implements OnInit, AfterViewInit {
 
   deleteHandler(id) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.subject.programs.includes(this.academicId)) {
+      this.isAdded = true;
+    }
+  }
 
   ngAfterViewInit(): void {}
 }

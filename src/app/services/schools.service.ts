@@ -31,6 +31,11 @@ export class SchoolService {
     return this.http.get(configUrl);
   }
 
+  public findById(schoolId: string) {
+    let configUrl = `${server.SERVER_URL}schools/${schoolId}`;
+    return this.http.get(configUrl, { headers: this.headers });
+  }
+
   public findOne() {
     let configUrl = `${server.SERVER_URL}schools/${this.schoolId}`;
     return this.http.get(configUrl, { headers: this.headers });

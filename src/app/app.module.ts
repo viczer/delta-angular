@@ -18,7 +18,6 @@ import {
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { ComponentsModule } from "./components/components.module";
 import { PagesModule } from "./pages/pages.module";
-
 @NgModule({
   declarations: [AppComponent],
   imports: [

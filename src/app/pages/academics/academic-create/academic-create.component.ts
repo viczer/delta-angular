@@ -101,11 +101,12 @@ export class AcademicCreateComponent implements OnInit {
   ngOnInit() {
     this.informationForm = new FormGroup({
       name: new FormControl("", Validators.required),
-      folio: new FormControl(
-        "",
-        Validators.required,
-        CustomProgramValidators.folioUniqueValidator.bind(this)
-      ),
+
+      folio: new FormControl("", {
+        updateOn: "blur",
+        validators: Validators.required,
+        asyncValidators: CustomProgramValidators.folioUniqueValidator.bind(this)
+      }),
       inscriptionFee: new FormControl("", Validators.required),
       monthlyFee: new FormControl("", Validators.required),
       academicStart: new FormControl("", Validators.required),

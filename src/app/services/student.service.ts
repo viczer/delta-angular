@@ -52,7 +52,7 @@ export class StudentService {
   }
 
   public deleteOne(studentId: string) {
-    let configUrl = `${server.SERVER_URL}groups/${studentId}`;
+    let configUrl = `${server.SERVER_URL}students/${studentId}`;
     return this.http.delete(configUrl, { headers: this.headers });
   }
 }

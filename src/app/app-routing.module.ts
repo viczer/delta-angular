@@ -18,6 +18,7 @@ import { SubjectEditComponent } from "./pages/subjects/subject-edit/subject-edit
 import { SubjectComponent } from "./pages/subjects/subject/subject.component";
 import { AcademicComponent } from "./pages/academics/academic/academic.component";
 import { AcademicEditComponent } from "./pages/academics/academic-edit/academic-edit.component";
+import { StudentCreateComponent } from "./pages/students/student-create/student-create.component";
 
 const routes: Routes = [
   {
@@ -78,7 +79,7 @@ const routes: Routes = [
   },
   {
     path: "alumnos/nuevo",
-    component: StudentEditComponent,
+    component: StudentCreateComponent,
     canActivate: [AuthGuard]
   },
   {

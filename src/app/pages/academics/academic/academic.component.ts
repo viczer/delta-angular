@@ -5,6 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import { IResponse } from "src/app/interfaces/response.interface";
 import { IProgram } from "src/app/interfaces/program.interface";
 import { ISubject } from "src/app/interfaces/subject.iterface";
+import { AuthService } from "src/app/services/auth.service";
 
 @Component({
   selector: "app-academic",
@@ -20,8 +21,7 @@ export class AcademicComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private academicsService: AcademicsService,
     private subjectService: SubjectsService
-  ) {}
-  ngOnInit() {
+  ) {
     this.activatedRoute.params.subscribe(params => {
       this.id = params["id"];
       this.subjectService
@@ -39,4 +39,22 @@ export class AcademicComponent implements OnInit {
         });
     });
   }
+  handleReload() {
+    setTimeout(() => {
+      this.subjectService
+        .findAllInProgram(this.id)
+        .subscribe((response: IResponse) => {
+          this.programSubjects = response.data;
+        });
+      this.subjectService.findAll().subscribe((response: IResponse) => {
+        this.subjects = response.data;
+      });
+      this.academicsService
+        .findById(this.id)
+        .subscribe((response: IResponse) => {
+          this.academic = response.data;
+        });
+    }, 300);
+  }
+  ngOnInit() {}
 }

@@ -59,13 +59,14 @@
   </button>
   <button
     *ngIf="mode == 'remove'"
-    (click)="navigate(subject._id)"
+    (click)="removeSubject(subject._id)"
     nbButton
     shape="round"
     status="basic"
     size="small"
     type="button"
   >
-    Remover
+    {{ isRemoving ? "Removiendo" : "" }}
+    {{ !isRemoving ? "Remover" : "" }}
   </button>
 </div>

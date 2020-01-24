@@ -30,9 +30,7 @@
           ></app-academic-table>
         </nb-tab>
         <nb-tab tabTitle="Crear Programa">
-          <app-academic-create
-            (back)="tabset.selectTab(tableTab)"
-          ></app-academic-create>
+          <app-academic-create (back)="handleReload()"></app-academic-create>
         </nb-tab>
       </nb-tabset>
     </div>

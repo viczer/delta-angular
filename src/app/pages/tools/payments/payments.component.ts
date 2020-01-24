@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { PaymentsService } from "../../../services/payments.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import { StudentService } from "../../../services/student.service";
+import { IResponse } from "src/app/interfaces/response.interface";
+import { NbToastrService } from "@nebular/theme";
 
 @Component({
   selector: "app-payments",
@@ -10,18 +12,34 @@ import { StudentService } from "../../../services/student.service";
 })
 export class PaymentsComponent implements OnInit {
   public payments = [];
-  public student;
-
+  public id: string;
   constructor(
-    private paymentsService: PaymentsService,
-    private studentService: StudentService,
+    private router: Router,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private studentService: StudentService,
+    private paymentsService: PaymentsService,
+    private toastrService: NbToastrService
   ) {
     this.activatedRoute.params.subscribe(params => {
-      this.student = this.studentService.findById(params["id"]);
+      this.id = params["id"];
+      setTimeout(() => {
+        this.paymentsService
+          .findAllInStudent(this.id)
+          .subscribe((response: IResponse) => {
+            this.payments = response.data;
+          });
+      }, 300);
     });
-    this.payments = paymentsService.findAll();
+  }
+
+  public handleReload() {
+    setTimeout(() => {
+      this.paymentsService
+        .findAllInStudent(this.id)
+        .subscribe((response: IResponse) => {
+          this.payments = response.data;
+        });
+    }, 300);
   }
 
   public navigate(route: string) {

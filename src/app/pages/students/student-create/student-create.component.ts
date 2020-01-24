@@ -2,14 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { NbToastrService } from "@nebular/theme";
 import { MexicoService } from "../../../services/mexico.service";
-import * as _ from "lodash";
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  Validators,
-  FormArray
-} from "@angular/forms";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { GroupService } from "../../../services/group.service";
 import { AcademicsService } from "../../../services/academics.service";
 import { IResponse } from "../../../interfaces/response.interface";
@@ -20,14 +13,15 @@ import { AuthService } from "../../../services/auth.service";
 import { IUser } from "../../../interfaces/user.interface";
 import { SchoolService } from "src/app/services/schools.service";
 
+import * as _ from "lodash";
+
 @Component({
-  selector: "app-student-edit",
-  templateUrl: "./student-edit.component.html",
-  styleUrls: ["./student-edit.component.scss"]
+  selector: "app-student-create",
+  templateUrl: "./student-create.component.html",
+  styleUrls: ["./student-create.component.scss"]
 })
-export class StudentEditComponent implements OnInit {
+export class StudentCreateComponent implements OnInit {
   public user: FormGroup;
-  public id: string;
 
   public municipalities: string[] = [];
   public states: string[] = [];
@@ -61,7 +55,6 @@ export class StudentEditComponent implements OnInit {
     private authService: AuthService,
     private studentService: StudentService,
     private uploadService: UploadService,
-    private activatedRoute: ActivatedRoute,
     private toastrService: NbToastrService,
     private mexicoService: MexicoService,
     private groupService: GroupService,
@@ -103,7 +96,7 @@ export class StudentEditComponent implements OnInit {
       user.dob = new Date(this.user.value.dob).valueOf();
       user.schools = [this.user.value.schools];
       this.studentService
-        .updateOne(this.id, this.user.value)
+        .createOne(this.user.value)
         .subscribe((response: IResponse) => {
           if (this.upload.uploaded) {
             let groupId = response.data._id;
@@ -127,16 +120,14 @@ export class StudentEditComponent implements OnInit {
     }
   }
 
-  public handleDelete() {
-    this.studentService.deleteOne(this.id).subscribe((response: IResponse) => {
-      this.router.navigate(["alumnos"]);
-    });
-  }
-
   ngOnInit() {
     this.user = new FormGroup({
       email: new FormControl("", [Validators.required, Validators.email]),
-      username: new FormControl({ value: "", disabled: true }),
+      username: new FormControl("", {
+        updateOn: "blur",
+        validators: Validators.required,
+        asyncValidators: CustomUserValidators.usernameUniqueValidator.bind(this)
+      }),
       password: new FormControl("", [Validators.required]),
       name: new FormControl("", [Validators.required]),
       phone: new FormControl("", [
@@ -195,15 +186,5 @@ export class StudentEditComponent implements OnInit {
         }
       }
     );
-
-    this.activatedRoute.params.subscribe(params => {
-      this.id = params["id"];
-      this.studentService.findById(this.id).subscribe((response: IResponse) => {
-        const schools = { schools: response.data.schools[0] };
-        const data = { ...response.data, ...schools };
-
-        this.user.patchValue(data);
-      });
-    });
   }
 }

@@ -50,6 +50,7 @@ import { AcademicCreateComponent } from "./academics/academic-create/academic-cr
 import { PaymentItemComponent } from "./tools/payments/payment-item/payment-item.component";
 import { GradeItemComponent } from "./tools/grades/grade-item/grade-item.component";
 import { DirectivesModule } from "../directives/directives.module";
+import { StudentCreateComponent } from './students/student-create/student-create.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { DirectivesModule } from "../directives/directives.module";
     AcademicEditComponent,
     AcademicCreateComponent,
     PaymentItemComponent,
-    GradeItemComponent
+    GradeItemComponent,
+    StudentCreateComponent
   ],
   imports: [
     CommonModule,

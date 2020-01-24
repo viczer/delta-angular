@@ -73,7 +73,7 @@ export class AcademicsService {
 
   public addSubject(academicId: string, subjectId: string) {
     let configUrl = `${server.SERVER_URL}programs/${academicId}/subject/${subjectId}`;
-    return this.http.put(configUrl, { headers: this.headers });
+    return this.http.put(configUrl, null, { headers: this.headers });
   }
 
   public removeSubject(academicId: string, subjectId: string) {
