@@ -9156,7 +9156,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/tslib/tslib.es6.js");
 
     var server = {
-      SERVER_URL: "http://delta-api.cuadrosoft.com/"
+      SERVER_URL: "http://localhost:3000/"
     };
     /***/
   },
