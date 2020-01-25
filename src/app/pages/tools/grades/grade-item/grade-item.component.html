@@ -2,21 +2,25 @@
   class="wrapper"
   *ngIf="mode == 'create'"
   [ngClass]="{ create: mode == 'create' }"
+  [formGroup]="subject"
 >
-  <nb-select placeholder="Materia" [selected]="id" shape="round" fullWidth>
-    <nb-select-label>
-      <nb-user
-        [name]="getSubject(id).name"
-        [title]="getSubject(id).folio"
-        size="small"
-      ></nb-user>
-    </nb-select-label>
-
+  <nb-select
+    formControlName="subject"
+    placeholder="Materia"
+    shape="round"
+    fullWidth
+  >
     <nb-option [value]="subject._id" *ngFor="let subject of subjects">
       {{ subject.name }}
     </nb-option>
   </nb-select>
-  <button nbButton shape="round" status="primary" fullWidth>
+  <button
+    nbButton
+    shape="round"
+    status="primary"
+    fullWidth
+    (click)="handleAddSubject()"
+  >
     Agregar
   </button>
 </div>
@@ -25,18 +29,32 @@
   class="wrapper"
   *ngIf="mode == 'view'"
   [ngClass]="{ view: mode == 'view' }"
+  [formGroup]="grade"
 >
   <nb-icon
+    (click)="handleDelete()"
     icon="minus-circle-outline"
     status="basic"
     [options]="{ animation: { type: 'pulse' } }"
   ></nb-icon>
   <div>
-    {{ grade.subject.name }}
+    {{ gradeInput.subject.name || gradeInput.student.name }}
   </div>
-
-  <input nbInput fullWidth shape="round" placeholder="Calificación" />
-  <button nbButton shape="round" status="basic" size="small" fullWidth>
+  <input
+    formControlName="grade"
+    nbInput
+    fullWidth
+    shape="round"
+    placeholder="Calificación"
+  />
+  <button
+    (click)="handleUpdate()"
+    nbButton
+    shape="round"
+    status="basic"
+    size="small"
+    fullWidth
+  >
     Guardar
   </button>
 </div>

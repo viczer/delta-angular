@@ -1,7 +1,7 @@
 <nb-card>
   <nb-card-body>
     <nb-actions size="small" fullWidth>
-      <nb-action (click)="navigate('alumnos/' + student._id)">
+      <nb-action (click)="navigate('alumnos/' + id)">
         <nb-icon
           icon="arrow-ios-back-outline"
           status="basic"
@@ -10,9 +10,9 @@
         </nb-icon>
         <span> Regresar</span>
       </nb-action>
-      <nb-action (click)="navigate('pagos/' + student._id)">
+      <nb-action (click)="navigate('pagos/' + id)">
         <nb-icon
-          icon="file-text-outline"
+          icon="credit-card-outline"
           status="basic"
           [options]="{ animation: { type: 'pulse' } }"
         ></nb-icon>
@@ -20,14 +20,14 @@
       </nb-action>
       <nb-action disabled>
         <nb-icon
-          icon="credit-card-outline"
+          icon="file-text-outline"
           status="basic"
           [options]="{ animation: { type: 'pulse' } }"
         >
         </nb-icon
         ><span>Calificaciones</span>
       </nb-action>
-      <nb-action (click)="navigate('notas/' + student._id)">
+      <nb-action (click)="navigate('notas/' + id)">
         <nb-icon
           icon="archive-outline"
           status="basic"
@@ -35,7 +35,7 @@
         ></nb-icon>
         <span>Ver notas</span>
       </nb-action>
-      <nb-action (click)="navigate('alumnos/editar/' + student._id)">
+      <nb-action (click)="navigate('alumnos/editar/' + id)">
         <nb-icon
           icon="edit-2-outline"
           status="basic"
@@ -60,14 +60,26 @@
   </nb-card-header>
   <nb-card-body>
     <div class="filter-bar">
-      <app-grade-item mode="create"></app-grade-item>
+      <app-grade-item
+        mode="create"
+        [studentId]="id"
+        (reload)="handleReload()"
+      ></app-grade-item>
     </div>
     <div class="wrapper">
       <nb-list>
         <nb-list-item *ngFor="let grade of grades">
-          <app-grade-item [grade]="grade" mode="view"></app-grade-item>
+          <app-grade-item
+            [grade]="grade"
+            [studentId]="id"
+            (reload)="handleReload()"
+            mode="view"
+          ></app-grade-item>
         </nb-list-item>
       </nb-list>
+      <p *ngIf="grades?.length == 0">
+        No hay Calificaciones para mostrar
+      </p>
     </div>
   </nb-card-body>
 </nb-card>

@@ -26,6 +26,9 @@ nb-card.members {
 
     .wrapper {
       padding: 0 30px;
+      app-grade-item {
+        width: 100%;
+      }
     }
 
     .editor {

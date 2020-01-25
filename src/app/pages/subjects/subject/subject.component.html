@@ -36,10 +36,16 @@
       </nb-select>
     </div>
     <div class="wrapper">
-      <app-students-table
-        [students]="students"
-        mode="grade"
-      ></app-students-table>
+      <nb-list>
+        <nb-list-item *ngFor="let grade of grades">
+          <app-grade-item
+            [grade]="grade"
+            [studentId]="grade.student._id"
+            (reload)="handleReload()"
+            mode="view"
+          ></app-grade-item>
+        </nb-list-item>
+      </nb-list>
     </div>
   </nb-card-body>
 </nb-card>

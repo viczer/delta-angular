@@ -12,7 +12,7 @@ import { GradesService } from "../../../services/grades.service";
 })
 export class SubjectComponent implements OnInit {
   public subject;
-  public students = [];
+  public grades = [];
   public id: string;
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -27,7 +27,7 @@ export class SubjectComponent implements OnInit {
         return this.gradesService
           .findAllInSubject(this.id)
           .subscribe((response: IResponse) => {
-            this.students = response.data;
+            this.grades = response.data;
           });
       });
     });

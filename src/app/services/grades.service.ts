@@ -38,6 +38,10 @@ export class GradesService {
     return this.http.get(configUrl, { headers: this.headers });
   }
 
+  public findAllInStudent(studentId: string) {
+    let configUrl = `${server.SERVER_URL}grades/student/${studentId}`;
+    return this.http.get(configUrl, { headers: this.headers });
+  }
   public createOne(grade: IGrade) {
     grade.school = this.schoolId;
     let configUrl = `${server.SERVER_URL}grades`;

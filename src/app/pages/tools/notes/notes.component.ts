@@ -30,8 +30,14 @@ export class NotesComponent implements AfterViewInit {
         .findById(params["id"])
         .subscribe((response: IResponse) => {
           this.student = response.data;
+          console.log(this.student);
 
-          const note = JSON.parse(response.data.note);
+          let note;
+          try {
+            note = JSON.parse(response.data.note);
+          } catch (error) {
+            note = {};
+          }
 
           this.editor = new EditorJS({
             holder: "codex-editor",
