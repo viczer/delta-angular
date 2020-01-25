@@ -37,11 +37,11 @@ export class NavigationService {
       icon: "person-add-outline",
       link: "/alumnos/nuevo"
     },
-    {
-      title: "Vuelos",
-      icon: "paper-plane-outline",
-      link: "/vuelos"
-    },
+    // {
+    //   title: "Vuelos",
+    //   icon: "paper-plane-outline",
+    //   link: "/vuelos"
+    // },
     {
       title: "Cerrar Session",
       icon: "unlock-outline",
