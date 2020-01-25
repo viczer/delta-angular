@@ -4080,8 +4080,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "ngOnInit",
         value: function ngOnInit() {
           this.user = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
-            username: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("mromero", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
-            password: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("Kiloopen.2", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required)
+            username: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
+            password: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required)
           });
         }
       }, {
@@ -9156,7 +9156,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/tslib/tslib.es6.js");
 
     var server = {
-      SERVER_URL: "http://localhost:3000/"
+      SERVER_URL: "http://delta-api.cuadrosoft.com/"
     };
     /***/
   },
