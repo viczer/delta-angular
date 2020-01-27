@@ -33,12 +33,14 @@
       <nb-tabset fullWidth>
         <nb-tab tabTitle="Miembros">
           <app-students-table
+            [groupId]="id"
             [students]="members"
             mode="remove"
           ></app-students-table>
         </nb-tab>
         <nb-tab tabTitle="Agregar">
           <app-students-table
+            [groupId]="id"
             [students]="students"
             mode="add"
           ></app-students-table>

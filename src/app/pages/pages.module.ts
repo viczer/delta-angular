@@ -50,7 +50,9 @@ import { AcademicCreateComponent } from "./academics/academic-create/academic-cr
 import { PaymentItemComponent } from "./tools/payments/payment-item/payment-item.component";
 import { GradeItemComponent } from "./tools/grades/grade-item/grade-item.component";
 import { DirectivesModule } from "../directives/directives.module";
-import { StudentCreateComponent } from './students/student-create/student-create.component';
+import { StudentCreateComponent } from "./students/student-create/student-create.component";
+import { FacebookComponent } from "./facebook/facebook.component";
+import { FacebookModule } from "ngx-facebook";
 
 @NgModule({
   declarations: [
@@ -87,7 +89,8 @@ import { StudentCreateComponent } from './students/student-create/student-create
     AcademicCreateComponent,
     PaymentItemComponent,
     GradeItemComponent,
-    StudentCreateComponent
+    StudentCreateComponent,
+    FacebookComponent
   ],
   imports: [
     CommonModule,
@@ -105,7 +108,8 @@ import { StudentCreateComponent } from './students/student-create/student-create
     NbActionsModule,
     ReactiveFormsModule,
     NbStepperModule,
-    DirectivesModule
+    DirectivesModule,
+    FacebookModule.forRoot()
   ]
 })
 export class PagesModule {}

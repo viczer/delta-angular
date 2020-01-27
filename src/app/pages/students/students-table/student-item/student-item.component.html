@@ -45,7 +45,7 @@
   </button>
   <button
     *ngIf="mode == 'add'"
-    (click)="navigate(student._id)"
+    (click)="handleGroupAdd(student._id)"
     nbButton
     shape="round"
     status="primary"
@@ -56,7 +56,7 @@
   </button>
   <button
     *ngIf="mode == 'remove'"
-    (click)="navigate(student._id)"
+    (click)="handleGroupRemoval(student._id)"
     nbButton
     shape="round"
     status="basic"

@@ -162,9 +162,9 @@ export class StudentEditComponent implements OnInit {
         street: new FormControl("", [Validators.required]),
         zipCode: new FormControl("", [Validators.required])
       }),
-      schools: new FormControl("", [Validators.required]),
-      program: new FormControl("", [Validators.required]),
-      group: new FormControl("", [Validators.required]),
+      schools: new FormControl({ value: "", disabled: true }),
+      program: new FormControl({ value: "", disabled: true }),
+      group: new FormControl({ value: "", disabled: true }),
       enrolled: new FormControl("", [Validators.required]),
       enrollmentId: new FormControl("", [Validators.required])
     });

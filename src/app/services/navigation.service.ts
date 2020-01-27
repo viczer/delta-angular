@@ -7,6 +7,11 @@ import { NbMenuItem } from "@nebular/theme";
 export class NavigationService {
   private items: NbMenuItem[] = [
     {
+      title: "Pagina",
+      icon: "facebook-outline",
+      link: "/facebook"
+    },
+    {
       title: "Inicio",
       icon: "home-outline",
       link: "/inicio"

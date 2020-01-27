@@ -19,12 +19,18 @@ import { SubjectComponent } from "./pages/subjects/subject/subject.component";
 import { AcademicComponent } from "./pages/academics/academic/academic.component";
 import { AcademicEditComponent } from "./pages/academics/academic-edit/academic-edit.component";
 import { StudentCreateComponent } from "./pages/students/student-create/student-create.component";
+import { FacebookComponent } from "./pages/facebook/facebook.component";
 
 const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
     component: AuthComponent
+  },
+  {
+    path: "facebook",
+    component: FacebookComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "inicio",

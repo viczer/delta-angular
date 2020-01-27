@@ -9,5 +9,6 @@ import { StudentService } from "../../../services/student.service";
 export class StudentsTableComponent implements OnInit {
   @Input("students") students;
   @Input("mode") mode;
+  @Input("groupId") groupId = "";
   ngOnInit() {}
 }

@@ -45,7 +45,18 @@ export class GroupService {
       headers: this.headers
     });
   }
-
+  public addMember(groupId: string, studentId: string) {
+    let configUrl = `${server.SERVER_URL}groups/${groupId}/student/${studentId}`;
+    return this.http.put(configUrl, null, {
+      headers: this.headers
+    });
+  }
+  public removeMember(groupId: string, studentId: string) {
+    let configUrl = `${server.SERVER_URL}groups/${groupId}/student/${studentId}`;
+    return this.http.delete(configUrl, {
+      headers: this.headers
+    });
+  }
   public deleteOne(groupId: string) {
     let configUrl = `${server.SERVER_URL}groups/${groupId}`;
     return this.http.delete(configUrl, { headers: this.headers });

@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <nb-card *ngFor="let post of posts">
+    <nb-card-header>
+      <nb-icon icon="facebook-outline"></nb-icon>
+      facebook
+    </nb-card-header>
+    <nb-card-body>
+      <img [src]="post.full_picture" />
+    </nb-card-body>
+    <nb-card-footer>
+      {{ post.message ? post.message : post.story }}
+    </nb-card-footer>
+  </nb-card>
+</div>

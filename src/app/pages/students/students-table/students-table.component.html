@@ -1,7 +1,11 @@
 <div *ngIf="students?.length != 0">
   <nb-list>
     <nb-list-item *ngFor="let student of students">
-      <app-student-item [student]="student" [mode]="mode"></app-student-item>
+      <app-student-item
+        [groupId]="groupId"
+        [student]="student"
+        [mode]="mode"
+      ></app-student-item>
     </nb-list-item>
   </nb-list>
 </div>

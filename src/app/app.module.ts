@@ -4,6 +4,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FacebookModule, FBPostComponent } from "ngx-facebook";
 
 import {
   NbThemeModule,
@@ -30,15 +31,14 @@ import { PagesModule } from "./pages/pages.module";
     NbActionsModule,
     NbSidebarModule,
     NbLayoutModule,
-    NbThemeModule.forRoot({ name: "default" }),
+    NbMenuModule,
     NbIconModule,
     NbEvaIconsModule,
+    NbThemeModule.forRoot({ name: "default" }),
     NbSidebarModule.forRoot(),
-    NbMenuModule,
     NbToastrModule.forRoot(),
     NbMenuModule.forRoot(),
-    NbDatepickerModule.forRoot(),
-    NbThemeModule.forRoot({ name: "default" })
+    NbDatepickerModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })
