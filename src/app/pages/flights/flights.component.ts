@@ -22,7 +22,6 @@ export class FlightsComponent implements OnInit {
       this.FlightsService.findAll().subscribe((response: IResponse) => {
         this.stockFlights = response.data;
         this.flights = this.stockFlights;
-        console.log(this.flights);
       });
     }, 300);
   }

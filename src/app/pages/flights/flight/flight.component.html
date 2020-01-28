@@ -1,16 +1,22 @@
 <nb-card class="members" *ngIf="flight">
   <nb-card-header>
-    Programa
+    Vuelo
   </nb-card-header>
   <nb-card-body>
     <div class="row editor">
       <div class="col-12">
+        <div class="col-12"><b>Titulo: </b> {{ flight?.name }}</div>
         <div class="col-12"><b>Folio: </b> {{ flight?.folio }}</div>
-        <div class="col-12"><b>Programa: </b> {{ flight?.name }}</div>
         <div class="col-12">
-          <b>Materias: </b> {{ flight?.subjects?.length }}
+          <b>Costo: </b> {{ flight?.cost | currency }}mxn
         </div>
-        <div class="col-12"><b>Contacto: </b> {{ flight?.email }}</div>
+        <div class="col-12"><b>Fecha: </b> {{ flight?.startDate | date }}</div>
+        <div class="col-12">
+          <b>Enlistados: </b> {{ flight?.enlisted?.length }}
+        </div>
+        <div class="col-12">
+          <b>Aprovados: </b> {{ flight?.approved?.length }}
+        </div>
         <div class="col-12"><b>Objetivo: </b> {{ flight?.description }}</div>
       </div>
     </div>
@@ -32,21 +38,29 @@
     </div>
     <div class="wrapper">
       <nb-tabset fullWidth>
-        <nb-tab tabTitle="Materias">
-          <app-subject-table
-            [academicId]="id"
-            [subjects]="programSubjects"
+        <nb-tab tabTitle="Pilotos">
+          <app-students-table
+            [students]="flightPilots"
+            [flightId]="flight?._id"
             mode="remove"
             (reload)="handleReload()"
-          ></app-subject-table>
+          ></app-students-table>
+        </nb-tab>
+        <nb-tab tabTitle="Enlistados">
+          <app-students-table
+            [students]="flightRecruits"
+            [flightId]="flight?._id"
+            mode="promote"
+            (reload)="handleReload()"
+          ></app-students-table>
         </nb-tab>
         <nb-tab tabTitle="Agregar">
-          <app-subject-table
-            [academicId]="id"
-            [subjects]="subjects"
+          <app-students-table
+            [students]="students"
+            [flightId]="flight?._id"
             mode="add"
             (reload)="handleReload()"
-          ></app-subject-table>
+          ></app-students-table>
         </nb-tab>
       </nb-tabset>
     </div>

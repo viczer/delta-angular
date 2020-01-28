@@ -56,6 +56,27 @@ export class FlightsService {
     });
   }
 
+  public addRecruit(flightId: string, studentId: string) {
+    let configUrl = `${server.SERVER_URL}flights/${flightId}/recruit/${studentId}`;
+    return this.http.put(configUrl, null, {
+      headers: this.headers
+    });
+  }
+
+  public addPilot(flightId: string, studentId: string) {
+    let configUrl = `${server.SERVER_URL}flights/${flightId}/pilot/${studentId}`;
+    return this.http.put(configUrl, null, {
+      headers: this.headers
+    });
+  }
+
+  public removeStudent(flightId: string, studentId: string) {
+    let configUrl = `${server.SERVER_URL}flights/${flightId}/student/${studentId}`;
+    return this.http.delete(configUrl, {
+      headers: this.headers
+    });
+  }
+
   public deleteOne(flightId: string) {
     let configUrl = `${server.SERVER_URL}flights/${flightId}`;
     return this.http.delete(configUrl, { headers: this.headers });

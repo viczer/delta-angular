@@ -1,1 +1,143 @@
-<p>flight-edit works!</p>
+<nb-card class="members" *ngIf="flight">
+  <nb-card-header>
+    Editando Vuelo
+  </nb-card-header>
+  <nb-card-body>
+    <div class="col-12 actions">
+      <nb-actions size="small" fullWidth>
+        <nb-action (click)="navigate('vuelos')">
+          <nb-icon
+            icon="arrow-ios-back-outline"
+            status="basic"
+            [options]="{ animation: { type: 'pulse' } }"
+          ></nb-icon>
+          <span>
+            Regresar
+          </span>
+        </nb-action>
+        <nb-action class="danger" (click)="handleDelete()">
+          <nb-icon
+            icon="trash-outline"
+            status="basic"
+            [options]="{ animation: { type: 'pulse' } }"
+          ></nb-icon>
+          <span>
+            Eliminar
+          </span>
+        </nb-action>
+        <nb-action (click)="handleUpdate()">
+          <nb-icon
+            icon="cloud-upload-outline"
+            status="basic"
+            [options]="{ animation: { type: 'pulse' } }"
+          ></nb-icon>
+          <span>
+            Guardar
+          </span>
+        </nb-action>
+      </nb-actions>
+    </div>
+    <div class="row editor" [formGroup]="flight">
+      <div class="col-12">
+        <input
+          formControlName="name"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Titulo del Vuelo"
+          class="mb-3"
+        />
+      </div>
+      <div class="col-12">
+        <input
+          formControlName="folio"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Folio del Vuelo"
+          class="mb-3"
+        />
+      </div>
+      <div class="col-12">
+        <input
+          formControlName="cost"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Costo de Vuelo"
+          class="mb-3"
+        />
+      </div>
+      <div class="col-12">
+        <input
+          formControlName="startDate"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Fecha"
+          class="mb-3"
+          [nbDatepicker]="endpicker"
+        />
+        <nb-datepicker #endpicker></nb-datepicker>
+      </div>
+
+      <div class="col-12">
+        <textarea
+          formControlName="description"
+          nbInput
+          fullWidth
+          placeholder="descripcion"
+          shape="round"
+        ></textarea>
+      </div>
+    </div>
+    <div class="row filter-bar">
+      <input
+        type="text"
+        nbInput
+        fullWidth
+        shape="round"
+        placeholder="Busqueda..."
+      />
+      <nb-select fullWidth placeholder="Buscar Por" shape="round">
+        <nb-option value="1">Matricula </nb-option>
+        <nb-option value="2">Usuario </nb-option>
+        <nb-option value="3">Nombre </nb-option>
+        <nb-option value="3">Teléfono </nb-option>
+        <nb-option value="3">Pagos </nb-option>
+      </nb-select>
+    </div>
+    <div class="wrapper">
+      <nb-tabset fullWidth>
+        <nb-tab tabTitle="Pilotos">
+          <app-students-table
+            [students]="flightPilots"
+            [flightId]="flightInput?._id"
+            mode="remove"
+            (reload)="handleReload()"
+          ></app-students-table>
+        </nb-tab>
+        <nb-tab tabTitle="Enlistados">
+          <app-students-table
+            [students]="flightRecruits"
+            [flightId]="flightInput?._id"
+            mode="promote"
+            (reload)="handleReload()"
+          ></app-students-table>
+        </nb-tab>
+        <nb-tab tabTitle="Agregar">
+          <app-students-table
+            [students]="students"
+            [flightId]="flightInput?._id"
+            mode="add"
+            (reload)="handleReload()"
+          ></app-students-table>
+        </nb-tab>
+      </nb-tabset>
+    </div>
+  </nb-card-body>
+</nb-card>

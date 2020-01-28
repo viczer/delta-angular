@@ -13,7 +13,8 @@ import { IResponse } from "src/app/interfaces/response.interface";
 })
 export class FlightComponent {
   public flight: IFlight = {};
-  public flightMembers: IUser[] = [];
+  public flightRecruits: IUser[] = [];
+  public flightPilots: IUser[] = [];
   public students: IUser[] = [];
   public id: string;
   constructor(
@@ -28,6 +29,11 @@ export class FlightComponent {
         this.students = response.data;
       });
 
+      this.flightsService.findAll().subscribe((response: IResponse) => {
+        this.flightRecruits = response.data[0].enlisted;
+        this.flightPilots = response.data[0].approved;
+      });
+
       this.flightsService.findById(this.id).subscribe((response: IResponse) => {
         this.flight = response.data;
       });
@@ -35,18 +41,17 @@ export class FlightComponent {
   }
   handleReload() {
     setTimeout(() => {
-      this.activatedRoute.params.subscribe(params => {
-        this.id = params["id"];
+      this.studentService.findAll().subscribe((response: IResponse) => {
+        this.students = response.data;
+      });
 
-        this.studentService.findAll().subscribe((response: IResponse) => {
-          this.students = response.data;
-        });
+      this.flightsService.findAll().subscribe((response: IResponse) => {
+        this.flightRecruits = response.data[0].enlisted;
+        this.flightPilots = response.data[0].approved;
+      });
 
-        this.flightsService
-          .findById(this.id)
-          .subscribe((response: IResponse) => {
-            this.flight = response.data;
-          });
+      this.flightsService.findById(this.id).subscribe((response: IResponse) => {
+        this.flight = response.data;
       });
     }, 300);
   }

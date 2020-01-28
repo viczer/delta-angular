@@ -2,9 +2,11 @@
   <nb-list>
     <nb-list-item *ngFor="let student of students">
       <app-student-item
+        [flightId]="flightId"
         [groupId]="groupId"
         [student]="student"
         [mode]="mode"
+        (reload)="handleReload()"
       ></app-student-item>
     </nb-list-item>
   </nb-list>

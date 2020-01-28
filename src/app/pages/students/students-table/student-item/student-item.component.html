@@ -45,7 +45,7 @@
   </button>
   <button
     *ngIf="mode == 'add'"
-    (click)="handleGroupAdd(student._id)"
+    (click)="handleAdd(student._id)"
     nbButton
     shape="round"
     status="primary"
@@ -55,8 +55,19 @@
     Agregar
   </button>
   <button
+    *ngIf="mode == 'promote'"
+    (click)="handlePromotion(student._id)"
+    nbButton
+    shape="round"
+    status="primary"
+    size="small"
+    type="button"
+  >
+    Aprovar
+  </button>
+  <button
     *ngIf="mode == 'remove'"
-    (click)="handleGroupRemoval(student._id)"
+    (click)="handleRemoval(student._id)"
     nbButton
     shape="round"
     status="basic"

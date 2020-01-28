@@ -1,0 +1,92 @@
+nb-card .row {
+  .col-4,
+  .col-3,
+  .col-6,
+  .col-9,
+  .col-12 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+nb-card.members {
+  margin: 0;
+  nb-card-body {
+    padding: 0;
+    width: 100%;
+    .filter-bar {
+      padding: 15px;
+      margin: 0;
+      display: grid;
+      grid-template-columns: auto 200px;
+      column-gap: 15px;
+      border-top: 1px solid #edf1f6;
+      border-bottom: 1px solid #edf1f6;
+      width: 100%;
+    }
+    .actions {
+      border-bottom: 1px solid #edf1f6;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+      nb-action {
+        cursor: pointer;
+        &:hover:not(.danger) {
+          color: #3561f7;
+
+          nb-icon {
+            color: #3561f7;
+          }
+        }
+
+        nb-icon {
+          margin-right: 15px;
+        }
+        &.danger:hover {
+          color: #fe1874;
+
+          nb-icon {
+            color: #fe1874;
+          }
+        }
+      }
+    }
+    .editor {
+      padding: 30px;
+      width: 100%;
+      margin: 0;
+
+      .mb-3 {
+        margin-bottom: 30px;
+      }
+
+      textarea {
+        resize: none;
+        height: 220px;
+      }
+
+      .profile-pic {
+        z-index: 0;
+        height: 295px;
+        width: 100%;
+        margin-bottom: 15px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+app-student-item {
+  width: 100%;
+}
+
+nb-list-item {
+  padding: 0;
+}
+
+nb-tabset {
+  min-height: 100% !important;
+  position: relative;
+}
