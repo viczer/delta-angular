@@ -1,0 +1,40 @@
+nb-card {
+  margin: 0;
+  nb-card-body {
+    padding: 0;
+    width: 100%;
+    .wrapper {
+      position: relative;
+      top: 0;
+      padding: 0;
+      margin: 0;
+      height: calc(100vh - 265px);
+      overflow-y: scroll;
+    }
+
+    .filter-bar {
+      padding: 15px;
+      margin: 0;
+      border-bottom: 1px solid #edf1f6;
+      width: 100%;
+    }
+  }
+}
+app-subject-table {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+}
+
+nb-tabset {
+  min-height: 100% !important;
+  position: relative;
+}
+
+nb-tab:last-child {
+  position: absolute;
+  width: 100%;
+  min-height: calc(100% - 50px) !important;
+  top: 50px;
+  bottom: 0;
+}

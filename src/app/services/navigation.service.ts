@@ -32,6 +32,11 @@ export class NavigationService {
       link: "/programas"
     },
     {
+      title: "Vuelos",
+      icon: "paper-plane-outline",
+      link: "/vuelos"
+    },
+    {
       title: "Alumnos",
       icon: "person-outline",
       link: "/alumnos",
@@ -42,11 +47,6 @@ export class NavigationService {
       icon: "person-add-outline",
       link: "/alumnos/nuevo"
     },
-    // {
-    //   title: "Vuelos",
-    //   icon: "paper-plane-outline",
-    //   link: "/vuelos"
-    // },
     {
       title: "Cerrar Session",
       icon: "unlock-outline",

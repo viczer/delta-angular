@@ -1,0 +1,93 @@
+<nb-stepper orientation="horizontal">
+  <nb-step label="Informacion" [stepControl]="informationForm">
+    <form class="row" [formGroup]="informationForm">
+      <div class="info col-12 mb-3">
+        <h3>Informacion del Vuelo</h3>
+        <p>
+          El folio del vuelo son importantes, escribe cualquier nombre sin
+          importar si es igual al de otros vuelos; importante, el folio no se
+          puede repetir.
+        </p>
+      </div>
+      <div class="col-6">
+        <input
+          formControlName="name"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Nombre del vuelo"
+          class="mb-3"
+        />
+        <input
+          formControlName="folio"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Folio del vuelo"
+          class="mb-3"
+        />
+        <input
+          formControlName="startDate"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Fecha de Inicio"
+          [nbDatepicker]="startpicker"
+        />
+        <nb-datepicker #startpicker></nb-datepicker>
+      </div>
+      <div class="col-6">
+        <input
+          formControlName="duration"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Duracion del vuelo"
+          class="mb-3"
+        />
+        <input
+          formControlName="cost"
+          type="text"
+          nbInput
+          fullWidth
+          shape="round"
+          placeholder="Costo del vuelo"
+          class="mb-3"
+        />
+      </div>
+      <div class="controls">
+        <button nbButton status="basic" (click)="cancelFlight()">
+          Cancelar
+        </button>
+        <button nbButton nbStepperNext>Continuar</button>
+      </div>
+    </form>
+  </nb-step>
+
+  <nb-step label="Descripcion" [stepControl]="descriptionForm">
+    <form [formGroup]="descriptionForm" class="row">
+      <div class="col-12">
+        <h3>Descripcion del Vuelo</h3>
+        <p>
+          La descripcion de los vuelos son públicas para los estudiantes, tienen
+          un limite de 500 charácteres. La información de los vuelos también
+          pueden ser observada desde la app y la página web.
+        </p>
+        <textarea
+          formControlName="description"
+          nbInput
+          fullWidth
+          placeholder="Descripcion del vuelo"
+          rows="7"
+        ></textarea>
+      </div>
+      <div class="controls">
+        <button nbButton nbStepperPrevious status="basic">Regresar</button>
+        <button nbButton (click)="saveFlight()">Continuar</button>
+      </div>
+    </form>
+  </nb-step>
+</nb-stepper>

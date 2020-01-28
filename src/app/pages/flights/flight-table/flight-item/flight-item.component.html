@@ -1,0 +1,49 @@
+<div class="flight-item">
+  <div>
+    <b>
+      {{ flight.folio }}
+    </b>
+  </div>
+  <div>
+    {{ flight.name }}
+  </div>
+  <div>{{ flight.enlisted.length }} enlistados</div>
+  <div>{{ flight.approved.length }} aprovados</div>
+  <nb-icon
+    *ngIf="!editEnabled"
+    icon="edit-2-outline"
+    status="basic"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="enableModsHandler(true)"
+  ></nb-icon>
+  <nb-icon
+    *ngIf="editEnabled"
+    icon="edit-2-outline"
+    status="warning"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="navigate(flight._id, true)"
+  ></nb-icon>
+  <nb-icon
+    *ngIf="!deleteEnabled"
+    icon="trash-outline"
+    status="basic"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="enableModsHandler(false)"
+  ></nb-icon>
+  <nb-icon
+    *ngIf="deleteEnabled"
+    icon="trash-outline"
+    status="danger"
+    [options]="{ animation: { type: 'pulse' } }"
+    (click)="deleteHandler(flight._id)"
+  ></nb-icon>
+  <button
+    nbButton
+    shape="round"
+    status="basic"
+    size="small"
+    (click)="navigate(flight._id)"
+  >
+    Ver Mas
+  </button>
+</div>

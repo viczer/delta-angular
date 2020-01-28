@@ -17,11 +17,11 @@ export class FacebookEnabledService {
 
   public getAllPosts() {
     return this.facebookService.api(
-      "1062315607258260/posts?fields=full_picture,message,story",
+      "deltamexicoaviacion/posts?fields=full_picture,message,story",
       null,
       {
         access_token:
-          "EAAFpMrNPtesBABMlXLkZByC589NN6mbZBnD26J37FQMfEVZALGC3aDFvKsVA48wdp9ZC5m8R4R6W6c4z9zEc5lZCCVJZCmgjGb9zXaarZAH1TQLxB9qwIv423SvOsqtYqoFEihdKQf8nb3k3Qsv9mLhZCJgnRWjdr29Yq6DLQrGU6dx4EpLn8vVW"
+          "EAAFpMrNPtesBAK5QGihZBmZBUe4cG5HPxJDLGiKU8OICQ6pY8vSDBdKylwov49I8A2sTchvwrFKZAX4kl6y79uIClKzZC0ME2dogKhNfTJcxNLJZBcqO096Stdk0Qktjkg4aCvNfE1DAPUxknZAsbdJ8FuVzwzw31H6HGVnRjWVgZDZD"
       }
     );
   }

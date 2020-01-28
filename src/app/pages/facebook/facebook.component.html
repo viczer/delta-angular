@@ -4,7 +4,7 @@
       <nb-icon icon="facebook-outline"></nb-icon>
       facebook
     </nb-card-header>
-    <nb-card-body>
+    <nb-card-body *ngIf="post.full_picture">
       <img [src]="post.full_picture" />
     </nb-card-body>
     <nb-card-footer>

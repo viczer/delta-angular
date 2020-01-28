@@ -1,17 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  Validators
-} from "@angular/forms";
-import { Router } from "@angular/router";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { NbToastrService } from "@nebular/theme";
 import { CustomSubjectValidators } from "../../../validators/subject.validators";
 import { SubjectsService } from "../../../services/subjects.service";
 import { ISubject } from "../../../interfaces/subject.iterface";
-import { IUser } from "../../../interfaces/user.interface";
-import { AuthService } from "../../../services/auth.service";
 import { IResponse } from "../../../interfaces/response.interface";
 import { UploadService } from "../../../services/upload.service";
 
@@ -36,8 +28,6 @@ export class SubjectCreateComponent implements OnInit {
   };
 
   constructor(
-    private formBuilder: FormBuilder,
-    private router: Router,
     private subjectsService: SubjectsService,
     private uploadService: UploadService,
     private toastrService: NbToastrService

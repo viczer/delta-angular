@@ -1,0 +1,21 @@
+.flight-item {
+  width: 100%;
+  display: grid;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  column-gap: 10px;
+  align-items: center;
+  grid-template-columns: 100px auto 150px 150px 50px 50px 100px;
+  .options {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &.settings-active {
+      justify-content: space-between;
+    }
+  }
+}
+
+nb-icon {
+  cursor: pointer;
+}

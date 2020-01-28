@@ -1,0 +1,17 @@
+<div *ngIf="flights?.length != 0">
+  <nb-list>
+    <nb-list-item *ngFor="let flight of flights">
+      <app-flight-item
+        [flight]="flight"
+        [mode]="mode"
+        (reload)="handleReload($event)"
+      >
+      </app-flight-item>
+    </nb-list-item>
+  </nb-list>
+</div>
+<p *ngIf="flights?.length == 0">
+  No hay vuelos {{ mode == "view" ? "para mostar" : "" }}
+  {{ mode == "add" ? "para agregar" : "" }}
+  {{ mode == "remove" ? "agregados" : "" }}
+</p>

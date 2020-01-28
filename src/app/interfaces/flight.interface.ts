@@ -6,7 +6,7 @@ export interface IFlight {
   name?: string;
   description?: string;
   startDate?: number;
-  duration?: number;
+  duration?: string;
   cost?: number;
   enlisted?: IUser[] | string;
   approved?: IUser[] | string[];

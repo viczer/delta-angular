@@ -31,10 +31,10 @@ export class AcademicItemComponent implements OnInit {
       : this.router.navigate(["programas", id]);
   }
 
-  ngOnInit() {}
-
   deleteHandler(id) {
     this.academicsService.deleteOne(id).subscribe();
     this.reload.emit(true);
   }
+
+  ngOnInit() {}
 }

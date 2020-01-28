@@ -27,7 +27,6 @@ import { StudentEditComponent } from "./students/student-edit/student-edit.compo
 import { NotesComponent } from "./tools/notes/notes.component";
 import { PaymentsComponent } from "./tools/payments/payments.component";
 import { GradesComponent } from "./tools/grades/grades.component";
-import { FlightsComponent } from "./tools/flights/flights.component";
 import { StudentsTableComponent } from "./students/students-table/students-table.component";
 import { StudentItemComponent } from "./students/students-table/student-item/student-item.component";
 import { AcademicsComponent } from "./academics/academics.component";
@@ -53,6 +52,12 @@ import { DirectivesModule } from "../directives/directives.module";
 import { StudentCreateComponent } from "./students/student-create/student-create.component";
 import { FacebookComponent } from "./facebook/facebook.component";
 import { FacebookModule } from "ngx-facebook";
+import { FlightsComponent } from './flights/flights.component';
+import { FlightComponent } from './flights/flight/flight.component';
+import { FlightCreateComponent } from './flights/flight-create/flight-create.component';
+import { FlightEditComponent } from './flights/flight-edit/flight-edit.component';
+import { FlightTableComponent } from './flights/flight-table/flight-table.component';
+import { FlightItemComponent } from './flights/flight-table/flight-item/flight-item.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +73,6 @@ import { FacebookModule } from "ngx-facebook";
     NotesComponent,
     PaymentsComponent,
     GradesComponent,
-    FlightsComponent,
     StudentsTableComponent,
     StudentItemComponent,
     AcademicsComponent,
@@ -90,7 +94,13 @@ import { FacebookModule } from "ngx-facebook";
     PaymentItemComponent,
     GradeItemComponent,
     StudentCreateComponent,
-    FacebookComponent
+    FacebookComponent,
+    FlightsComponent,
+    FlightComponent,
+    FlightCreateComponent,
+    FlightEditComponent,
+    FlightTableComponent,
+    FlightItemComponent
   ],
   imports: [
     CommonModule,

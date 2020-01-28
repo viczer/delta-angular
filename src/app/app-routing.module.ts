@@ -20,6 +20,9 @@ import { AcademicComponent } from "./pages/academics/academic/academic.component
 import { AcademicEditComponent } from "./pages/academics/academic-edit/academic-edit.component";
 import { StudentCreateComponent } from "./pages/students/student-create/student-create.component";
 import { FacebookComponent } from "./pages/facebook/facebook.component";
+import { FlightsComponent } from "./pages/flights/flights.component";
+import { FlightEditComponent } from "./pages/flights/flight-edit/flight-edit.component";
+import { FlightComponent } from "./pages/flights/flight/flight.component";
 
 const routes: Routes = [
   {
@@ -84,6 +87,26 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: "vuelos",
+    component: FlightsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "vuelos/editar/:id",
+    component: FlightEditComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "vuelos/:id",
+    component: FlightComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "alumnos",
+    component: StudentsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: "alumnos/nuevo",
     component: StudentCreateComponent,
     canActivate: [AuthGuard]
@@ -99,8 +122,8 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: "alumnos",
-    component: StudentsComponent,
+    path: "calificaciones/:id",
+    component: GradesComponent,
     canActivate: [AuthGuard]
   },
   {
