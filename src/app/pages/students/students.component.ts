@@ -12,8 +12,9 @@ export class StudentsComponent implements OnInit {
   public graduates;
   constructor(private studentService: StudentService) {
     setTimeout(() => {
-      studentService.findAll().subscribe((response: IResponse) => {
+      studentService.findAll(false).subscribe((response: IResponse) => {
         this.students = response.data;
+        console.log(response.data);
       });
       studentService.findAll(true).subscribe((response: IResponse) => {
         this.graduates = response.data;

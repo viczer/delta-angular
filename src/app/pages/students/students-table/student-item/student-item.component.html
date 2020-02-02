@@ -1,12 +1,12 @@
 <div class="student-item" [ngClass]="{ view: mode == 'view' }">
   <div>
-    <strong>
-      {{ student.enrollmentId }}
-    </strong>
+    <small>
+      {{ student.enrollmentId ? student.enrollmentId : "Sin Matricula" }}
+    </small>
   </div>
   <div *ngIf="mode == 'view'">
     <strong>
-      {{ student.group.name }}
+      {{ student.group ? student.group.name : "Sin Grupo" }}
     </strong>
   </div>
   <div *ngIf="student">
@@ -17,7 +17,7 @@
     ></nb-user>
   </div>
   <div *ngIf="mode == 'view'">
-    {{ student.phone }}
+    {{ student.phone ? student.phone : "Sin Telefono" }}
   </div>
   <div *ngIf="mode == 'view'">{{ student?.payments.length }} Pagos</div>
   <button

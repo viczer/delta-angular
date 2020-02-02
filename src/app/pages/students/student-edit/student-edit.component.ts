@@ -135,38 +135,32 @@ export class StudentEditComponent implements OnInit {
 
   ngOnInit() {
     this.user = new FormGroup({
-      email: new FormControl("", [Validators.required, Validators.email]),
+      email: new FormControl("", [Validators.email]),
       username: new FormControl({ value: "", disabled: true }),
       password: new FormControl("", [Validators.required]),
       name: new FormControl("", [Validators.required]),
-      phone: new FormControl("", [
-        Validators.required,
-        Validators.minLength(14)
-      ]),
-      dob: new FormControl("", [Validators.required]),
+      phone: new FormControl("", [Validators.minLength(14)]),
+      dob: new FormControl(""),
       gender: new FormControl("", [Validators.required]),
-      lastSchool: new FormControl("", [Validators.required]),
+      lastSchool: new FormControl(""),
       emergency: new FormGroup({
-        phone: new FormControl("", [
-          Validators.required,
-          Validators.minLength(14)
-        ]),
-        name: new FormControl("", [Validators.required]),
-        relation: new FormControl("", [Validators.required]),
-        bloodType: new FormControl("", [Validators.required])
+        phone: new FormControl("", [Validators.minLength(14)]),
+        name: new FormControl(""),
+        relation: new FormControl(""),
+        bloodType: new FormControl("")
       }),
       address: new FormGroup({
         state: new FormControl("", [Validators.required]),
-        municipality: new FormControl("", [Validators.required]),
-        colony: new FormControl("", [Validators.required]),
-        street: new FormControl("", [Validators.required]),
-        zipCode: new FormControl("", [Validators.required])
+        municipality: new FormControl(""),
+        colony: new FormControl(""),
+        street: new FormControl(""),
+        zipCode: new FormControl("")
       }),
       schools: new FormControl({ value: "", disabled: true }),
       program: new FormControl({ value: "", disabled: true }),
       group: new FormControl({ value: "", disabled: true }),
-      enrolled: new FormControl("", [Validators.required]),
-      enrollmentId: new FormControl("", [Validators.required])
+      enrolled: new FormControl(""),
+      enrollmentId: new FormControl("")
     });
 
     (this.user.controls
