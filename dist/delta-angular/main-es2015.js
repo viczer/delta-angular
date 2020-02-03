@@ -409,7 +409,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nb-card class=\"members\">\r\n  <nb-card-header>\r\n    Editando Programa\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"col-12 actions\">\r\n      <nb-actions size=\"small\" fullWidth>\r\n        <nb-action (click)=\"navigate('grupos')\">\r\n          <nb-icon\r\n            icon=\"arrow-ios-back-outline\"\r\n            status=\"basic\"\r\n            [options]=\"{ animation: { type: 'pulse' } }\"\r\n          ></nb-icon>\r\n          <span>\r\n            Regresar\r\n          </span>\r\n        </nb-action>\r\n        <nb-action class=\"danger\">\r\n          <nb-icon\r\n            icon=\"trash-outline\"\r\n            status=\"basic\"\r\n            [options]=\"{ animation: { type: 'pulse' } }\"\r\n          ></nb-icon>\r\n          <span>\r\n            Eliminar\r\n          </span>\r\n        </nb-action>\r\n        <nb-action (click)=\"handleUpdateMetadata()\">\r\n          <nb-icon\r\n            icon=\"cloud-upload-outline\"\r\n            status=\"basic\"\r\n            [options]=\"{ animation: { type: 'pulse' } }\"\r\n          ></nb-icon>\r\n          <span>\r\n            Guardar\r\n          </span>\r\n        </nb-action>\r\n      </nb-actions>\r\n    </div>\r\n    <div class=\"row editor\" [formGroup]=\"program\">\r\n      <div class=\"col-4\">\r\n        <div class=\"profile-pic\">\r\n          <app-upload (upload)=\"handleUpload($event)\"></app-upload>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-8 mb-3\">\r\n        <input\r\n          formControlName=\"name\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Nombre de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n\r\n        <input\r\n          formControlName=\"folio\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Folio de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <input\r\n          formControlName=\"inscription\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Costo de Inscripción de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <input\r\n          formControlName=\"monthlyRate\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Costo de Mensualidad de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <input\r\n          formControlName=\"startDate\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Fecha de Inicio\"\r\n          class=\"mb-3\"\r\n          [nbDatepicker]=\"startpicker\"\r\n        />\r\n        <nb-datepicker #startpicker></nb-datepicker>\r\n\r\n        <input\r\n          formControlName=\"endDate\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Fecha Terminación\"\r\n          class=\"mb-3\"\r\n          [nbDatepicker]=\"endpicker\"\r\n        />\r\n        <nb-datepicker #endpicker></nb-datepicker>\r\n\r\n        <input\r\n          formControlName=\"email\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Contacto de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <textarea\r\n          formControlName=\"description\"\r\n          nbInput\r\n          fullWidth\r\n          placeholder=\"Objetivo\"\r\n          shape=\"round\"\r\n        ></textarea>\r\n      </div>\r\n    </div>\r\n    <div class=\"row filter-bar\">\r\n      <input\r\n        type=\"text\"\r\n        nbInput\r\n        fullWidth\r\n        shape=\"round\"\r\n        placeholder=\"Busqueda...\"\r\n      />\r\n      <nb-select fullWidth placeholder=\"Buscar Por\" shape=\"round\">\r\n        <nb-option value=\"1\">Matricula </nb-option>\r\n        <nb-option value=\"2\">Usuario </nb-option>\r\n        <nb-option value=\"3\">Nombre </nb-option>\r\n        <nb-option value=\"3\">Teléfono </nb-option>\r\n        <nb-option value=\"3\">Pagos </nb-option>\r\n      </nb-select>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth>\r\n        <nb-tab tabTitle=\"Materias\">\r\n          <app-subject-table\r\n            [subjects]=\"subjects\"\r\n            mode=\"remove\"\r\n          ></app-subject-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Agregar\">\r\n          <app-subject-table\r\n            [subjects]=\"subjects\"\r\n            mode=\"add\"\r\n          ></app-subject-table>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nb-card class=\"members\">\r\n  <nb-card-header>\r\n    Editando Programa\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"col-12 actions\">\r\n      <nb-actions size=\"small\" fullWidth>\r\n        <nb-action (click)=\"navigate('grupos')\">\r\n          <nb-icon\r\n            icon=\"arrow-ios-back-outline\"\r\n            status=\"basic\"\r\n            [options]=\"{ animation: { type: 'pulse' } }\"\r\n          ></nb-icon>\r\n          <span>\r\n            Regresar\r\n          </span>\r\n        </nb-action>\r\n        <nb-action class=\"danger\">\r\n          <nb-icon\r\n            icon=\"trash-outline\"\r\n            status=\"basic\"\r\n            [options]=\"{ animation: { type: 'pulse' } }\"\r\n          ></nb-icon>\r\n          <span>\r\n            Eliminar\r\n          </span>\r\n        </nb-action>\r\n        <nb-action (click)=\"handleUpdateMetadata()\">\r\n          <nb-icon\r\n            icon=\"cloud-upload-outline\"\r\n            status=\"basic\"\r\n            [options]=\"{ animation: { type: 'pulse' } }\"\r\n          ></nb-icon>\r\n          <span>\r\n            Guardar\r\n          </span>\r\n        </nb-action>\r\n      </nb-actions>\r\n    </div>\r\n    <div class=\"row editor\" [formGroup]=\"program\">\r\n      <div class=\"col-4\">\r\n        <div class=\"profile-pic\">\r\n          <app-upload (upload)=\"handleFileUpload($event)\"></app-upload>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-8 mb-3\">\r\n        <input\r\n          formControlName=\"name\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Nombre de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n\r\n        <input\r\n          formControlName=\"folio\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Folio de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <input\r\n          formControlName=\"inscription\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Costo de Inscripción de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <input\r\n          formControlName=\"monthlyRate\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Costo de Mensualidad de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <input\r\n          formControlName=\"startDate\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Fecha de Inicio\"\r\n          class=\"mb-3\"\r\n          [nbDatepicker]=\"startpicker\"\r\n        />\r\n        <nb-datepicker #startpicker></nb-datepicker>\r\n\r\n        <input\r\n          formControlName=\"endDate\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Fecha Terminación\"\r\n          class=\"mb-3\"\r\n          [nbDatepicker]=\"endpicker\"\r\n        />\r\n        <nb-datepicker #endpicker></nb-datepicker>\r\n\r\n        <input\r\n          formControlName=\"email\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Contacto de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <textarea\r\n          formControlName=\"description\"\r\n          nbInput\r\n          fullWidth\r\n          placeholder=\"Objetivo\"\r\n          shape=\"round\"\r\n        ></textarea>\r\n      </div>\r\n    </div>\r\n    <div class=\"row filter-bar\">\r\n      <input\r\n        type=\"text\"\r\n        nbInput\r\n        fullWidth\r\n        shape=\"round\"\r\n        placeholder=\"Busqueda...\"\r\n      />\r\n      <nb-select fullWidth placeholder=\"Buscar Por\" shape=\"round\">\r\n        <nb-option value=\"1\">Matricula </nb-option>\r\n        <nb-option value=\"2\">Usuario </nb-option>\r\n        <nb-option value=\"3\">Nombre </nb-option>\r\n        <nb-option value=\"3\">Teléfono </nb-option>\r\n        <nb-option value=\"3\">Pagos </nb-option>\r\n      </nb-select>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth>\r\n        <nb-tab tabTitle=\"Materias\">\r\n          <app-subject-table\r\n            [subjects]=\"subjects\"\r\n            mode=\"remove\"\r\n          ></app-subject-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Agregar\">\r\n          <app-subject-table\r\n            [subjects]=\"subjects\"\r\n            mode=\"add\"\r\n          ></app-subject-table>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n");
 
 /***/ }),
 
@@ -474,7 +474,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"wrapper\">\r\n  <div class=\"background\" #auth [ngClass]=\"{ blurred: isBlurred }\"></div>\r\n</div>\r\n<section class=\"auth\">\r\n  <nb-card (mouseenter)=\"toggleBlur()\" (mouseleave)=\"toggleBlur()\">\r\n    <nb-card-body>\r\n      <nb-tabset>\r\n        <nb-tab tabTitle=\"Iniciar Session\">\r\n          <app-login></app-login>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Activar Cuenta\">\r\n          <app-register></app-register>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </nb-card-body>\r\n  </nb-card>\r\n</section>\r\n<div class=\"versioning-wrapper\">\r\n  <p>Developed by Cuadrosoft | Version 1.0.1</p>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"wrapper\">\r\n  <div class=\"background\" #auth [ngClass]=\"{ blurred: isBlurred }\"></div>\r\n</div>\r\n<section class=\"auth\">\r\n  <nb-card (mouseenter)=\"toggleBlur()\" (mouseleave)=\"toggleBlur()\">\r\n    <nb-card-body>\r\n      <nb-tabset>\r\n        <nb-tab tabTitle=\"Iniciar Session\">\r\n          <app-login></app-login>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Activar Cuenta\">\r\n          <app-register></app-register>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </nb-card-body>\r\n  </nb-card>\r\n</section>\r\n<div class=\"versioning-wrapper\">\r\n  <p>Developed by Cuadrosoft | Version 1.0.4</p>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -2114,6 +2114,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_subjects_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/subjects.service */ "./src/app/services/subjects.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var src_app_services_upload_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/upload.service */ "./src/app/services/upload.service.ts");
+/* harmony import */ var _nebular_theme__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @nebular/theme */ "./node_modules/@nebular/theme/fesm2015/index.js");
+
+
 
 
 
@@ -2121,11 +2125,50 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AcademicEditComponent = class AcademicEditComponent {
-    constructor(activatedRoute, academicsService, subjectsService) {
+    constructor(activatedRoute, academicsService, subjectsService, uploadService, toastrService, router) {
         this.activatedRoute = activatedRoute;
         this.academicsService = academicsService;
         this.subjectsService = subjectsService;
+        this.uploadService = uploadService;
+        this.toastrService = toastrService;
+        this.router = router;
         this.subjects = [];
+        this.upload = {
+            uploaded: false
+        };
+    }
+    navigate(route) {
+        this.router.navigate([route]);
+    }
+    handleFileUpload(eventFile) {
+        this.upload = {
+            file: eventFile,
+            uploaded: true
+        };
+    }
+    handleUpdateMetadata() {
+        if (this.program.valid) {
+            let program = this.program.value;
+            program.startDate = new Date(this.program.value.startDate).valueOf();
+            program.endDate = new Date(this.program.value.endDate).valueOf();
+            this.academicsService
+                .updateOne(this.id, program)
+                .subscribe((response) => {
+                if (this.upload.uploaded) {
+                    let programId = response.data._id;
+                    this.uploadService
+                        .uploadImage(this.upload.file, "program", programId)
+                        .subscribe();
+                }
+                this.toastrService.show("Exito al guardar programa", "Programa Actualizado", {
+                    status: "primary",
+                    hasIcon: true,
+                    destroyByClick: true,
+                    icon: "award-outline"
+                });
+                this.router.navigate(["programas"]);
+            });
+        }
     }
     ngOnInit() {
         this.program = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
@@ -2154,7 +2197,10 @@ let AcademicEditComponent = class AcademicEditComponent {
 AcademicEditComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] },
     { type: _services_academics_service__WEBPACK_IMPORTED_MODULE_2__["AcademicsService"] },
-    { type: _services_subjects_service__WEBPACK_IMPORTED_MODULE_3__["SubjectsService"] }
+    { type: _services_subjects_service__WEBPACK_IMPORTED_MODULE_3__["SubjectsService"] },
+    { type: src_app_services_upload_service__WEBPACK_IMPORTED_MODULE_6__["UploadService"] },
+    { type: _nebular_theme__WEBPACK_IMPORTED_MODULE_7__["NbToastrService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
 ];
 AcademicEditComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

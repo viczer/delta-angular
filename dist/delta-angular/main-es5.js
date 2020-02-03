@@ -483,7 +483,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<nb-card class=\"members\">\r\n  <nb-card-header>\r\n    Editando Programa\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"col-12 actions\">\r\n      <nb-actions size=\"small\" fullWidth>\r\n        <nb-action (click)=\"navigate('grupos')\">\r\n          <nb-icon\r\n            icon=\"arrow-ios-back-outline\"\r\n            status=\"basic\"\r\n            [options]=\"{ animation: { type: 'pulse' } }\"\r\n          ></nb-icon>\r\n          <span>\r\n            Regresar\r\n          </span>\r\n        </nb-action>\r\n        <nb-action class=\"danger\">\r\n          <nb-icon\r\n            icon=\"trash-outline\"\r\n            status=\"basic\"\r\n            [options]=\"{ animation: { type: 'pulse' } }\"\r\n          ></nb-icon>\r\n          <span>\r\n            Eliminar\r\n          </span>\r\n        </nb-action>\r\n        <nb-action (click)=\"handleUpdateMetadata()\">\r\n          <nb-icon\r\n            icon=\"cloud-upload-outline\"\r\n            status=\"basic\"\r\n            [options]=\"{ animation: { type: 'pulse' } }\"\r\n          ></nb-icon>\r\n          <span>\r\n            Guardar\r\n          </span>\r\n        </nb-action>\r\n      </nb-actions>\r\n    </div>\r\n    <div class=\"row editor\" [formGroup]=\"program\">\r\n      <div class=\"col-4\">\r\n        <div class=\"profile-pic\">\r\n          <app-upload (upload)=\"handleUpload($event)\"></app-upload>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-8 mb-3\">\r\n        <input\r\n          formControlName=\"name\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Nombre de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n\r\n        <input\r\n          formControlName=\"folio\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Folio de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <input\r\n          formControlName=\"inscription\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Costo de Inscripción de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <input\r\n          formControlName=\"monthlyRate\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Costo de Mensualidad de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <input\r\n          formControlName=\"startDate\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Fecha de Inicio\"\r\n          class=\"mb-3\"\r\n          [nbDatepicker]=\"startpicker\"\r\n        />\r\n        <nb-datepicker #startpicker></nb-datepicker>\r\n\r\n        <input\r\n          formControlName=\"endDate\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Fecha Terminación\"\r\n          class=\"mb-3\"\r\n          [nbDatepicker]=\"endpicker\"\r\n        />\r\n        <nb-datepicker #endpicker></nb-datepicker>\r\n\r\n        <input\r\n          formControlName=\"email\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Contacto de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <textarea\r\n          formControlName=\"description\"\r\n          nbInput\r\n          fullWidth\r\n          placeholder=\"Objetivo\"\r\n          shape=\"round\"\r\n        ></textarea>\r\n      </div>\r\n    </div>\r\n    <div class=\"row filter-bar\">\r\n      <input\r\n        type=\"text\"\r\n        nbInput\r\n        fullWidth\r\n        shape=\"round\"\r\n        placeholder=\"Busqueda...\"\r\n      />\r\n      <nb-select fullWidth placeholder=\"Buscar Por\" shape=\"round\">\r\n        <nb-option value=\"1\">Matricula </nb-option>\r\n        <nb-option value=\"2\">Usuario </nb-option>\r\n        <nb-option value=\"3\">Nombre </nb-option>\r\n        <nb-option value=\"3\">Teléfono </nb-option>\r\n        <nb-option value=\"3\">Pagos </nb-option>\r\n      </nb-select>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth>\r\n        <nb-tab tabTitle=\"Materias\">\r\n          <app-subject-table\r\n            [subjects]=\"subjects\"\r\n            mode=\"remove\"\r\n          ></app-subject-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Agregar\">\r\n          <app-subject-table\r\n            [subjects]=\"subjects\"\r\n            mode=\"add\"\r\n          ></app-subject-table>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n";
+    __webpack_exports__["default"] = "<nb-card class=\"members\">\r\n  <nb-card-header>\r\n    Editando Programa\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"col-12 actions\">\r\n      <nb-actions size=\"small\" fullWidth>\r\n        <nb-action (click)=\"navigate('grupos')\">\r\n          <nb-icon\r\n            icon=\"arrow-ios-back-outline\"\r\n            status=\"basic\"\r\n            [options]=\"{ animation: { type: 'pulse' } }\"\r\n          ></nb-icon>\r\n          <span>\r\n            Regresar\r\n          </span>\r\n        </nb-action>\r\n        <nb-action class=\"danger\">\r\n          <nb-icon\r\n            icon=\"trash-outline\"\r\n            status=\"basic\"\r\n            [options]=\"{ animation: { type: 'pulse' } }\"\r\n          ></nb-icon>\r\n          <span>\r\n            Eliminar\r\n          </span>\r\n        </nb-action>\r\n        <nb-action (click)=\"handleUpdateMetadata()\">\r\n          <nb-icon\r\n            icon=\"cloud-upload-outline\"\r\n            status=\"basic\"\r\n            [options]=\"{ animation: { type: 'pulse' } }\"\r\n          ></nb-icon>\r\n          <span>\r\n            Guardar\r\n          </span>\r\n        </nb-action>\r\n      </nb-actions>\r\n    </div>\r\n    <div class=\"row editor\" [formGroup]=\"program\">\r\n      <div class=\"col-4\">\r\n        <div class=\"profile-pic\">\r\n          <app-upload (upload)=\"handleFileUpload($event)\"></app-upload>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-8 mb-3\">\r\n        <input\r\n          formControlName=\"name\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Nombre de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n\r\n        <input\r\n          formControlName=\"folio\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Folio de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <input\r\n          formControlName=\"inscription\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Costo de Inscripción de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <input\r\n          formControlName=\"monthlyRate\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Costo de Mensualidad de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <input\r\n          formControlName=\"startDate\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Fecha de Inicio\"\r\n          class=\"mb-3\"\r\n          [nbDatepicker]=\"startpicker\"\r\n        />\r\n        <nb-datepicker #startpicker></nb-datepicker>\r\n\r\n        <input\r\n          formControlName=\"endDate\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Fecha Terminación\"\r\n          class=\"mb-3\"\r\n          [nbDatepicker]=\"endpicker\"\r\n        />\r\n        <nb-datepicker #endpicker></nb-datepicker>\r\n\r\n        <input\r\n          formControlName=\"email\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Contacto de la Materia\"\r\n          class=\"mb-3\"\r\n        />\r\n        <textarea\r\n          formControlName=\"description\"\r\n          nbInput\r\n          fullWidth\r\n          placeholder=\"Objetivo\"\r\n          shape=\"round\"\r\n        ></textarea>\r\n      </div>\r\n    </div>\r\n    <div class=\"row filter-bar\">\r\n      <input\r\n        type=\"text\"\r\n        nbInput\r\n        fullWidth\r\n        shape=\"round\"\r\n        placeholder=\"Busqueda...\"\r\n      />\r\n      <nb-select fullWidth placeholder=\"Buscar Por\" shape=\"round\">\r\n        <nb-option value=\"1\">Matricula </nb-option>\r\n        <nb-option value=\"2\">Usuario </nb-option>\r\n        <nb-option value=\"3\">Nombre </nb-option>\r\n        <nb-option value=\"3\">Teléfono </nb-option>\r\n        <nb-option value=\"3\">Pagos </nb-option>\r\n      </nb-select>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth>\r\n        <nb-tab tabTitle=\"Materias\">\r\n          <app-subject-table\r\n            [subjects]=\"subjects\"\r\n            mode=\"remove\"\r\n          ></app-subject-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Agregar\">\r\n          <app-subject-table\r\n            [subjects]=\"subjects\"\r\n            mode=\"add\"\r\n          ></app-subject-table>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n";
     /***/
   },
 
@@ -583,7 +583,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"wrapper\">\r\n  <div class=\"background\" #auth [ngClass]=\"{ blurred: isBlurred }\"></div>\r\n</div>\r\n<section class=\"auth\">\r\n  <nb-card (mouseenter)=\"toggleBlur()\" (mouseleave)=\"toggleBlur()\">\r\n    <nb-card-body>\r\n      <nb-tabset>\r\n        <nb-tab tabTitle=\"Iniciar Session\">\r\n          <app-login></app-login>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Activar Cuenta\">\r\n          <app-register></app-register>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </nb-card-body>\r\n  </nb-card>\r\n</section>\r\n<div class=\"versioning-wrapper\">\r\n  <p>Developed by Cuadrosoft | Version 1.0.1</p>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"wrapper\">\r\n  <div class=\"background\" #auth [ngClass]=\"{ blurred: isBlurred }\"></div>\r\n</div>\r\n<section class=\"auth\">\r\n  <nb-card (mouseenter)=\"toggleBlur()\" (mouseleave)=\"toggleBlur()\">\r\n    <nb-card-body>\r\n      <nb-tabset>\r\n        <nb-tab tabTitle=\"Iniciar Session\">\r\n          <app-login></app-login>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Activar Cuenta\">\r\n          <app-register></app-register>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </nb-card-body>\r\n  </nb-card>\r\n</section>\r\n<div class=\"versioning-wrapper\">\r\n  <p>Developed by Cuadrosoft | Version 1.0.4</p>\r\n</div>\r\n";
     /***/
   },
 
@@ -3417,23 +3417,81 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/forms */
     "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var src_app_services_upload_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! src/app/services/upload.service */
+    "./src/app/services/upload.service.ts");
+    /* harmony import */
+
+
+    var _nebular_theme__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! @nebular/theme */
+    "./node_modules/@nebular/theme/fesm2015/index.js");
 
     var AcademicEditComponent =
     /*#__PURE__*/
     function () {
-      function AcademicEditComponent(activatedRoute, academicsService, subjectsService) {
+      function AcademicEditComponent(activatedRoute, academicsService, subjectsService, uploadService, toastrService, router) {
         _classCallCheck(this, AcademicEditComponent);
 
         this.activatedRoute = activatedRoute;
         this.academicsService = academicsService;
         this.subjectsService = subjectsService;
+        this.uploadService = uploadService;
+        this.toastrService = toastrService;
+        this.router = router;
         this.subjects = [];
+        this.upload = {
+          uploaded: false
+        };
       }
 
       _createClass(AcademicEditComponent, [{
+        key: "navigate",
+        value: function navigate(route) {
+          this.router.navigate([route]);
+        }
+      }, {
+        key: "handleFileUpload",
+        value: function handleFileUpload(eventFile) {
+          this.upload = {
+            file: eventFile,
+            uploaded: true
+          };
+        }
+      }, {
+        key: "handleUpdateMetadata",
+        value: function handleUpdateMetadata() {
+          var _this5 = this;
+
+          if (this.program.valid) {
+            var program = this.program.value;
+            program.startDate = new Date(this.program.value.startDate).valueOf();
+            program.endDate = new Date(this.program.value.endDate).valueOf();
+            this.academicsService.updateOne(this.id, program).subscribe(function (response) {
+              if (_this5.upload.uploaded) {
+                var programId = response.data._id;
+
+                _this5.uploadService.uploadImage(_this5.upload.file, "program", programId).subscribe();
+              }
+
+              _this5.toastrService.show("Exito al guardar programa", "Programa Actualizado", {
+                status: "primary",
+                hasIcon: true,
+                destroyByClick: true,
+                icon: "award-outline"
+              });
+
+              _this5.router.navigate(["programas"]);
+            });
+          }
+        }
+      }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this5 = this;
+          var _this6 = this;
 
           this.program = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
             folio: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({
@@ -3450,14 +3508,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             endDate: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required)
           });
           this.activatedRoute.params.subscribe(function (params) {
-            _this5.id = params["id"];
+            _this6.id = params["id"];
 
-            _this5.academicsService.findById(_this5.id).subscribe(function (response) {
-              _this5.program.patchValue(response.data);
+            _this6.academicsService.findById(_this6.id).subscribe(function (response) {
+              _this6.program.patchValue(response.data);
 
-              _this5.program.controls.startDate.patchValue(new Date(response.data.startDate));
+              _this6.program.controls.startDate.patchValue(new Date(response.data.startDate));
 
-              _this5.program.controls.endDate.patchValue(new Date(response.data.endDate));
+              _this6.program.controls.endDate.patchValue(new Date(response.data.endDate));
             });
           });
         }
@@ -3473,6 +3531,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _services_academics_service__WEBPACK_IMPORTED_MODULE_2__["AcademicsService"]
       }, {
         type: _services_subjects_service__WEBPACK_IMPORTED_MODULE_3__["SubjectsService"]
+      }, {
+        type: src_app_services_upload_service__WEBPACK_IMPORTED_MODULE_6__["UploadService"]
+      }, {
+        type: _nebular_theme__WEBPACK_IMPORTED_MODULE_7__["NbToastrService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
       }];
     };
 
@@ -3778,7 +3842,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function AcademicComponent(activatedRoute, academicsService, subjectService) {
-        var _this6 = this;
+        var _this7 = this;
 
         _classCallCheck(this, AcademicComponent);
 
@@ -3789,18 +3853,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.programSubjects = [];
         this.subjects = [];
         this.activatedRoute.params.subscribe(function (params) {
-          _this6.id = params["id"];
+          _this7.id = params["id"];
 
-          _this6.subjectService.findAllInProgram(_this6.id).subscribe(function (response) {
-            _this6.programSubjects = response.data;
+          _this7.subjectService.findAllInProgram(_this7.id).subscribe(function (response) {
+            _this7.programSubjects = response.data;
           });
 
-          _this6.subjectService.findAll().subscribe(function (response) {
-            _this6.subjects = response.data;
+          _this7.subjectService.findAll().subscribe(function (response) {
+            _this7.subjects = response.data;
           });
 
-          _this6.academicsService.findById(_this6.id).subscribe(function (response) {
-            _this6.academic = response.data;
+          _this7.academicsService.findById(_this7.id).subscribe(function (response) {
+            _this7.academic = response.data;
           });
         });
       }
@@ -3808,19 +3872,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AcademicComponent, [{
         key: "handleReload",
         value: function handleReload() {
-          var _this7 = this;
+          var _this8 = this;
 
           setTimeout(function () {
-            _this7.subjectService.findAllInProgram(_this7.id).subscribe(function (response) {
-              _this7.programSubjects = response.data;
+            _this8.subjectService.findAllInProgram(_this8.id).subscribe(function (response) {
+              _this8.programSubjects = response.data;
             });
 
-            _this7.subjectService.findAll().subscribe(function (response) {
-              _this7.subjects = response.data;
+            _this8.subjectService.findAll().subscribe(function (response) {
+              _this8.subjects = response.data;
             });
 
-            _this7.academicsService.findById(_this7.id).subscribe(function (response) {
-              _this7.academic = response.data;
+            _this8.academicsService.findById(_this8.id).subscribe(function (response) {
+              _this8.academic = response.data;
             });
           }, 300);
         }
@@ -3928,7 +3992,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function AcademicsComponent(academicsService) {
-        var _this8 = this;
+        var _this9 = this;
 
         _classCallCheck(this, AcademicsComponent);
 
@@ -3937,9 +4001,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.stockAcademics = [];
         this.academics = [];
         setTimeout(function () {
-          _this8.academicsService.findAll().subscribe(function (response) {
-            _this8.stockAcademics = response.data;
-            _this8.academics = _this8.stockAcademics;
+          _this9.academicsService.findAll().subscribe(function (response) {
+            _this9.stockAcademics = response.data;
+            _this9.academics = _this9.stockAcademics;
           });
         }, 300);
       }
@@ -3952,13 +4016,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleSearch",
         value: function handleSearch(e) {
-          var _this9 = this;
+          var _this10 = this;
 
           var name = e.target.value;
           var a;
           var b = new RegExp(name.toLowerCase());
           this.academics = lodash__WEBPACK_IMPORTED_MODULE_3__["filter"](this.stockAcademics, function (obj) {
-            switch (_this9.filter) {
+            switch (_this10.filter) {
               case "name":
                 a = obj.name.toLowerCase();
                 a = a.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -3979,15 +4043,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleReload",
         value: function handleReload() {
-          var _this10 = this;
+          var _this11 = this;
 
           setTimeout(function () {
-            _this10.academicsService.findAll().subscribe(function (response) {
-              _this10.stockAcademics = response.data;
-              _this10.academics = _this10.stockAcademics;
+            _this11.academicsService.findAll().subscribe(function (response) {
+              _this11.stockAcademics = response.data;
+              _this11.academics = _this11.stockAcademics;
             });
 
-            _this10.tabset.selectTab(_this10.tableTab);
+            _this11.tabset.selectTab(_this11.tableTab);
           }, 300);
         }
       }, {
@@ -4265,12 +4329,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "login",
         value: function login() {
-          var _this11 = this;
+          var _this12 = this;
 
           if (this.user.valid) {
             this.authService.login(this.user.value.username, this.user.value.password).subscribe(function (response) {
               if (response.data && response.data.access_token) {
-                _this11.toastrService.show("Bienvenido a casa", "Hola ".concat(response.data.name), {
+                _this12.toastrService.show("Bienvenido a casa", "Hola ".concat(response.data.name), {
                   status: "success",
                   hasIcon: true,
                   destroyByClick: true,
@@ -4279,12 +4343,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                 localStorage.setItem("token", JSON.stringify(response.data.access_token));
 
-                _this11.router.navigate(["inicio"]);
+                _this12.router.navigate(["inicio"]);
 
-                _this11.authService.authenticated$.next(response.data);
+                _this12.authService.authenticated$.next(response.data);
               }
             }, function () {
-              _this11.toastrService.show("El usuario o la contraseña ingresados no son correctos", "Algo anda mal", {
+              _this12.toastrService.show("El usuario o la contraseña ingresados no son correctos", "Algo anda mal", {
                 status: "danger",
                 hasIcon: true,
                 destroyByClick: true,
@@ -4296,12 +4360,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleUsernameBlur",
         value: function handleUsernameBlur() {
-          var _this12 = this;
+          var _this13 = this;
 
           this.authService.checkUsername(this.user.value.username).subscribe(function (response) {
-            _this12.avatarUrl = response.data.avatarUrl;
+            _this13.avatarUrl = response.data.avatarUrl;
           }, function () {
-            _this12.avatarUrl = null;
+            _this13.avatarUrl = null;
           });
         }
       }]);
@@ -4417,7 +4481,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function RegisterComponent(authService, schoolService, toastrService) {
-        var _this13 = this;
+        var _this14 = this;
 
         _classCallCheck(this, RegisterComponent);
 
@@ -4425,14 +4489,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.schoolService = schoolService;
         this.toastrService = toastrService;
         this.schoolService.findAll().subscribe(function (response) {
-          _this13.schools = response.data;
+          _this14.schools = response.data;
         }, function (error) {});
       }
 
       _createClass(RegisterComponent, [{
         key: "handleRegister",
         value: function handleRegister() {
-          var _this14 = this;
+          var _this15 = this;
 
           if (this.auth.valid) {
             var requestUser = {
@@ -4447,17 +4511,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             console.log(requestUser);
             this.authService.login(this.auth.value.username, this.auth.value.password).subscribe(function (response) {
-              _this14.authService.signup(requestUser).subscribe(function (response) {
-                _this14.stepper.reset();
+              _this15.authService.signup(requestUser).subscribe(function (response) {
+                _this15.stepper.reset();
 
-                _this14.toastrService.show("Director Registado", "Director Registardo", {
+                _this15.toastrService.show("Director Registado", "Director Registardo", {
                   status: "primary",
                   hasIcon: true,
                   destroyByClick: true,
                   icon: "person-outline"
                 });
               }, function () {
-                _this14.toastrService.show("Registro Fallido", "El usuario ya existe", {
+                _this15.toastrService.show("Registro Fallido", "El usuario ya existe", {
                   status: "warning",
                   hasIcon: true,
                   destroyByClick: true,
@@ -4465,7 +4529,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 });
               });
             }, function () {
-              _this14.toastrService.show("Autorización Fallida", "No hay autorización", {
+              _this15.toastrService.show("Autorización Fallida", "No hay autorización", {
                 status: "danger",
                 hasIcon: true,
                 destroyByClick: true,
@@ -4598,14 +4662,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function FacebookComponent(facebookEnabledService) {
-        var _this15 = this;
+        var _this16 = this;
 
         _classCallCheck(this, FacebookComponent);
 
         this.facebookEnabledService = facebookEnabledService;
         this.posts = [];
         this.facebookEnabledService.getAllPosts().then(function (e) {
-          _this15.posts = e.data;
+          _this16.posts = e.data;
         });
       }
 
@@ -4742,7 +4806,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "saveFlight",
         value: function saveFlight() {
-          var _this16 = this;
+          var _this17 = this;
 
           console.log(this.informationForm.valid);
           console.log(this.descriptionForm.valid);
@@ -4757,14 +4821,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               description: this.descriptionForm.value.description
             };
             this.flightsService.createOne(flight).subscribe(function (response) {
-              _this16.toastrService.show("Exito al guardar el vuelo", "Vuelo Guardado", {
+              _this17.toastrService.show("Exito al guardar el vuelo", "Vuelo Guardado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "paper-plane-outline"
               });
 
-              _this16.back.emit();
+              _this17.back.emit();
             }, function (e) {
               console.log(e);
             });
@@ -4941,27 +5005,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleReload",
         value: function handleReload() {
-          var _this17 = this;
+          var _this18 = this;
 
           setTimeout(function () {
-            _this17.studentService.findAll().subscribe(function (response) {
-              _this17.students = response.data;
+            _this18.studentService.findAll().subscribe(function (response) {
+              _this18.students = response.data;
             });
 
-            _this17.flightsService.findAll().subscribe(function (response) {
-              _this17.flightRecruits = response.data[0].enlisted;
-              _this17.flightPilots = response.data[0].approved;
+            _this18.flightsService.findAll().subscribe(function (response) {
+              _this18.flightRecruits = response.data[0].enlisted;
+              _this18.flightPilots = response.data[0].approved;
             });
 
-            _this17.flightsService.findById(_this17.id).subscribe(function (response) {
-              _this17.flightInput = response.data;
+            _this18.flightsService.findById(_this18.id).subscribe(function (response) {
+              _this18.flightInput = response.data;
             });
           }, 300);
         }
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this18 = this;
+          var _this19 = this;
 
           this.flight = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
             name: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
@@ -4974,22 +5038,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             description: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required)
           });
           this.activatedRoute.params.subscribe(function (params) {
-            _this18.id = params["id"];
+            _this19.id = params["id"];
 
-            _this18.studentService.findAll().subscribe(function (response) {
-              _this18.students = response.data;
+            _this19.studentService.findAll().subscribe(function (response) {
+              _this19.students = response.data;
             });
 
-            _this18.flightsService.findAll().subscribe(function (response) {
-              _this18.flightRecruits = response.data[0].enlisted;
-              _this18.flightPilots = response.data[0].approved;
+            _this19.flightsService.findAll().subscribe(function (response) {
+              _this19.flightRecruits = response.data[0].enlisted;
+              _this19.flightPilots = response.data[0].approved;
             });
 
-            _this18.flightsService.findById(_this18.id).subscribe(function (response) {
+            _this19.flightsService.findById(_this19.id).subscribe(function (response) {
               response.data.startDate = new Date(response.data.startDate);
-              _this18.flightInput = response.data;
+              _this19.flightInput = response.data;
 
-              _this18.flight.patchValue(_this18.flightInput);
+              _this19.flight.patchValue(_this19.flightInput);
             });
           });
         }
@@ -5326,7 +5390,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function FlightComponent(activatedRoute, studentService, flightsService) {
-        var _this19 = this;
+        var _this20 = this;
 
         _classCallCheck(this, FlightComponent);
 
@@ -5338,19 +5402,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.flightPilots = [];
         this.students = [];
         this.activatedRoute.params.subscribe(function (params) {
-          _this19.id = params["id"];
+          _this20.id = params["id"];
 
-          _this19.studentService.findAll().subscribe(function (response) {
-            _this19.students = response.data;
+          _this20.studentService.findAll().subscribe(function (response) {
+            _this20.students = response.data;
           });
 
-          _this19.flightsService.findAll().subscribe(function (response) {
-            _this19.flightRecruits = response.data[0].enlisted;
-            _this19.flightPilots = response.data[0].approved;
+          _this20.flightsService.findAll().subscribe(function (response) {
+            _this20.flightRecruits = response.data[0].enlisted;
+            _this20.flightPilots = response.data[0].approved;
           });
 
-          _this19.flightsService.findById(_this19.id).subscribe(function (response) {
-            _this19.flight = response.data;
+          _this20.flightsService.findById(_this20.id).subscribe(function (response) {
+            _this20.flight = response.data;
           });
         });
       }
@@ -5358,20 +5422,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(FlightComponent, [{
         key: "handleReload",
         value: function handleReload() {
-          var _this20 = this;
+          var _this21 = this;
 
           setTimeout(function () {
-            _this20.studentService.findAll().subscribe(function (response) {
-              _this20.students = response.data;
+            _this21.studentService.findAll().subscribe(function (response) {
+              _this21.students = response.data;
             });
 
-            _this20.flightsService.findAll().subscribe(function (response) {
-              _this20.flightRecruits = response.data[0].enlisted;
-              _this20.flightPilots = response.data[0].approved;
+            _this21.flightsService.findAll().subscribe(function (response) {
+              _this21.flightRecruits = response.data[0].enlisted;
+              _this21.flightPilots = response.data[0].approved;
             });
 
-            _this20.flightsService.findById(_this20.id).subscribe(function (response) {
-              _this20.flight = response.data;
+            _this21.flightsService.findById(_this21.id).subscribe(function (response) {
+              _this21.flight = response.data;
             });
           }, 300);
         }
@@ -5476,7 +5540,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function FlightsComponent(FlightsService) {
-        var _this21 = this;
+        var _this22 = this;
 
         _classCallCheck(this, FlightsComponent);
 
@@ -5485,9 +5549,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.stockFlights = [];
         this.flights = [];
         setTimeout(function () {
-          _this21.FlightsService.findAll().subscribe(function (response) {
-            _this21.stockFlights = response.data;
-            _this21.flights = _this21.stockFlights;
+          _this22.FlightsService.findAll().subscribe(function (response) {
+            _this22.stockFlights = response.data;
+            _this22.flights = _this22.stockFlights;
           });
         }, 300);
       }
@@ -5511,15 +5575,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleReload",
         value: function handleReload() {
-          var _this22 = this;
+          var _this23 = this;
 
           setTimeout(function () {
-            _this22.FlightsService.findAll().subscribe(function (response) {
-              _this22.stockFlights = response.data;
-              _this22.flights = _this22.stockFlights;
+            _this23.FlightsService.findAll().subscribe(function (response) {
+              _this23.stockFlights = response.data;
+              _this23.flights = _this23.stockFlights;
             });
 
-            _this22.tabset.selectTab(_this22.tableTab);
+            _this23.tabset.selectTab(_this23.tableTab);
           }, 300);
         }
       }, {
@@ -5662,7 +5726,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "saveGroup",
         value: function saveGroup() {
-          var _this23 = this;
+          var _this24 = this;
 
           if (this.nameForm.valid && this.descriptionForm.valid) {
             var group = {
@@ -5670,20 +5734,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               description: this.descriptionForm.value.description
             };
             this.groupService.createOne(group).subscribe(function (response) {
-              if (_this23.upload.uploaded) {
+              if (_this24.upload.uploaded) {
                 var groupId = response.data._id;
 
-                _this23.uploadService.uploadImage(_this23.upload.file, "group", groupId).subscribe();
+                _this24.uploadService.uploadImage(_this24.upload.file, "group", groupId).subscribe();
               }
 
-              _this23.toastrService.show("Exito al guardar grupo", "Grupo Guardado", {
+              _this24.toastrService.show("Exito al guardar grupo", "Grupo Guardado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "people-outline"
               });
 
-              _this23.back.emit();
+              _this24.back.emit();
             });
           }
         }
@@ -5848,49 +5912,49 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleUpdateMetadata",
         value: function handleUpdateMetadata() {
-          var _this24 = this;
+          var _this25 = this;
 
           if (this.group.valid) {
             this.groupService.updateOne(this.id, this.group.value).subscribe(function (response) {
-              if (_this24.upload.uploaded) {
+              if (_this25.upload.uploaded) {
                 var groupId = response.data._id;
 
-                _this24.uploadService.uploadImage(_this24.upload.file, "group", groupId).subscribe();
+                _this25.uploadService.uploadImage(_this25.upload.file, "group", groupId).subscribe();
               }
 
-              _this24.toastrService.show("Exito al guardar grupo", "Grupo Actualizado", {
+              _this25.toastrService.show("Exito al guardar grupo", "Grupo Actualizado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "people-outline"
               });
 
-              _this24.router.navigate(["grupos"]);
+              _this25.router.navigate(["grupos"]);
             });
           }
         }
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this25 = this;
+          var _this26 = this;
 
           this.group = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
             name: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
             description: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required)
           });
           this.activatedRoute.params.subscribe(function (params) {
-            _this25.id = params["id"];
+            _this26.id = params["id"];
 
-            _this25.studentService.findAllInGroup(_this25.id).subscribe(function (response) {
-              _this25.members = response.data;
+            _this26.studentService.findAllInGroup(_this26.id).subscribe(function (response) {
+              _this26.members = response.data;
             });
 
-            _this25.studentService.findAll().subscribe(function (response) {
-              _this25.students = response.data;
+            _this26.studentService.findAll().subscribe(function (response) {
+              _this26.students = response.data;
             });
 
-            _this25.groupService.findById(_this25.id).subscribe(function (response) {
-              _this25.group.patchValue(response.data);
+            _this26.groupService.findById(_this26.id).subscribe(function (response) {
+              _this26.group.patchValue(response.data);
             });
           });
         }
@@ -6030,10 +6094,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteHandler",
         value: function deleteHandler(id) {
-          var _this26 = this;
+          var _this27 = this;
 
           this.groupService.deleteOne(id).subscribe(function (response) {
-            _this26.toastrService.show("Exito al eliminar grupo", "Grupo Eliminado", {
+            _this27.toastrService.show("Exito al eliminar grupo", "Grupo Eliminado", {
               status: "primary",
               hasIcon: true,
               destroyByClick: true,
@@ -6234,7 +6298,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GroupComponent(activatedRoute, groupService, studentService) {
-        var _this27 = this;
+        var _this28 = this;
 
         _classCallCheck(this, GroupComponent);
 
@@ -6242,18 +6306,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.groupService = groupService;
         this.studentService = studentService;
         this.activatedRoute.params.subscribe(function (params) {
-          _this27.id = params["id"];
+          _this28.id = params["id"];
 
-          _this27.groupService.findById(_this27.id).subscribe(function (response) {
-            _this27.group = response.data;
+          _this28.groupService.findById(_this28.id).subscribe(function (response) {
+            _this28.group = response.data;
           });
 
-          _this27.studentService.findAll().subscribe(function (response) {
-            _this27.students = response.data;
+          _this28.studentService.findAll().subscribe(function (response) {
+            _this28.students = response.data;
           });
 
-          _this27.studentService.findAllInGroup(_this27.id).subscribe(function (response) {
-            _this27.members = response.data;
+          _this28.studentService.findAllInGroup(_this28.id).subscribe(function (response) {
+            _this28.members = response.data;
           });
         });
       }
@@ -6362,7 +6426,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GroupsComponent(groupService) {
-        var _this28 = this;
+        var _this29 = this;
 
         _classCallCheck(this, GroupsComponent);
 
@@ -6371,9 +6435,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.stockGroups = [];
         this.groups = [];
         setTimeout(function () {
-          _this28.groupService.findAll().subscribe(function (response) {
-            _this28.stockGroups = response.data;
-            _this28.groups = _this28.stockGroups;
+          _this29.groupService.findAll().subscribe(function (response) {
+            _this29.stockGroups = response.data;
+            _this29.groups = _this29.stockGroups;
           });
         }, 300);
       }
@@ -6409,15 +6473,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleReload",
         value: function handleReload() {
-          var _this29 = this;
+          var _this30 = this;
 
           setTimeout(function () {
-            _this29.groupService.findAll().subscribe(function (response) {
-              _this29.stockGroups = response.data;
-              _this29.groups = _this29.stockGroups;
+            _this30.groupService.findAll().subscribe(function (response) {
+              _this30.stockGroups = response.data;
+              _this30.groups = _this30.stockGroups;
             });
 
-            _this29.tabset.selectTab(_this29.tableTab);
+            _this30.tabset.selectTab(_this30.tableTab);
           }, 300);
         }
       }, {
@@ -6553,7 +6617,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function HomeComponent(schoolService, studentService, groupService) {
-        var _this30 = this;
+        var _this31 = this;
 
         _classCallCheck(this, HomeComponent);
 
@@ -6562,7 +6626,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.groupService = groupService;
         this.school = {};
         this.schoolService.findOne().subscribe(function (response) {
-          _this30.school = response.data;
+          _this31.school = response.data;
         });
       }
 
@@ -6584,7 +6648,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ngAfterViewInit",
         value: function ngAfterViewInit() {
-          var _this31 = this;
+          var _this32 = this;
 
           this.studentService.findAll().subscribe(function (response) {
             var gendersGroup = lodash__WEBPACK_IMPORTED_MODULE_6__["groupBy"](response.data, "gender");
@@ -6595,9 +6659,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               genderData.push(gendersGroup[key].length);
             }
 
-            new chart_js__WEBPACK_IMPORTED_MODULE_5__(_this31.genderChart.nativeElement, {
+            new chart_js__WEBPACK_IMPORTED_MODULE_5__(_this32.genderChart.nativeElement, {
               type: "doughnut",
-              data: _this31.getData({
+              data: _this32.getData({
                 labels: Object.keys(gendersGroup),
                 data: genderData
               }),
@@ -6615,9 +6679,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               origenData.push(originGroup[_key].length);
             }
 
-            new chart_js__WEBPACK_IMPORTED_MODULE_5__(_this31.originChart.nativeElement, {
+            new chart_js__WEBPACK_IMPORTED_MODULE_5__(_this32.originChart.nativeElement, {
               type: "doughnut",
-              data: _this31.getData({
+              data: _this32.getData({
                 labels: Object.keys(originGroup),
                 data: origenData
               }),
@@ -6657,9 +6721,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
             }
 
-            new chart_js__WEBPACK_IMPORTED_MODULE_5__(_this31.groupChart.nativeElement, {
+            new chart_js__WEBPACK_IMPORTED_MODULE_5__(_this32.groupChart.nativeElement, {
               type: "bar",
-              data: _this31.getData({
+              data: _this32.getData({
                 labels: Object.keys(nameGroup),
                 data: data
               }),
@@ -7155,7 +7219,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function StudentCreateComponent(router, schoolService, authService, studentService, uploadService, toastrService, mexicoService, groupService, academicsService) {
-        var _this32 = this;
+        var _this33 = this;
 
         _classCallCheck(this, StudentCreateComponent);
 
@@ -7180,16 +7244,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
         mexicoService.getStates().subscribe(function (_ref) {
           var response = _ref.response;
-          _this32.states = response.estado.sort();
+          _this33.states = response.estado.sort();
         });
         this.groupService.findAll().subscribe(function (response) {
-          _this32.groups = response.data;
+          _this33.groups = response.data;
         });
         this.academicsService.findAll().subscribe(function (response) {
-          _this32.academics = response.data;
+          _this33.academics = response.data;
         });
         this.schoolService.findAll().subscribe(function (response) {
-          _this32.schools = response.data;
+          _this33.schools = response.data;
         });
       }
 
@@ -7209,7 +7273,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "saveStudent",
         value: function saveStudent() {
-          var _this33 = this;
+          var _this34 = this;
 
           if (this.user.valid) {
             var user = this.user.value;
@@ -7217,27 +7281,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             user.dob = new Date(this.user.value.dob).valueOf();
             user.schools = [this.user.value.schools];
             this.studentService.createOne(this.user.value).subscribe(function (response) {
-              if (_this33.upload.uploaded) {
+              if (_this34.upload.uploaded) {
                 var groupId = response.data._id;
 
-                _this33.uploadService.uploadImage(_this33.upload.file, "student", groupId).subscribe();
+                _this34.uploadService.uploadImage(_this34.upload.file, "student", groupId).subscribe();
               }
 
-              _this33.toastrService.show("Exito al guardar alumno", "Alumno Guardado", {
+              _this34.toastrService.show("Exito al guardar alumno", "Alumno Guardado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "person-outline"
               });
 
-              _this33.router.navigate(["alumnos"]);
+              _this34.router.navigate(["alumnos"]);
             });
           }
         }
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this34 = this;
+          var _this35 = this;
 
           this.user = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
             email: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].email]),
@@ -7273,21 +7337,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.user.controls.address.controls.state.valueChanges.subscribe(function (value) {
             if (value != "") {
-              _this34.user.controls.address.controls.municipality.setValue("");
+              _this35.user.controls.address.controls.municipality.setValue("");
 
-              _this34.mexicoService.getMunicipalities(value).subscribe(function (_ref2) {
+              _this35.mexicoService.getMunicipalities(value).subscribe(function (_ref2) {
                 var response = _ref2.response;
-                _this34.municipalities = response.municipios.sort();
+                _this35.municipalities = response.municipios.sort();
               });
             }
           });
           this.user.controls.address.controls.municipality.valueChanges.subscribe(function (value) {
             if (value != "") {
-              _this34.user.controls.address.controls.colony.setValue("");
+              _this35.user.controls.address.controls.colony.setValue("");
 
-              _this34.mexicoService.getColonies(value).subscribe(function (_ref3) {
+              _this35.mexicoService.getColonies(value).subscribe(function (_ref3) {
                 var response = _ref3.response;
-                _this34.cities = response.colonia.sort();
+                _this35.cities = response.colonia.sort();
               });
             }
           });
@@ -7447,7 +7511,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function StudentEditComponent(router, schoolService, authService, studentService, uploadService, activatedRoute, toastrService, mexicoService, groupService, academicsService) {
-        var _this35 = this;
+        var _this36 = this;
 
         _classCallCheck(this, StudentEditComponent);
 
@@ -7473,16 +7537,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
         mexicoService.getStates().subscribe(function (_ref4) {
           var response = _ref4.response;
-          _this35.states = response.estado.sort();
+          _this36.states = response.estado.sort();
         });
         this.groupService.findAll().subscribe(function (response) {
-          _this35.groups = response.data;
+          _this36.groups = response.data;
         });
         this.academicsService.findAll().subscribe(function (response) {
-          _this35.academics = response.data;
+          _this36.academics = response.data;
         });
         this.schoolService.findAll().subscribe(function (response) {
-          _this35.schools = response.data;
+          _this36.schools = response.data;
         });
       }
 
@@ -7502,7 +7566,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "saveStudent",
         value: function saveStudent() {
-          var _this36 = this;
+          var _this37 = this;
 
           if (this.user.valid) {
             var user = this.user.value;
@@ -7510,36 +7574,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             user.dob = new Date(this.user.value.dob).valueOf();
             user.schools = [this.user.value.schools];
             this.studentService.updateOne(this.id, this.user.value).subscribe(function (response) {
-              if (_this36.upload.uploaded) {
+              if (_this37.upload.uploaded) {
                 var groupId = response.data._id;
 
-                _this36.uploadService.uploadImage(_this36.upload.file, "student", groupId).subscribe();
+                _this37.uploadService.uploadImage(_this37.upload.file, "student", groupId).subscribe();
               }
 
-              _this36.toastrService.show("Exito al guardar alumno", "Alumno Guardado", {
+              _this37.toastrService.show("Exito al guardar alumno", "Alumno Guardado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "person-outline"
               });
 
-              _this36.router.navigate(["alumnos"]);
+              _this37.router.navigate(["alumnos"]);
             });
           }
         }
       }, {
         key: "handleDelete",
         value: function handleDelete() {
-          var _this37 = this;
+          var _this38 = this;
 
           this.studentService.deleteOne(this.id).subscribe(function (response) {
-            _this37.router.navigate(["alumnos"]);
+            _this38.router.navigate(["alumnos"]);
           });
         }
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this38 = this;
+          var _this39 = this;
 
           this.user = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
             email: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].email]),
@@ -7583,34 +7647,34 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.user.controls.address.controls.state.valueChanges.subscribe(function (value) {
             if (value != "") {
-              _this38.user.controls.address.controls.municipality.setValue("");
+              _this39.user.controls.address.controls.municipality.setValue("");
 
-              _this38.mexicoService.getMunicipalities(value).subscribe(function (_ref5) {
+              _this39.mexicoService.getMunicipalities(value).subscribe(function (_ref5) {
                 var response = _ref5.response;
-                _this38.municipalities = response.municipios.sort();
+                _this39.municipalities = response.municipios.sort();
               });
             }
           });
           this.user.controls.address.controls.municipality.valueChanges.subscribe(function (value) {
             if (value != "") {
-              _this38.user.controls.address.controls.colony.setValue("");
+              _this39.user.controls.address.controls.colony.setValue("");
 
-              _this38.mexicoService.getColonies(value).subscribe(function (_ref6) {
+              _this39.mexicoService.getColonies(value).subscribe(function (_ref6) {
                 var response = _ref6.response;
-                _this38.cities = response.colonia.sort();
+                _this39.cities = response.colonia.sort();
               });
             }
           });
           this.activatedRoute.params.subscribe(function (params) {
-            _this38.id = params["id"];
+            _this39.id = params["id"];
 
-            _this38.studentService.findById(_this38.id).subscribe(function (response) {
+            _this39.studentService.findById(_this39.id).subscribe(function (response) {
               var schools = {
                 schools: response.data.schools[0]
               };
               var data = Object.assign({}, response.data, schools);
 
-              _this38.user.patchValue(data);
+              _this39.user.patchValue(data);
             });
           });
         }
@@ -7759,34 +7823,34 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleDelete",
         value: function handleDelete() {
-          var _this39 = this;
+          var _this40 = this;
 
           this.studentService.deleteOne(this.id).subscribe(function (response) {
-            _this39.router.navigate(["alumnos"]);
+            _this40.router.navigate(["alumnos"]);
           });
         }
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this40 = this;
+          var _this41 = this;
 
           this.activatedRoute.params.subscribe(function (params) {
-            _this40.id = params["id"];
+            _this41.id = params["id"];
 
-            _this40.studentService.findById(_this40.id).subscribe(function (response) {
-              _this40.schoolService.findById(response.data.schools[0]).subscribe(function (subresponse) {
+            _this41.studentService.findById(_this41.id).subscribe(function (response) {
+              _this41.schoolService.findById(response.data.schools[0]).subscribe(function (subresponse) {
                 response.data.schools[0] = subresponse.data.name;
               });
 
-              _this40.groupService.findById(response.data.group).subscribe(function (subresponse) {
+              _this41.groupService.findById(response.data.group).subscribe(function (subresponse) {
                 response.data.group = subresponse.data.name;
               });
 
-              _this40.academicsService.findById(response.data.program).subscribe(function (subresponse) {
+              _this41.academicsService.findById(response.data.program).subscribe(function (subresponse) {
                 response.data.program = subresponse.data.name;
               });
 
-              _this40.student = response.data;
+              _this41.student = response.data;
             });
           });
         }
@@ -8149,7 +8213,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function StudentsComponent(studentService) {
-        var _this41 = this;
+        var _this42 = this;
 
         _classCallCheck(this, StudentsComponent);
 
@@ -8159,12 +8223,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.stockGraduates = [];
         setTimeout(function () {
           studentService.findAll(false).subscribe(function (response) {
-            _this41.stockStudents = response.data;
-            _this41.students = _this41.stockStudents;
+            _this42.stockStudents = response.data;
+            _this42.students = _this42.stockStudents;
           });
           studentService.findAll(true).subscribe(function (response) {
-            _this41.stockGraduates = response.data;
-            _this41.graduates = _this41.stockGraduates;
+            _this42.stockGraduates = response.data;
+            _this42.graduates = _this42.stockGraduates;
           });
         }, 100);
       }
@@ -8177,13 +8241,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleSearch",
         value: function handleSearch(e) {
-          var _this42 = this;
+          var _this43 = this;
 
           var name = e.target.value;
           var a;
           var b = new RegExp(name.toLowerCase());
           this.students = lodash__WEBPACK_IMPORTED_MODULE_3__["filter"](this.stockStudents, function (obj) {
-            switch (_this42.filter) {
+            switch (_this43.filter) {
               case "name":
                 a = obj.name.toLowerCase();
                 a = a.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -8349,7 +8413,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "saveSubject",
         value: function saveSubject() {
-          var _this43 = this;
+          var _this44 = this;
 
           if (this.informationForm.valid && this.descriptionForm.valid && this.contactForm.valid) {
             var subject = {
@@ -8359,20 +8423,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               email: this.contactForm.value.email
             };
             this.subjectsService.createOne(subject).subscribe(function (response) {
-              if (_this43.upload.uploaded) {
+              if (_this44.upload.uploaded) {
                 var subjectId = response.data._id;
 
-                _this43.uploadService.uploadImage(_this43.upload.file, "subject", subjectId).subscribe();
+                _this44.uploadService.uploadImage(_this44.upload.file, "subject", subjectId).subscribe();
               }
 
-              _this43.toastrService.show("Exito al guardar la materia", "Materia Guardada", {
+              _this44.toastrService.show("Exito al guardar la materia", "Materia Guardada", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "book-open-outline"
               });
 
-              _this43.back.emit();
+              _this44.back.emit();
             });
           }
         }
@@ -8537,14 +8601,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleUpdate",
         value: function handleUpdate() {
-          var _this44 = this;
+          var _this45 = this;
 
           if (this.subject.valid) {
             this.subjectService.updateOne(this.id, this.subject.value).subscribe(function (response) {
-              if (_this44.upload.uploaded) {
+              if (_this45.upload.uploaded) {
                 var subjectId = response.data._id;
 
-                _this44.uploadService.uploadImage(_this44.upload.file, "subject", subjectId).subscribe();
+                _this45.uploadService.uploadImage(_this45.upload.file, "subject", subjectId).subscribe();
               }
             });
             this.toastrService.show("Exito al guardar la materia", "Materia Guardada", {
@@ -8570,7 +8634,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this45 = this;
+          var _this46 = this;
 
           this.subject = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
             folio: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({
@@ -8583,10 +8647,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             email: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required)
           });
           this.activatedRoute.params.subscribe(function (params) {
-            _this45.id = params["id"];
+            _this46.id = params["id"];
 
-            _this45.subjectService.findById(_this45.id).subscribe(function (response) {
-              _this45.subject.patchValue(response.data);
+            _this46.subjectService.findById(_this46.id).subscribe(function (response) {
+              _this46.subject.patchValue(response.data);
             });
           });
         }
@@ -8721,26 +8785,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addSubject",
         value: function addSubject(subjectId) {
-          var _this46 = this;
+          var _this47 = this;
 
           if (!this.isAdded && this.academicId != "") {
             this.isAdding = true;
             this.academicsService.addSubject(this.academicId, subjectId).subscribe(function (response) {
-              _this46.isAdded = true;
+              _this47.isAdded = true;
 
-              _this46.reload.emit(true);
+              _this47.reload.emit(true);
             });
           }
         }
       }, {
         key: "removeSubject",
         value: function removeSubject(subjectId) {
-          var _this47 = this;
+          var _this48 = this;
 
           if (!this.isRemoving) {
             this.isRemoving = true;
             this.academicsService.removeSubject(this.academicId, subjectId).subscribe(function (response) {
-              _this47.reload.emit(true);
+              _this48.reload.emit(true);
             });
           }
         }
@@ -8974,15 +9038,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(SubjectComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this48 = this;
+          var _this49 = this;
 
           this.activatedRoute.params.subscribe(function (params) {
-            _this48.id = params["id"];
+            _this49.id = params["id"];
 
-            _this48.subjectService.findById(_this48.id).subscribe(function (response) {
-              _this48.subject = response.data;
-              return _this48.gradesService.findAllInSubject(_this48.id).subscribe(function (response) {
-                _this48.grades = response.data;
+            _this49.subjectService.findById(_this49.id).subscribe(function (response) {
+              _this49.subject = response.data;
+              return _this49.gradesService.findAllInSubject(_this49.id).subscribe(function (response) {
+                _this49.grades = response.data;
               });
             });
           });
@@ -9088,7 +9152,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function SubjectsComponent(subjectsService) {
-        var _this49 = this;
+        var _this50 = this;
 
         _classCallCheck(this, SubjectsComponent);
 
@@ -9097,9 +9161,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.stockSubjects = [];
         this.subjects = [];
         setTimeout(function () {
-          _this49.subjectsService.findAll().subscribe(function (response) {
-            _this49.stockSubjects = response.data;
-            _this49.subjects = _this49.stockSubjects;
+          _this50.subjectsService.findAll().subscribe(function (response) {
+            _this50.stockSubjects = response.data;
+            _this50.subjects = _this50.stockSubjects;
           });
         }, 300);
       }
@@ -9112,13 +9176,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleSearch",
         value: function handleSearch(e) {
-          var _this50 = this;
+          var _this51 = this;
 
           var name = e.target.value;
           var a;
           var b = new RegExp(name.toLowerCase());
           this.subjects = lodash__WEBPACK_IMPORTED_MODULE_3__["filter"](this.stockSubjects, function (obj) {
-            switch (_this50.filter) {
+            switch (_this51.filter) {
               case "name":
                 a = obj.name.toLowerCase();
                 a = a.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -9139,15 +9203,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleReload",
         value: function handleReload() {
-          var _this51 = this;
+          var _this52 = this;
 
           setTimeout(function () {
-            _this51.subjectsService.findAll().subscribe(function (response) {
-              _this51.stockSubjects = response.data;
-              _this51.subjects = _this51.stockSubjects;
+            _this52.subjectsService.findAll().subscribe(function (response) {
+              _this52.stockSubjects = response.data;
+              _this52.subjects = _this52.stockSubjects;
             });
 
-            _this51.tabset.selectTab(_this51.tableTab);
+            _this52.tabset.selectTab(_this52.tableTab);
           }, 300);
         }
       }, {
@@ -9265,7 +9329,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GradeItemComponent(subjectsService, gradesService, toastrService) {
-        var _this52 = this;
+        var _this53 = this;
 
         _classCallCheck(this, GradeItemComponent);
 
@@ -9277,14 +9341,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.reload = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"](true);
         this.subjects = [];
         this.subjectsService.findAll().subscribe(function (response) {
-          _this52.subjects = response.data;
+          _this53.subjects = response.data;
         });
       }
 
       _createClass(GradeItemComponent, [{
         key: "handleAddSubject",
         value: function handleAddSubject() {
-          var _this53 = this;
+          var _this54 = this;
 
           if (this.subject.valid && this.studentId != "") {
             var grade = {
@@ -9293,9 +9357,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               grade: 0
             };
             this.gradesService.createOne(grade).subscribe(function (response) {
-              _this53.reload.emit(true);
+              _this54.reload.emit(true);
 
-              _this53.toastrService.show("Exito al guardar materia", "Materia Asignada", {
+              _this54.toastrService.show("Exito al guardar materia", "Materia Asignada", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
@@ -9307,12 +9371,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleDelete",
         value: function handleDelete() {
-          var _this54 = this;
+          var _this55 = this;
 
           this.gradesService.deleteOne(this.gradeInput._id).subscribe(function () {
-            _this54.reload.emit(true);
+            _this55.reload.emit(true);
 
-            _this54.toastrService.show("Exito al eliminar calificacion", "Calificacion Deasignada", {
+            _this55.toastrService.show("Exito al eliminar calificacion", "Calificacion Deasignada", {
               status: "primary",
               hasIcon: true,
               destroyByClick: true,
@@ -9323,14 +9387,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleUpdate",
         value: function handleUpdate() {
-          var _this55 = this;
+          var _this56 = this;
 
           if (this.grade.valid && this.studentId != "") {
             var grade = {
               grade: this.grade.value.grade
             };
             this.gradesService.updateOne(this.gradeInput._id, grade).subscribe(function (response) {
-              _this55.toastrService.show("Exito al guardar calificacion", "Calificacion Asignada", {
+              _this56.toastrService.show("Exito al guardar calificacion", "Calificacion Asignada", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
@@ -9458,7 +9522,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GradesComponent(gradesService, studentService, activatedRoute, router) {
-        var _this56 = this;
+        var _this57 = this;
 
         _classCallCheck(this, GradesComponent);
 
@@ -9469,10 +9533,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.grades = [];
         this.id = "";
         this.activatedRoute.params.subscribe(function (params) {
-          _this56.id = params["id"];
+          _this57.id = params["id"];
 
-          _this56.gradesService.findAllInStudent(_this56.id).subscribe(function (response) {
-            _this56.grades = response.data;
+          _this57.gradesService.findAllInStudent(_this57.id).subscribe(function (response) {
+            _this57.grades = response.data;
           });
         });
       }
@@ -9480,11 +9544,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(GradesComponent, [{
         key: "handleReload",
         value: function handleReload() {
-          var _this57 = this;
+          var _this58 = this;
 
           setTimeout(function () {
-            _this57.gradesService.findAllInStudent(_this57.id).subscribe(function (response) {
-              _this57.grades = response.data;
+            _this58.gradesService.findAllInStudent(_this58.id).subscribe(function (response) {
+              _this58.grades = response.data;
             });
           }, 300);
         }
@@ -9680,7 +9744,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function NotesComponent(router, activatedRoute, studentService, toastrService) {
-        var _this58 = this;
+        var _this59 = this;
 
         _classCallCheck(this, NotesComponent);
 
@@ -9689,9 +9753,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.studentService = studentService;
         this.toastrService = toastrService;
         this.activatedRoute.params.subscribe(function (params) {
-          _this58.studentService.findById(params["id"]).subscribe(function (response) {
-            _this58.student = response.data;
-            console.log(_this58.student);
+          _this59.studentService.findById(params["id"]).subscribe(function (response) {
+            _this59.student = response.data;
+            console.log(_this59.student);
             var note;
 
             try {
@@ -9700,7 +9764,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               note = {};
             }
 
-            _this58.editor = new _editorjs_editorjs__WEBPACK_IMPORTED_MODULE_2___default.a({
+            _this59.editor = new _editorjs_editorjs__WEBPACK_IMPORTED_MODULE_2___default.a({
               holder: "codex-editor",
               tools: {
                 header: {
@@ -9747,23 +9811,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "saveNote",
         value: function saveNote() {
-          var _this59 = this;
+          var _this60 = this;
 
           this.editor.save().then(function (outputData) {
-            _this59.student.note = JSON.stringify(outputData);
+            _this60.student.note = JSON.stringify(outputData);
 
-            _this59.studentService.updateOne(_this59.student._id, _this59.student).subscribe(function (response) {
-              _this59.toastrService.show("Exito al guardar nota", "Nota Guardada", {
+            _this60.studentService.updateOne(_this60.student._id, _this60.student).subscribe(function (response) {
+              _this60.toastrService.show("Exito al guardar nota", "Nota Guardada", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "file-add-outline"
               });
 
-              _this59.router.navigate(["alumnos", _this59.student._id]);
+              _this60.router.navigate(["alumnos", _this60.student._id]);
             });
           }).catch(function (error) {
-            _this59.toastrService.show("Algo anda mal, no se logro al guardar nota", "Intentar en otro momento", {
+            _this60.toastrService.show("Algo anda mal, no se logro al guardar nota", "Intentar en otro momento", {
               status: "warning",
               hasIcon: true,
               destroyByClick: true,
@@ -9896,7 +9960,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PaymentItemComponent, [{
         key: "handleCreate",
         value: function handleCreate() {
-          var _this60 = this;
+          var _this61 = this;
 
           if (this.payment.valid && this.studentId != "") {
             var payment = Object.assign({}, this.payment.value, {
@@ -9904,11 +9968,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
             payment.deadLine = new Date(payment.deadLine).valueOf();
             this.paymentsService.createOne(payment).subscribe(function () {
-              _this60.payment.reset();
+              _this61.payment.reset();
 
-              _this60.reload.emit(true);
+              _this61.reload.emit(true);
 
-              _this60.toastrService.show("Exito al generar pago", "Pago Asignado", {
+              _this61.toastrService.show("Exito al generar pago", "Pago Asignado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
@@ -9925,13 +9989,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleDelete",
         value: function handleDelete() {
-          var _this61 = this;
+          var _this62 = this;
 
           if (this.paymentInput) {
             this.paymentsService.deleteOne(this.paymentInput._id).subscribe(function () {
-              _this61.reload.emit(true);
+              _this62.reload.emit(true);
 
-              _this61.toastrService.show("Exito al eliminar pago", "Pago Eliminado", {
+              _this62.toastrService.show("Exito al eliminar pago", "Pago Eliminado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
@@ -9943,20 +10007,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handlePay",
         value: function handlePay() {
-          var _this62 = this;
+          var _this63 = this;
 
           if (this.paymentInput && !this.isPayed) {
             this.isPaying = true;
             this.paymentInput.completed = true;
             this.paymentsService.updateOne(this.paymentInput._id, this.paymentInput).subscribe(function () {
-              _this62.toastrService.show("Exito al completar pago", "Pago Registrado", {
+              _this63.toastrService.show("Exito al completar pago", "Pago Registrado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "credit-card-outline"
               });
 
-              _this62.isPayed = true;
+              _this63.isPayed = true;
             });
           }
         }
@@ -10083,7 +10147,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function PaymentsComponent(router, activatedRoute, studentService, paymentsService, toastrService) {
-        var _this63 = this;
+        var _this64 = this;
 
         _classCallCheck(this, PaymentsComponent);
 
@@ -10094,10 +10158,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.toastrService = toastrService;
         this.payments = [];
         this.activatedRoute.params.subscribe(function (params) {
-          _this63.id = params["id"];
+          _this64.id = params["id"];
           setTimeout(function () {
-            _this63.paymentsService.findAllInStudent(_this63.id).subscribe(function (response) {
-              _this63.payments = response.data;
+            _this64.paymentsService.findAllInStudent(_this64.id).subscribe(function (response) {
+              _this64.payments = response.data;
             });
           }, 300);
         });
@@ -10106,11 +10170,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PaymentsComponent, [{
         key: "handleReload",
         value: function handleReload() {
-          var _this64 = this;
+          var _this65 = this;
 
           setTimeout(function () {
-            _this64.paymentsService.findAllInStudent(_this64.id).subscribe(function (response) {
-              _this64.payments = response.data;
+            _this65.paymentsService.findAllInStudent(_this65.id).subscribe(function (response) {
+              _this65.payments = response.data;
             });
           }, 300);
         }
@@ -10207,7 +10271,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function AcademicsService(http, authService) {
-        var _this65 = this;
+        var _this66 = this;
 
         _classCallCheck(this, AcademicsService);
 
@@ -10219,8 +10283,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this65.headers.Authorization = "bearer ".concat(status.access_token);
-          _this65.schoolId = status.schools[0];
+          _this66.headers.Authorization = "bearer ".concat(status.access_token);
+          _this66.schoolId = status.schools[0];
         });
       } ////////////////////////////////////////
       //         FIND FUNCTIONS
@@ -10589,7 +10653,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function FlightsService(http, authService) {
-        var _this66 = this;
+        var _this67 = this;
 
         _classCallCheck(this, FlightsService);
 
@@ -10601,8 +10665,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this66.headers.Authorization = "bearer ".concat(status.access_token);
-          _this66.schoolId = status.schools[0];
+          _this67.headers.Authorization = "bearer ".concat(status.access_token);
+          _this67.schoolId = status.schools[0];
         });
       }
 
@@ -10760,7 +10824,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GradesService(http, authService) {
-        var _this67 = this;
+        var _this68 = this;
 
         _classCallCheck(this, GradesService);
 
@@ -10772,8 +10836,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this67.headers.Authorization = "bearer ".concat(status.access_token);
-          _this67.schoolId = status.schools[0];
+          _this68.headers.Authorization = "bearer ".concat(status.access_token);
+          _this68.schoolId = status.schools[0];
         });
       }
 
@@ -10907,7 +10971,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GroupService(http, authService) {
-        var _this68 = this;
+        var _this69 = this;
 
         _classCallCheck(this, GroupService);
 
@@ -10919,8 +10983,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this68.headers.Authorization = "bearer ".concat(status.access_token);
-          _this68.schoolId = status.schools[0];
+          _this69.headers.Authorization = "bearer ".concat(status.access_token);
+          _this69.schoolId = status.schools[0];
         });
       }
 
@@ -11228,7 +11292,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function PaymentsService(http, authService) {
-        var _this69 = this;
+        var _this70 = this;
 
         _classCallCheck(this, PaymentsService);
 
@@ -11240,8 +11304,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this69.headers.Authorization = "bearer ".concat(status.access_token);
-          _this69.schoolId = status.schools[0];
+          _this70.headers.Authorization = "bearer ".concat(status.access_token);
+          _this70.schoolId = status.schools[0];
         });
       }
 
@@ -11387,7 +11451,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function SchoolService(http, authService) {
-        var _this70 = this;
+        var _this71 = this;
 
         _classCallCheck(this, SchoolService);
 
@@ -11400,8 +11464,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
         authService.authenticated$.subscribe(function (status) {
           if (!lodash__WEBPACK_IMPORTED_MODULE_5__["isEmpty"](status)) {
-            _this70.headers.Authorization = "bearer ".concat(status.access_token);
-            _this70.schoolId = status.schools[0];
+            _this71.headers.Authorization = "bearer ".concat(status.access_token);
+            _this71.schoolId = status.schools[0];
           }
         });
       }
@@ -11501,7 +11565,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function StudentService(http, authService) {
-        var _this71 = this;
+        var _this72 = this;
 
         _classCallCheck(this, StudentService);
 
@@ -11513,8 +11577,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this71.headers.Authorization = "bearer ".concat(status.access_token);
-          _this71.schoolId = status.schools[0];
+          _this72.headers.Authorization = "bearer ".concat(status.access_token);
+          _this72.schoolId = status.schools[0];
         });
       }
 
@@ -11641,7 +11705,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function SubjectsService(http, authService) {
-        var _this72 = this;
+        var _this73 = this;
 
         _classCallCheck(this, SubjectsService);
 
@@ -11653,8 +11717,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this72.headers.Authorization = "bearer ".concat(status.access_token);
-          _this72.schoolId = status.schools[0];
+          _this73.headers.Authorization = "bearer ".concat(status.access_token);
+          _this73.schoolId = status.schools[0];
         });
       }
 
@@ -11788,7 +11852,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function UploadService(http, authService) {
-        var _this73 = this;
+        var _this74 = this;
 
         _classCallCheck(this, UploadService);
 
@@ -11799,7 +11863,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this73.headers.Authorization = "bearer ".concat(status.access_token);
+          _this74.headers.Authorization = "bearer ".concat(status.access_token);
         });
       }
 

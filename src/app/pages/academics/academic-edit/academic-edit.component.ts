@@ -47,8 +47,12 @@ export class AcademicEditComponent implements OnInit {
 
   public handleUpdateMetadata() {
     if (this.program.valid) {
+      let program = this.program.value;
+      program.startDate = new Date(this.program.value.startDate).valueOf();
+      program.endDate = new Date(this.program.value.endDate).valueOf();
+
       this.academicsService
-        .updateOne(this.id, this.program.value)
+        .updateOne(this.id, program)
         .subscribe((response: IResponse) => {
           if (this.upload.uploaded) {
             let programId = response.data._id;
