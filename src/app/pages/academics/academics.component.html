@@ -11,13 +11,19 @@
           fullWidth
           shape="round"
           placeholder="Busqueda..."
+          (keyup)="handleSearch($event)"
         />
       </div>
       <div class="col-3">
-        <nb-select fullWidth placeholder="Buscar Por" shape="round">
+        <nb-select
+          fullWidth
+          placeholder="Buscar Por"
+          shape="round"
+          (selectedChange)="handleFilter($event)"
+        >
+          <nb-option value="name">Nombre</nb-option>
           <nb-option value="folio">Folio</nb-option>
           <nb-option value="subjects">Materias</nb-option>
-          <nb-option value="name">Nombre</nb-option>
         </nb-select>
       </div>
     </div>

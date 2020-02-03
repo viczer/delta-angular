@@ -6,6 +6,7 @@
     <div class="row filter-bar">
       <div class="col-9">
         <input
+          (keyup)="handleSearch($event)"
           type="text"
           nbInput
           fullWidth
@@ -14,12 +15,17 @@
         />
       </div>
       <div class="col-3">
-        <nb-select fullWidth placeholder="Buscar Por" shape="round">
-          <nb-option value="1">Matricula </nb-option>
-          <nb-option value="2">Grupo </nb-option>
-          <nb-option value="3">Nombre </nb-option>
-          <nb-option value="3">Teléfono </nb-option>
-          <nb-option value="3">Pagos </nb-option>
+        <nb-select
+          fullWidth
+          placeholder="Buscar Por"
+          shape="round"
+          (selectedChange)="handleFilter($event)"
+        >
+          <nb-option value="name" selected>Nombre </nb-option>
+          <nb-option value="enrollmentId">Matricula </nb-option>
+          <nb-option value="group">Grupo </nb-option>
+          <nb-option value="phone">Teléfono </nb-option>
+          <nb-option value="payments">Pagos </nb-option>
         </nb-select>
       </div>
     </div>

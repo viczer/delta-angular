@@ -13,7 +13,7 @@ export class SubjectsComponent implements OnInit, AfterViewInit {
   @ViewChild("tabset", { static: false }) tabset?: any;
   @ViewChild("tableTab", { static: false }) tableTab?: any;
 
-  public order: string = "";
+  public filter: string = "name";
   public stockSubjects = [];
   public subjects = [];
 
@@ -27,16 +27,27 @@ export class SubjectsComponent implements OnInit, AfterViewInit {
   }
 
   handleFilter(e) {
-    this.order = e;
-    this.subjects = _.orderBy(this.subjects, this.order, "desc");
+    this.filter = e;
   }
 
   handleSearch(e) {
     let name: string = e.target.value;
+    let a: string;
+    let b = new RegExp(name.toLowerCase());
     this.subjects = _.filter(this.stockSubjects, obj => {
-      let a = obj.name.toLowerCase();
-      let b = new RegExp(name.toLowerCase());
-      return a.search(b) >= 0;
+      switch (this.filter) {
+        case "name":
+          a = obj.name.toLowerCase();
+          a = a.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+          break;
+        case "folio":
+          a = obj.folio ? obj.folio.toLowerCase() : null;
+          break;
+        case "grades":
+          a = obj.grades ? obj.grades.length.toString() : null;
+          break;
+      }
+      return a ? a.search(b) >= 0 : null;
     });
   }
 
