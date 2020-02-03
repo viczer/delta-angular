@@ -55,3 +55,16 @@
   height: calc(100vh - 76px);
   overflow: hidden;
 }
+
+.versioning-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-left: 10px;
+  p {
+    margin: 0;
+    font-size: 10px;
+    background: #ffffff30;
+    padding: 0px 10px;
+  }
+}

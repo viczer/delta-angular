@@ -461,7 +461,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nb-card>\r\n  <nb-card-header>\r\n    Programas\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda...\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select fullWidth placeholder=\"Buscar Por\" shape=\"round\">\r\n          <nb-option value=\"folio\">Folio</nb-option>\r\n          <nb-option value=\"subjects\">Materias</nb-option>\r\n          <nb-option value=\"name\">Nombre</nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth #tabset>\r\n        <nb-tab tabTitle=\"Programas\" #tableTab>\r\n          <app-academic-table\r\n            [academics]=\"academics\"\r\n            (reload)=\"handleReload()\"\r\n          ></app-academic-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Crear Programa\">\r\n          <app-academic-create (back)=\"handleReload()\"></app-academic-create>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nb-card>\r\n  <nb-card-header>\r\n    Programas\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda...\"\r\n          (keyup)=\"handleSearch($event)\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select\r\n          fullWidth\r\n          placeholder=\"Buscar Por\"\r\n          shape=\"round\"\r\n          (selectedChange)=\"handleFilter($event)\"\r\n        >\r\n          <nb-option value=\"name\">Nombre</nb-option>\r\n          <nb-option value=\"folio\">Folio</nb-option>\r\n          <nb-option value=\"subjects\">Materias</nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth #tabset>\r\n        <nb-tab tabTitle=\"Programas\" #tableTab>\r\n          <app-academic-table\r\n            [academics]=\"academics\"\r\n            (reload)=\"handleReload()\"\r\n          ></app-academic-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Crear Programa\">\r\n          <app-academic-create (back)=\"handleReload()\"></app-academic-create>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n");
 
 /***/ }),
 
@@ -474,7 +474,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"wrapper\">\r\n  <div class=\"background\" #auth [ngClass]=\"{ blurred: isBlurred }\"></div>\r\n</div>\r\n<section class=\"auth\">\r\n  <nb-card (mouseenter)=\"toggleBlur()\" (mouseleave)=\"toggleBlur()\">\r\n    <nb-card-body>\r\n      <nb-tabset>\r\n        <nb-tab tabTitle=\"Iniciar Session\">\r\n          <app-login></app-login>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Activar Cuenta\">\r\n          <app-register></app-register>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </nb-card-body>\r\n  </nb-card>\r\n</section>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"wrapper\">\r\n  <div class=\"background\" #auth [ngClass]=\"{ blurred: isBlurred }\"></div>\r\n</div>\r\n<section class=\"auth\">\r\n  <nb-card (mouseenter)=\"toggleBlur()\" (mouseleave)=\"toggleBlur()\">\r\n    <nb-card-body>\r\n      <nb-tabset>\r\n        <nb-tab tabTitle=\"Iniciar Session\">\r\n          <app-login></app-login>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Activar Cuenta\">\r\n          <app-register></app-register>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </nb-card-body>\r\n  </nb-card>\r\n</section>\r\n<div class=\"versioning-wrapper\">\r\n  <p>Developed by Cuadrosoft | Version 1.0.1</p>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -669,7 +669,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nb-card>\r\n  <nb-card-header>\r\n    Grupos\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda por nombre...\"\r\n          (keyup)=\"handleSearch($event)\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select\r\n          fullWidth\r\n          placeholder=\"Ordenar Por\"\r\n          shape=\"round\"\r\n          (selectedChange)=\"handleFilter($event)\"\r\n        >\r\n          <nb-option selected value=\"members\">Tamaño </nb-option>\r\n          <nb-option selected value=\"updatedAt\">Fecha</nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth #tabset>\r\n        <nb-tab tabTitle=\"Grupos\" #tableTab>\r\n          <app-group-table\r\n            [groups]=\"groups\"\r\n            (tableChange)=\"handleReload()\"\r\n          ></app-group-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Crear Grupo\">\r\n          <app-group-create (back)=\"handleReload()\"></app-group-create>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nb-card>\r\n  <nb-card-header>\r\n    Grupos\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda por nombre...\"\r\n          (keyup)=\"handleSearch($event)\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select\r\n          fullWidth\r\n          placeholder=\"Ordenar Por\"\r\n          shape=\"round\"\r\n          (selectedChange)=\"handleFilter($event)\"\r\n        >\r\n          <nb-option selected value=\"size\">Tamaño </nb-option>\r\n          <nb-option selected value=\"name\">Nombre</nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth #tabset>\r\n        <nb-tab tabTitle=\"Grupos\" #tableTab>\r\n          <app-group-table\r\n            [groups]=\"groups\"\r\n            (tableChange)=\"handleReload()\"\r\n          ></app-group-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Crear Grupo\">\r\n          <app-group-create (back)=\"handleReload()\"></app-group-create>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n");
 
 /***/ }),
 
@@ -760,7 +760,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nb-card>\r\n  <nb-card-header>\r\n    Alumnos\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda...\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select fullWidth placeholder=\"Buscar Por\" shape=\"round\">\r\n          <nb-option value=\"1\">Matricula </nb-option>\r\n          <nb-option value=\"2\">Grupo </nb-option>\r\n          <nb-option value=\"3\">Nombre </nb-option>\r\n          <nb-option value=\"3\">Teléfono </nb-option>\r\n          <nb-option value=\"3\">Pagos </nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth>\r\n        <nb-tab tabTitle=\"Alumnos\">\r\n          <app-students-table\r\n            [students]=\"students\"\r\n            mode=\"view\"\r\n          ></app-students-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Egresados\">\r\n          <app-students-table\r\n            [students]=\"graduates\"\r\n            mode=\"view\"\r\n          ></app-students-table>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nb-card>\r\n  <nb-card-header>\r\n    Alumnos\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          (keyup)=\"handleSearch($event)\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda...\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select\r\n          fullWidth\r\n          placeholder=\"Buscar Por\"\r\n          shape=\"round\"\r\n          (selectedChange)=\"handleFilter($event)\"\r\n        >\r\n          <nb-option value=\"name\" selected>Nombre </nb-option>\r\n          <nb-option value=\"enrollmentId\">Matricula </nb-option>\r\n          <nb-option value=\"group\">Grupo </nb-option>\r\n          <nb-option value=\"phone\">Teléfono </nb-option>\r\n          <nb-option value=\"payments\">Pagos </nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth>\r\n        <nb-tab tabTitle=\"Alumnos\">\r\n          <app-students-table\r\n            [students]=\"students\"\r\n            mode=\"view\"\r\n          ></app-students-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Egresados\">\r\n          <app-students-table\r\n            [students]=\"graduates\"\r\n            mode=\"view\"\r\n          ></app-students-table>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n");
 
 /***/ }),
 
@@ -799,7 +799,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"subject-item\" [ngClass]=\"{ view: mode == 'view' }\">\r\n  <div>\r\n    <b> {{ subject.folio }}</b>\r\n  </div>\r\n  <div>\r\n    <nb-user [name]=\"subject.name\" [picture]=\"subject.avatarUrl\"></nb-user>\r\n  </div>\r\n  <div *ngIf=\"mode == 'view'\">{{ subject.grades.length }} calificaciones</div>\r\n  <nb-icon\r\n    *ngIf=\"!editEnabled && mode == 'view'\"\r\n    icon=\"edit-2-outline\"\r\n    status=\"basic\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"enableModsHandler(true)\"\r\n  ></nb-icon>\r\n  <nb-icon\r\n    *ngIf=\"editEnabled && mode == 'view'\"\r\n    icon=\"edit-2-outline\"\r\n    status=\"warning\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"navigate(subject._id, true)\"\r\n  ></nb-icon>\r\n  <nb-icon\r\n    *ngIf=\"!deleteEnabled && mode == 'view'\"\r\n    icon=\"trash-outline\"\r\n    status=\"basic\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"enableModsHandler(false)\"\r\n  ></nb-icon>\r\n  <nb-icon\r\n    *ngIf=\"deleteEnabled && mode == 'view'\"\r\n    icon=\"trash-outline\"\r\n    status=\"danger\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"deleteHandler(subject._id)\"\r\n  ></nb-icon>\r\n  <button\r\n    *ngIf=\"mode == 'view'\"\r\n    nbButton\r\n    shape=\"round\"\r\n    status=\"basic\"\r\n    size=\"small\"\r\n    (click)=\"navigate(subject._id)\"\r\n  >\r\n    Ver Mas\r\n  </button>\r\n  <button\r\n    *ngIf=\"mode == 'add'\"\r\n    (click)=\"addSubject(subject._id)\"\r\n    nbButton\r\n    shape=\"round\"\r\n    [status]=\"isAdded ? 'basic' : 'primary'\"\r\n    size=\"small\"\r\n    type=\"button\"\r\n  >\r\n    {{ !isAdded && !isAdding ? \"Agregar\" : \"\" }}\r\n    {{ !isAdded && isAdding ? \"Agregando\" : \"\" }}\r\n    {{ isAdded ? \"Agregada\" : \"\" }}\r\n  </button>\r\n  <button\r\n    *ngIf=\"mode == 'remove'\"\r\n    (click)=\"removeSubject(subject._id)\"\r\n    nbButton\r\n    shape=\"round\"\r\n    status=\"basic\"\r\n    size=\"small\"\r\n    type=\"button\"\r\n  >\r\n    {{ isRemoving ? \"Removiendo\" : \"\" }}\r\n    {{ !isRemoving ? \"Remover\" : \"\" }}\r\n  </button>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"subject-item\" [ngClass]=\"{ view: mode == 'view' }\">\r\n  <div>\r\n    <small>{{ subject.folio }}</small>\r\n  </div>\r\n  <div>\r\n    <nb-user [name]=\"subject.name\" [picture]=\"subject.avatarUrl\"></nb-user>\r\n  </div>\r\n  <div *ngIf=\"mode == 'view'\">{{ subject.grades.length }} calificaciones</div>\r\n  <nb-icon\r\n    *ngIf=\"!editEnabled && mode == 'view'\"\r\n    icon=\"edit-2-outline\"\r\n    status=\"basic\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"enableModsHandler(true)\"\r\n  ></nb-icon>\r\n  <nb-icon\r\n    *ngIf=\"editEnabled && mode == 'view'\"\r\n    icon=\"edit-2-outline\"\r\n    status=\"warning\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"navigate(subject._id, true)\"\r\n  ></nb-icon>\r\n  <nb-icon\r\n    *ngIf=\"!deleteEnabled && mode == 'view'\"\r\n    icon=\"trash-outline\"\r\n    status=\"basic\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"enableModsHandler(false)\"\r\n  ></nb-icon>\r\n  <nb-icon\r\n    *ngIf=\"deleteEnabled && mode == 'view'\"\r\n    icon=\"trash-outline\"\r\n    status=\"danger\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"deleteHandler(subject._id)\"\r\n  ></nb-icon>\r\n  <button\r\n    *ngIf=\"mode == 'view'\"\r\n    nbButton\r\n    shape=\"round\"\r\n    status=\"basic\"\r\n    size=\"small\"\r\n    (click)=\"navigate(subject._id)\"\r\n  >\r\n    Ver Mas\r\n  </button>\r\n  <button\r\n    *ngIf=\"mode == 'add'\"\r\n    (click)=\"addSubject(subject._id)\"\r\n    nbButton\r\n    shape=\"round\"\r\n    [status]=\"isAdded ? 'basic' : 'primary'\"\r\n    size=\"small\"\r\n    type=\"button\"\r\n  >\r\n    {{ !isAdded && !isAdding ? \"Agregar\" : \"\" }}\r\n    {{ !isAdded && isAdding ? \"Agregando\" : \"\" }}\r\n    {{ isAdded ? \"Agregada\" : \"\" }}\r\n  </button>\r\n  <button\r\n    *ngIf=\"mode == 'remove'\"\r\n    (click)=\"removeSubject(subject._id)\"\r\n    nbButton\r\n    shape=\"round\"\r\n    status=\"basic\"\r\n    size=\"small\"\r\n    type=\"button\"\r\n  >\r\n    {{ isRemoving ? \"Removiendo\" : \"\" }}\r\n    {{ !isRemoving ? \"Remover\" : \"\" }}\r\n  </button>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -838,7 +838,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nb-card>\r\n  <nb-card-header>\r\n    Materias\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda...\"\r\n          (keyup)=\"handleSearch($event)\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select\r\n          fullWidth\r\n          placeholder=\"Buscar Por\"\r\n          shape=\"round\"\r\n          (selectedChange)=\"handleFilter($event)\"\r\n        >\r\n          <nb-option selected value=\"grades\">Calificaciones </nb-option>\r\n          <nb-option selected value=\"updatedAt\">Fecha</nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth #tabset>\r\n        <nb-tab tabTitle=\"Materias\" #tableTab>\r\n          <app-subject-table\r\n            [subjects]=\"subjects\"\r\n            mode=\"view\"\r\n            (reload)=\"handleReload()\"\r\n          ></app-subject-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Crear Materia\">\r\n          <app-subject-create (back)=\"handleReload()\"></app-subject-create\r\n        ></nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nb-card>\r\n  <nb-card-header>\r\n    Materias\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda...\"\r\n          (keyup)=\"handleSearch($event)\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select\r\n          fullWidth\r\n          placeholder=\"Buscar Por\"\r\n          shape=\"round\"\r\n          (selectedChange)=\"handleFilter($event)\"\r\n        >\r\n          <nb-option value=\"name\" selected>Nombre</nb-option>\r\n          <nb-option value=\"folio\">Folio</nb-option>\r\n          <nb-option value=\"grades\">Califiaciones</nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth #tabset>\r\n        <nb-tab tabTitle=\"Materias\" #tableTab>\r\n          <app-subject-table\r\n            [subjects]=\"subjects\"\r\n            mode=\"view\"\r\n            (reload)=\"handleReload()\"\r\n          ></app-subject-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Crear Materia\">\r\n          <app-subject-create (back)=\"handleReload()\"></app-subject-create\r\n        ></nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n");
 
 /***/ }),
 
@@ -2431,7 +2431,7 @@ __webpack_require__.r(__webpack_exports__);
 let AcademicsComponent = class AcademicsComponent {
     constructor(academicsService) {
         this.academicsService = academicsService;
-        this.order = "";
+        this.filter = "name";
         this.stockAcademics = [];
         this.academics = [];
         setTimeout(() => {
@@ -2442,15 +2442,26 @@ let AcademicsComponent = class AcademicsComponent {
         }, 300);
     }
     handleFilter(e) {
-        this.order = e;
-        this.academics = lodash__WEBPACK_IMPORTED_MODULE_3__["orderBy"](this.academics, this.order, "desc");
+        this.filter = e;
     }
     handleSearch(e) {
         let name = e.target.value;
+        let a;
+        let b = new RegExp(name.toLowerCase());
         this.academics = lodash__WEBPACK_IMPORTED_MODULE_3__["filter"](this.stockAcademics, obj => {
-            let a = obj.name.toLowerCase();
-            let b = new RegExp(name.toLowerCase());
-            return a.search(b) >= 0;
+            switch (this.filter) {
+                case "name":
+                    a = obj.name.toLowerCase();
+                    a = a.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                    break;
+                case "folio":
+                    a = obj.folio ? obj.folio.toLowerCase() : null;
+                    break;
+                case "subjects":
+                    a = obj.subjects ? obj.subjects.length.toString() : null;
+                    break;
+            }
+            return a ? a.search(b) >= 0 : null;
         });
     }
     handleReload() {
@@ -2495,7 +2506,7 @@ AcademicsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".auth {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n  height: calc(100vh - 76px);\n}\n.auth nb-card {\n  background: #ffffffd8;\n  -webkit-backdrop-filter: blur(10px);\n          backdrop-filter: blur(10px);\n}\n.background {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  height: calc(100vh - 76px);\n  -webkit-transition: -webkit-filter 0.3s ease-in-out;\n  transition: -webkit-filter 0.3s ease-in-out;\n  transition: filter 0.3s ease-in-out;\n  transition: filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;\n}\n.background.airport {\n  background: url(/assets/login/0.jpeg) 0 -200px/cover;\n}\n.background.plane {\n  background: url(/assets/login/1.jpeg) top/cover;\n}\n.background.city {\n  background: url(/assets/login/2.jpeg) 0 -300px/cover;\n}\n.background.forest {\n  background: url(/assets/login/3.jpeg) center/cover;\n}\n.background.snow {\n  background: url(/assets/login/4.jpeg) center/cover;\n}\n.background.blurred {\n  -webkit-filter: blur(50px);\n          filter: blur(50px);\n}\n.wrapper {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  height: calc(100vh - 76px);\n  overflow: hidden;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYXV0aC9DOlxcVXNlcnNcXE1pZ3VlbCBSb21lcm9cXERvY3VtZW50c1xcZGVsdGEtYW5ndWxhci9zcmNcXGFwcFxccGFnZXNcXGF1dGhcXGF1dGguY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2F1dGgvYXV0aC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxNQUFBO0VBQ0EsU0FBQTtFQUNBLG9CQUFBO0VBQUEsYUFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7RUFDQSx3QkFBQTtVQUFBLHVCQUFBO0VBQ0EsMEJBQUE7QUNDRjtBRENFO0VBQ0UscUJBQUE7RUFDQSxtQ0FBQTtVQUFBLDJCQUFBO0FDQ0o7QURHQTtFQWlCRSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsTUFBQTtFQUNBLFNBQUE7RUFFQSwwQkFBQTtFQUNBLG1EQUFBO0VBQUEsMkNBQUE7RUFBQSxtQ0FBQTtFQUFBLG9FQUFBO0FDakJGO0FETkU7RUFDRSxvREFBQTtBQ1FKO0FETkU7RUFDRSwrQ0FBQTtBQ1FKO0FETkU7RUFDRSxvREFBQTtBQ1FKO0FETkU7RUFDRSxrREFBQTtBQ1FKO0FETkU7RUFDRSxrREFBQTtBQ1FKO0FESUU7RUFDRSwwQkFBQTtVQUFBLGtCQUFBO0FDRko7QURNQTtFQUNFLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxNQUFBO0VBQ0EsU0FBQTtFQUNBLDBCQUFBO0VBQ0EsZ0JBQUE7QUNIRiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2F1dGgvYXV0aC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hdXRoIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgbGVmdDogMDtcclxuICByaWdodDogMDtcclxuICB0b3A6IDA7XHJcbiAgYm90dG9tOiAwO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBoZWlnaHQ6IGNhbGMoMTAwdmggLSA3NnB4KTtcclxuXHJcbiAgbmItY2FyZCB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZmZmZmZmZDg7XHJcbiAgICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoMTBweCk7XHJcbiAgfVxyXG59XHJcblxyXG4uYmFja2dyb3VuZCB7XHJcbiAgJi5haXJwb3J0IHtcclxuICAgIGJhY2tncm91bmQ6IHVybCgvYXNzZXRzL2xvZ2luLzAuanBlZykgMCAtMjAwcHggLyBjb3ZlcjtcclxuICB9XHJcbiAgJi5wbGFuZSB7XHJcbiAgICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8xLmpwZWcpIHRvcCAvIGNvdmVyOyAvL3BsYW5lXHJcbiAgfVxyXG4gICYuY2l0eSB7XHJcbiAgICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8yLmpwZWcpIDAgLTMwMHB4IC8gY292ZXI7IC8vY2l0eVxyXG4gIH1cclxuICAmLmZvcmVzdCB7XHJcbiAgICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8zLmpwZWcpIGNlbnRlciAvIGNvdmVyOyAvLyBmb3Jlc3RcclxuICB9XHJcbiAgJi5zbm93IHtcclxuICAgIGJhY2tncm91bmQ6IHVybCgvYXNzZXRzL2xvZ2luLzQuanBlZykgY2VudGVyIC8gY292ZXI7IC8vIHNub3dcclxuICB9XHJcblxyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIHRvcDogMDtcclxuICBib3R0b206IDA7XHJcbiAgLy8gdHJhbnNmb3JtOiBzY2FsZSgxLjEpO1xyXG4gIGhlaWdodDogY2FsYygxMDB2aCAtIDc2cHgpO1xyXG4gIHRyYW5zaXRpb246IGZpbHRlciAwLjNzIGVhc2UtaW4tb3V0O1xyXG5cclxuICAmLmJsdXJyZWQge1xyXG4gICAgZmlsdGVyOiBibHVyKDUwcHgpO1xyXG4gIH1cclxufVxyXG5cclxuLndyYXBwZXIge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIHRvcDogMDtcclxuICBib3R0b206IDA7XHJcbiAgaGVpZ2h0OiBjYWxjKDEwMHZoIC0gNzZweCk7XHJcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcclxufVxyXG4iLCIuYXV0aCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIHRvcDogMDtcbiAgYm90dG9tOiAwO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgaGVpZ2h0OiBjYWxjKDEwMHZoIC0gNzZweCk7XG59XG4uYXV0aCBuYi1jYXJkIHtcbiAgYmFja2dyb3VuZDogI2ZmZmZmZmQ4O1xuICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoMTBweCk7XG59XG5cbi5iYWNrZ3JvdW5kIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBsZWZ0OiAwO1xuICByaWdodDogMDtcbiAgdG9wOiAwO1xuICBib3R0b206IDA7XG4gIGhlaWdodDogY2FsYygxMDB2aCAtIDc2cHgpO1xuICB0cmFuc2l0aW9uOiBmaWx0ZXIgMC4zcyBlYXNlLWluLW91dDtcbn1cbi5iYWNrZ3JvdW5kLmFpcnBvcnQge1xuICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8wLmpwZWcpIDAgLTIwMHB4L2NvdmVyO1xufVxuLmJhY2tncm91bmQucGxhbmUge1xuICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8xLmpwZWcpIHRvcC9jb3Zlcjtcbn1cbi5iYWNrZ3JvdW5kLmNpdHkge1xuICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8yLmpwZWcpIDAgLTMwMHB4L2NvdmVyO1xufVxuLmJhY2tncm91bmQuZm9yZXN0IHtcbiAgYmFja2dyb3VuZDogdXJsKC9hc3NldHMvbG9naW4vMy5qcGVnKSBjZW50ZXIvY292ZXI7XG59XG4uYmFja2dyb3VuZC5zbm93IHtcbiAgYmFja2dyb3VuZDogdXJsKC9hc3NldHMvbG9naW4vNC5qcGVnKSBjZW50ZXIvY292ZXI7XG59XG4uYmFja2dyb3VuZC5ibHVycmVkIHtcbiAgZmlsdGVyOiBibHVyKDUwcHgpO1xufVxuXG4ud3JhcHBlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIHRvcDogMDtcbiAgYm90dG9tOiAwO1xuICBoZWlnaHQ6IGNhbGMoMTAwdmggLSA3NnB4KTtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".auth {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n  height: calc(100vh - 76px);\n}\n.auth nb-card {\n  background: #ffffffd8;\n  -webkit-backdrop-filter: blur(10px);\n          backdrop-filter: blur(10px);\n}\n.background {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  height: calc(100vh - 76px);\n  -webkit-transition: -webkit-filter 0.3s ease-in-out;\n  transition: -webkit-filter 0.3s ease-in-out;\n  transition: filter 0.3s ease-in-out;\n  transition: filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;\n}\n.background.airport {\n  background: url(/assets/login/0.jpeg) 0 -200px/cover;\n}\n.background.plane {\n  background: url(/assets/login/1.jpeg) top/cover;\n}\n.background.city {\n  background: url(/assets/login/2.jpeg) 0 -300px/cover;\n}\n.background.forest {\n  background: url(/assets/login/3.jpeg) center/cover;\n}\n.background.snow {\n  background: url(/assets/login/4.jpeg) center/cover;\n}\n.background.blurred {\n  -webkit-filter: blur(50px);\n          filter: blur(50px);\n}\n.wrapper {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  height: calc(100vh - 76px);\n  overflow: hidden;\n}\n.versioning-wrapper {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  padding-left: 10px;\n}\n.versioning-wrapper p {\n  margin: 0;\n  font-size: 10px;\n  background: #ffffff30;\n  padding: 0px 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYXV0aC9DOlxcVXNlcnNcXE1pZ3VlbCBSb21lcm9cXERvY3VtZW50c1xcZGVsdGEtYW5ndWxhci9zcmNcXGFwcFxccGFnZXNcXGF1dGhcXGF1dGguY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2F1dGgvYXV0aC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxNQUFBO0VBQ0EsU0FBQTtFQUNBLG9CQUFBO0VBQUEsYUFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7RUFDQSx3QkFBQTtVQUFBLHVCQUFBO0VBQ0EsMEJBQUE7QUNDRjtBRENFO0VBQ0UscUJBQUE7RUFDQSxtQ0FBQTtVQUFBLDJCQUFBO0FDQ0o7QURHQTtFQWlCRSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsTUFBQTtFQUNBLFNBQUE7RUFFQSwwQkFBQTtFQUNBLG1EQUFBO0VBQUEsMkNBQUE7RUFBQSxtQ0FBQTtFQUFBLG9FQUFBO0FDakJGO0FETkU7RUFDRSxvREFBQTtBQ1FKO0FETkU7RUFDRSwrQ0FBQTtBQ1FKO0FETkU7RUFDRSxvREFBQTtBQ1FKO0FETkU7RUFDRSxrREFBQTtBQ1FKO0FETkU7RUFDRSxrREFBQTtBQ1FKO0FESUU7RUFDRSwwQkFBQTtVQUFBLGtCQUFBO0FDRko7QURNQTtFQUNFLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxNQUFBO0VBQ0EsU0FBQTtFQUNBLDBCQUFBO0VBQ0EsZ0JBQUE7QUNIRjtBRE1BO0VBQ0Usa0JBQUE7RUFDQSxTQUFBO0VBQ0EsUUFBQTtFQUNBLGtCQUFBO0FDSEY7QURJRTtFQUNFLFNBQUE7RUFDQSxlQUFBO0VBQ0EscUJBQUE7RUFDQSxpQkFBQTtBQ0ZKIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvYXV0aC9hdXRoLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmF1dGgge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIHRvcDogMDtcclxuICBib3R0b206IDA7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGhlaWdodDogY2FsYygxMDB2aCAtIDc2cHgpO1xyXG5cclxuICBuYi1jYXJkIHtcclxuICAgIGJhY2tncm91bmQ6ICNmZmZmZmZkODtcclxuICAgIGJhY2tkcm9wLWZpbHRlcjogYmx1cigxMHB4KTtcclxuICB9XHJcbn1cclxuXHJcbi5iYWNrZ3JvdW5kIHtcclxuICAmLmFpcnBvcnQge1xyXG4gICAgYmFja2dyb3VuZDogdXJsKC9hc3NldHMvbG9naW4vMC5qcGVnKSAwIC0yMDBweCAvIGNvdmVyO1xyXG4gIH1cclxuICAmLnBsYW5lIHtcclxuICAgIGJhY2tncm91bmQ6IHVybCgvYXNzZXRzL2xvZ2luLzEuanBlZykgdG9wIC8gY292ZXI7IC8vcGxhbmVcclxuICB9XHJcbiAgJi5jaXR5IHtcclxuICAgIGJhY2tncm91bmQ6IHVybCgvYXNzZXRzL2xvZ2luLzIuanBlZykgMCAtMzAwcHggLyBjb3ZlcjsgLy9jaXR5XHJcbiAgfVxyXG4gICYuZm9yZXN0IHtcclxuICAgIGJhY2tncm91bmQ6IHVybCgvYXNzZXRzL2xvZ2luLzMuanBlZykgY2VudGVyIC8gY292ZXI7IC8vIGZvcmVzdFxyXG4gIH1cclxuICAmLnNub3cge1xyXG4gICAgYmFja2dyb3VuZDogdXJsKC9hc3NldHMvbG9naW4vNC5qcGVnKSBjZW50ZXIgLyBjb3ZlcjsgLy8gc25vd1xyXG4gIH1cclxuXHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGxlZnQ6IDA7XHJcbiAgcmlnaHQ6IDA7XHJcbiAgdG9wOiAwO1xyXG4gIGJvdHRvbTogMDtcclxuICAvLyB0cmFuc2Zvcm06IHNjYWxlKDEuMSk7XHJcbiAgaGVpZ2h0OiBjYWxjKDEwMHZoIC0gNzZweCk7XHJcbiAgdHJhbnNpdGlvbjogZmlsdGVyIDAuM3MgZWFzZS1pbi1vdXQ7XHJcblxyXG4gICYuYmx1cnJlZCB7XHJcbiAgICBmaWx0ZXI6IGJsdXIoNTBweCk7XHJcbiAgfVxyXG59XHJcblxyXG4ud3JhcHBlciB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGxlZnQ6IDA7XHJcbiAgcmlnaHQ6IDA7XHJcbiAgdG9wOiAwO1xyXG4gIGJvdHRvbTogMDtcclxuICBoZWlnaHQ6IGNhbGMoMTAwdmggLSA3NnB4KTtcclxuICBvdmVyZmxvdzogaGlkZGVuO1xyXG59XHJcblxyXG4udmVyc2lvbmluZy13cmFwcGVyIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgYm90dG9tOiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIHBhZGRpbmctbGVmdDogMTBweDtcclxuICBwIHtcclxuICAgIG1hcmdpbjogMDtcclxuICAgIGZvbnQtc2l6ZTogMTBweDtcclxuICAgIGJhY2tncm91bmQ6ICNmZmZmZmYzMDtcclxuICAgIHBhZGRpbmc6IDBweCAxMHB4O1xyXG4gIH1cclxufVxyXG4iLCIuYXV0aCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIHRvcDogMDtcbiAgYm90dG9tOiAwO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgaGVpZ2h0OiBjYWxjKDEwMHZoIC0gNzZweCk7XG59XG4uYXV0aCBuYi1jYXJkIHtcbiAgYmFja2dyb3VuZDogI2ZmZmZmZmQ4O1xuICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoMTBweCk7XG59XG5cbi5iYWNrZ3JvdW5kIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBsZWZ0OiAwO1xuICByaWdodDogMDtcbiAgdG9wOiAwO1xuICBib3R0b206IDA7XG4gIGhlaWdodDogY2FsYygxMDB2aCAtIDc2cHgpO1xuICB0cmFuc2l0aW9uOiBmaWx0ZXIgMC4zcyBlYXNlLWluLW91dDtcbn1cbi5iYWNrZ3JvdW5kLmFpcnBvcnQge1xuICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8wLmpwZWcpIDAgLTIwMHB4L2NvdmVyO1xufVxuLmJhY2tncm91bmQucGxhbmUge1xuICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8xLmpwZWcpIHRvcC9jb3Zlcjtcbn1cbi5iYWNrZ3JvdW5kLmNpdHkge1xuICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8yLmpwZWcpIDAgLTMwMHB4L2NvdmVyO1xufVxuLmJhY2tncm91bmQuZm9yZXN0IHtcbiAgYmFja2dyb3VuZDogdXJsKC9hc3NldHMvbG9naW4vMy5qcGVnKSBjZW50ZXIvY292ZXI7XG59XG4uYmFja2dyb3VuZC5zbm93IHtcbiAgYmFja2dyb3VuZDogdXJsKC9hc3NldHMvbG9naW4vNC5qcGVnKSBjZW50ZXIvY292ZXI7XG59XG4uYmFja2dyb3VuZC5ibHVycmVkIHtcbiAgZmlsdGVyOiBibHVyKDUwcHgpO1xufVxuXG4ud3JhcHBlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIHRvcDogMDtcbiAgYm90dG9tOiAwO1xuICBoZWlnaHQ6IGNhbGMoMTAwdmggLSA3NnB4KTtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuLnZlcnNpb25pbmctd3JhcHBlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgYm90dG9tOiAwO1xuICByaWdodDogMDtcbiAgcGFkZGluZy1sZWZ0OiAxMHB4O1xufVxuLnZlcnNpb25pbmctd3JhcHBlciBwIHtcbiAgbWFyZ2luOiAwO1xuICBmb250LXNpemU6IDEwcHg7XG4gIGJhY2tncm91bmQ6ICNmZmZmZmYzMDtcbiAgcGFkZGluZzogMHB4IDEwcHg7XG59Il19 */");
 
 /***/ }),
 
@@ -3907,33 +3918,43 @@ __webpack_require__.r(__webpack_exports__);
 let GroupsComponent = class GroupsComponent {
     constructor(groupService) {
         this.groupService = groupService;
-        this.order = "";
-        this.stcokGroups = [];
+        this.order = "size";
+        this.stockGroups = [];
         this.groups = [];
         setTimeout(() => {
             this.groupService.findAll().subscribe((response) => {
-                this.stcokGroups = response.data;
-                this.groups = this.stcokGroups;
+                this.stockGroups = response.data;
+                this.groups = this.stockGroups;
             });
         }, 300);
     }
     handleFilter(e) {
         this.order = e;
-        this.groups = lodash__WEBPACK_IMPORTED_MODULE_3__["orderBy"](this.groups, this.order, "desc");
+        switch (this.order) {
+            case "size":
+                this.groups = lodash__WEBPACK_IMPORTED_MODULE_3__["orderBy"](this.groups, function (o) {
+                    return o.members.length;
+                }, ["desc"]);
+                break;
+            case "name":
+                this.groups = lodash__WEBPACK_IMPORTED_MODULE_3__["orderBy"](this.groups, "name", ["asc"]);
+                break;
+        }
     }
     handleSearch(e) {
         let name = e.target.value;
-        this.groups = lodash__WEBPACK_IMPORTED_MODULE_3__["filter"](this.stcokGroups, obj => {
+        this.groups = lodash__WEBPACK_IMPORTED_MODULE_3__["filter"](this.stockGroups, obj => {
             let a = obj.name.toLowerCase();
             let b = new RegExp(name.toLowerCase());
             return a.search(b) >= 0;
         });
+        this.handleFilter(this.order);
     }
     handleReload() {
         setTimeout(() => {
             this.groupService.findAll().subscribe((response) => {
-                this.stcokGroups = response.data;
-                this.groups = this.stcokGroups;
+                this.stockGroups = response.data;
+                this.groups = this.stockGroups;
             });
             this.tabset.selectTab(this.tableTab);
         }, 300);
@@ -4651,38 +4672,32 @@ let StudentEditComponent = class StudentEditComponent {
     }
     ngOnInit() {
         this.user = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
-            email: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].email]),
+            email: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].email]),
             username: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: "", disabled: true }),
             password: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
             name: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-            phone: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [
-                _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required,
-                _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(14)
-            ]),
-            dob: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            phone: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(14)]),
+            dob: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
             gender: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-            lastSchool: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            lastSchool: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
             emergency: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
-                phone: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required,
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(14)
-                ]),
-                name: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-                relation: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-                bloodType: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required])
+                phone: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(14)]),
+                name: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
+                relation: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
+                bloodType: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("")
             }),
             address: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
                 state: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-                municipality: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-                colony: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-                street: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-                zipCode: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required])
+                municipality: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
+                colony: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
+                street: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
+                zipCode: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("")
             }),
             schools: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: "", disabled: true }),
             program: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: "", disabled: true }),
             group: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({ value: "", disabled: true }),
-            enrolled: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-            enrollmentId: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required])
+            enrolled: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
+            enrollmentId: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("")
         });
         this.user.controls
             .address.controls.state.valueChanges.subscribe(value => {
@@ -5038,21 +5053,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _services_student_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/student.service */ "./src/app/services/student.service.ts");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
 let StudentsComponent = class StudentsComponent {
     constructor(studentService) {
         this.studentService = studentService;
+        this.filter = "name";
+        this.stockStudents = [];
+        this.stockGraduates = [];
         setTimeout(() => {
             studentService.findAll(false).subscribe((response) => {
-                this.students = response.data;
-                console.log(response.data);
+                this.stockStudents = response.data;
+                this.students = this.stockStudents;
             });
             studentService.findAll(true).subscribe((response) => {
-                this.graduates = response.data;
+                this.stockGraduates = response.data;
+                this.graduates = this.stockGraduates;
             });
-        }, 300);
+        }, 100);
+    }
+    handleFilter(e) {
+        this.filter = e;
+    }
+    handleSearch(e) {
+        let name = e.target.value;
+        let a;
+        let b = new RegExp(name.toLowerCase());
+        this.students = lodash__WEBPACK_IMPORTED_MODULE_3__["filter"](this.stockStudents, obj => {
+            switch (this.filter) {
+                case "name":
+                    a = obj.name.toLowerCase();
+                    a = a.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                    break;
+                case "group":
+                    a = obj.group ? obj.group.name.toLowerCase() : null;
+                    break;
+                case "enrollmentId":
+                    a = obj.enrollmentId ? obj.enrollmentId.toLowerCase() : null;
+                    break;
+                case "phone":
+                    a = obj.phone ? obj.phone.replace(/[() -]/g, "") : null;
+                    break;
+                case "payments":
+                    a = obj.payments ? obj.payments.length.toString() : null;
+                    break;
+            }
+            return a ? a.search(b) >= 0 : null;
+        });
     }
     ngOnInit() { }
 };
@@ -5597,7 +5648,7 @@ __webpack_require__.r(__webpack_exports__);
 let SubjectsComponent = class SubjectsComponent {
     constructor(subjectsService) {
         this.subjectsService = subjectsService;
-        this.order = "";
+        this.filter = "name";
         this.stockSubjects = [];
         this.subjects = [];
         setTimeout(() => {
@@ -5608,15 +5659,26 @@ let SubjectsComponent = class SubjectsComponent {
         }, 300);
     }
     handleFilter(e) {
-        this.order = e;
-        this.subjects = lodash__WEBPACK_IMPORTED_MODULE_3__["orderBy"](this.subjects, this.order, "desc");
+        this.filter = e;
     }
     handleSearch(e) {
         let name = e.target.value;
+        let a;
+        let b = new RegExp(name.toLowerCase());
         this.subjects = lodash__WEBPACK_IMPORTED_MODULE_3__["filter"](this.stockSubjects, obj => {
-            let a = obj.name.toLowerCase();
-            let b = new RegExp(name.toLowerCase());
-            return a.search(b) >= 0;
+            switch (this.filter) {
+                case "name":
+                    a = obj.name.toLowerCase();
+                    a = a.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                    break;
+                case "folio":
+                    a = obj.folio ? obj.folio.toLowerCase() : null;
+                    break;
+                case "grades":
+                    a = obj.grades ? obj.grades.length.toString() : null;
+                    break;
+            }
+            return a ? a.search(b) >= 0 : null;
         });
     }
     handleReload() {

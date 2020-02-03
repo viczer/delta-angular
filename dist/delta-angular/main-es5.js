@@ -563,7 +563,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<nb-card>\r\n  <nb-card-header>\r\n    Programas\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda...\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select fullWidth placeholder=\"Buscar Por\" shape=\"round\">\r\n          <nb-option value=\"folio\">Folio</nb-option>\r\n          <nb-option value=\"subjects\">Materias</nb-option>\r\n          <nb-option value=\"name\">Nombre</nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth #tabset>\r\n        <nb-tab tabTitle=\"Programas\" #tableTab>\r\n          <app-academic-table\r\n            [academics]=\"academics\"\r\n            (reload)=\"handleReload()\"\r\n          ></app-academic-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Crear Programa\">\r\n          <app-academic-create (back)=\"handleReload()\"></app-academic-create>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n";
+    __webpack_exports__["default"] = "<nb-card>\r\n  <nb-card-header>\r\n    Programas\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda...\"\r\n          (keyup)=\"handleSearch($event)\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select\r\n          fullWidth\r\n          placeholder=\"Buscar Por\"\r\n          shape=\"round\"\r\n          (selectedChange)=\"handleFilter($event)\"\r\n        >\r\n          <nb-option value=\"name\">Nombre</nb-option>\r\n          <nb-option value=\"folio\">Folio</nb-option>\r\n          <nb-option value=\"subjects\">Materias</nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth #tabset>\r\n        <nb-tab tabTitle=\"Programas\" #tableTab>\r\n          <app-academic-table\r\n            [academics]=\"academics\"\r\n            (reload)=\"handleReload()\"\r\n          ></app-academic-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Crear Programa\">\r\n          <app-academic-create (back)=\"handleReload()\"></app-academic-create>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n";
     /***/
   },
 
@@ -583,7 +583,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"wrapper\">\r\n  <div class=\"background\" #auth [ngClass]=\"{ blurred: isBlurred }\"></div>\r\n</div>\r\n<section class=\"auth\">\r\n  <nb-card (mouseenter)=\"toggleBlur()\" (mouseleave)=\"toggleBlur()\">\r\n    <nb-card-body>\r\n      <nb-tabset>\r\n        <nb-tab tabTitle=\"Iniciar Session\">\r\n          <app-login></app-login>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Activar Cuenta\">\r\n          <app-register></app-register>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </nb-card-body>\r\n  </nb-card>\r\n</section>\r\n";
+    __webpack_exports__["default"] = "<div class=\"wrapper\">\r\n  <div class=\"background\" #auth [ngClass]=\"{ blurred: isBlurred }\"></div>\r\n</div>\r\n<section class=\"auth\">\r\n  <nb-card (mouseenter)=\"toggleBlur()\" (mouseleave)=\"toggleBlur()\">\r\n    <nb-card-body>\r\n      <nb-tabset>\r\n        <nb-tab tabTitle=\"Iniciar Session\">\r\n          <app-login></app-login>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Activar Cuenta\">\r\n          <app-register></app-register>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </nb-card-body>\r\n  </nb-card>\r\n</section>\r\n<div class=\"versioning-wrapper\">\r\n  <p>Developed by Cuadrosoft | Version 1.0.1</p>\r\n</div>\r\n";
     /***/
   },
 
@@ -883,7 +883,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<nb-card>\r\n  <nb-card-header>\r\n    Grupos\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda por nombre...\"\r\n          (keyup)=\"handleSearch($event)\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select\r\n          fullWidth\r\n          placeholder=\"Ordenar Por\"\r\n          shape=\"round\"\r\n          (selectedChange)=\"handleFilter($event)\"\r\n        >\r\n          <nb-option selected value=\"members\">Tamaño </nb-option>\r\n          <nb-option selected value=\"updatedAt\">Fecha</nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth #tabset>\r\n        <nb-tab tabTitle=\"Grupos\" #tableTab>\r\n          <app-group-table\r\n            [groups]=\"groups\"\r\n            (tableChange)=\"handleReload()\"\r\n          ></app-group-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Crear Grupo\">\r\n          <app-group-create (back)=\"handleReload()\"></app-group-create>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n";
+    __webpack_exports__["default"] = "<nb-card>\r\n  <nb-card-header>\r\n    Grupos\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda por nombre...\"\r\n          (keyup)=\"handleSearch($event)\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select\r\n          fullWidth\r\n          placeholder=\"Ordenar Por\"\r\n          shape=\"round\"\r\n          (selectedChange)=\"handleFilter($event)\"\r\n        >\r\n          <nb-option selected value=\"size\">Tamaño </nb-option>\r\n          <nb-option selected value=\"name\">Nombre</nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth #tabset>\r\n        <nb-tab tabTitle=\"Grupos\" #tableTab>\r\n          <app-group-table\r\n            [groups]=\"groups\"\r\n            (tableChange)=\"handleReload()\"\r\n          ></app-group-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Crear Grupo\">\r\n          <app-group-create (back)=\"handleReload()\"></app-group-create>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n";
     /***/
   },
 
@@ -1023,7 +1023,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<nb-card>\r\n  <nb-card-header>\r\n    Alumnos\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda...\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select fullWidth placeholder=\"Buscar Por\" shape=\"round\">\r\n          <nb-option value=\"1\">Matricula </nb-option>\r\n          <nb-option value=\"2\">Grupo </nb-option>\r\n          <nb-option value=\"3\">Nombre </nb-option>\r\n          <nb-option value=\"3\">Teléfono </nb-option>\r\n          <nb-option value=\"3\">Pagos </nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth>\r\n        <nb-tab tabTitle=\"Alumnos\">\r\n          <app-students-table\r\n            [students]=\"students\"\r\n            mode=\"view\"\r\n          ></app-students-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Egresados\">\r\n          <app-students-table\r\n            [students]=\"graduates\"\r\n            mode=\"view\"\r\n          ></app-students-table>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n";
+    __webpack_exports__["default"] = "<nb-card>\r\n  <nb-card-header>\r\n    Alumnos\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          (keyup)=\"handleSearch($event)\"\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda...\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select\r\n          fullWidth\r\n          placeholder=\"Buscar Por\"\r\n          shape=\"round\"\r\n          (selectedChange)=\"handleFilter($event)\"\r\n        >\r\n          <nb-option value=\"name\" selected>Nombre </nb-option>\r\n          <nb-option value=\"enrollmentId\">Matricula </nb-option>\r\n          <nb-option value=\"group\">Grupo </nb-option>\r\n          <nb-option value=\"phone\">Teléfono </nb-option>\r\n          <nb-option value=\"payments\">Pagos </nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth>\r\n        <nb-tab tabTitle=\"Alumnos\">\r\n          <app-students-table\r\n            [students]=\"students\"\r\n            mode=\"view\"\r\n          ></app-students-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Egresados\">\r\n          <app-students-table\r\n            [students]=\"graduates\"\r\n            mode=\"view\"\r\n          ></app-students-table>\r\n        </nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n";
     /***/
   },
 
@@ -1083,7 +1083,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"subject-item\" [ngClass]=\"{ view: mode == 'view' }\">\r\n  <div>\r\n    <b> {{ subject.folio }}</b>\r\n  </div>\r\n  <div>\r\n    <nb-user [name]=\"subject.name\" [picture]=\"subject.avatarUrl\"></nb-user>\r\n  </div>\r\n  <div *ngIf=\"mode == 'view'\">{{ subject.grades.length }} calificaciones</div>\r\n  <nb-icon\r\n    *ngIf=\"!editEnabled && mode == 'view'\"\r\n    icon=\"edit-2-outline\"\r\n    status=\"basic\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"enableModsHandler(true)\"\r\n  ></nb-icon>\r\n  <nb-icon\r\n    *ngIf=\"editEnabled && mode == 'view'\"\r\n    icon=\"edit-2-outline\"\r\n    status=\"warning\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"navigate(subject._id, true)\"\r\n  ></nb-icon>\r\n  <nb-icon\r\n    *ngIf=\"!deleteEnabled && mode == 'view'\"\r\n    icon=\"trash-outline\"\r\n    status=\"basic\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"enableModsHandler(false)\"\r\n  ></nb-icon>\r\n  <nb-icon\r\n    *ngIf=\"deleteEnabled && mode == 'view'\"\r\n    icon=\"trash-outline\"\r\n    status=\"danger\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"deleteHandler(subject._id)\"\r\n  ></nb-icon>\r\n  <button\r\n    *ngIf=\"mode == 'view'\"\r\n    nbButton\r\n    shape=\"round\"\r\n    status=\"basic\"\r\n    size=\"small\"\r\n    (click)=\"navigate(subject._id)\"\r\n  >\r\n    Ver Mas\r\n  </button>\r\n  <button\r\n    *ngIf=\"mode == 'add'\"\r\n    (click)=\"addSubject(subject._id)\"\r\n    nbButton\r\n    shape=\"round\"\r\n    [status]=\"isAdded ? 'basic' : 'primary'\"\r\n    size=\"small\"\r\n    type=\"button\"\r\n  >\r\n    {{ !isAdded && !isAdding ? \"Agregar\" : \"\" }}\r\n    {{ !isAdded && isAdding ? \"Agregando\" : \"\" }}\r\n    {{ isAdded ? \"Agregada\" : \"\" }}\r\n  </button>\r\n  <button\r\n    *ngIf=\"mode == 'remove'\"\r\n    (click)=\"removeSubject(subject._id)\"\r\n    nbButton\r\n    shape=\"round\"\r\n    status=\"basic\"\r\n    size=\"small\"\r\n    type=\"button\"\r\n  >\r\n    {{ isRemoving ? \"Removiendo\" : \"\" }}\r\n    {{ !isRemoving ? \"Remover\" : \"\" }}\r\n  </button>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"subject-item\" [ngClass]=\"{ view: mode == 'view' }\">\r\n  <div>\r\n    <small>{{ subject.folio }}</small>\r\n  </div>\r\n  <div>\r\n    <nb-user [name]=\"subject.name\" [picture]=\"subject.avatarUrl\"></nb-user>\r\n  </div>\r\n  <div *ngIf=\"mode == 'view'\">{{ subject.grades.length }} calificaciones</div>\r\n  <nb-icon\r\n    *ngIf=\"!editEnabled && mode == 'view'\"\r\n    icon=\"edit-2-outline\"\r\n    status=\"basic\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"enableModsHandler(true)\"\r\n  ></nb-icon>\r\n  <nb-icon\r\n    *ngIf=\"editEnabled && mode == 'view'\"\r\n    icon=\"edit-2-outline\"\r\n    status=\"warning\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"navigate(subject._id, true)\"\r\n  ></nb-icon>\r\n  <nb-icon\r\n    *ngIf=\"!deleteEnabled && mode == 'view'\"\r\n    icon=\"trash-outline\"\r\n    status=\"basic\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"enableModsHandler(false)\"\r\n  ></nb-icon>\r\n  <nb-icon\r\n    *ngIf=\"deleteEnabled && mode == 'view'\"\r\n    icon=\"trash-outline\"\r\n    status=\"danger\"\r\n    [options]=\"{ animation: { type: 'pulse' } }\"\r\n    (click)=\"deleteHandler(subject._id)\"\r\n  ></nb-icon>\r\n  <button\r\n    *ngIf=\"mode == 'view'\"\r\n    nbButton\r\n    shape=\"round\"\r\n    status=\"basic\"\r\n    size=\"small\"\r\n    (click)=\"navigate(subject._id)\"\r\n  >\r\n    Ver Mas\r\n  </button>\r\n  <button\r\n    *ngIf=\"mode == 'add'\"\r\n    (click)=\"addSubject(subject._id)\"\r\n    nbButton\r\n    shape=\"round\"\r\n    [status]=\"isAdded ? 'basic' : 'primary'\"\r\n    size=\"small\"\r\n    type=\"button\"\r\n  >\r\n    {{ !isAdded && !isAdding ? \"Agregar\" : \"\" }}\r\n    {{ !isAdded && isAdding ? \"Agregando\" : \"\" }}\r\n    {{ isAdded ? \"Agregada\" : \"\" }}\r\n  </button>\r\n  <button\r\n    *ngIf=\"mode == 'remove'\"\r\n    (click)=\"removeSubject(subject._id)\"\r\n    nbButton\r\n    shape=\"round\"\r\n    status=\"basic\"\r\n    size=\"small\"\r\n    type=\"button\"\r\n  >\r\n    {{ isRemoving ? \"Removiendo\" : \"\" }}\r\n    {{ !isRemoving ? \"Remover\" : \"\" }}\r\n  </button>\r\n</div>\r\n";
     /***/
   },
 
@@ -1143,7 +1143,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<nb-card>\r\n  <nb-card-header>\r\n    Materias\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda...\"\r\n          (keyup)=\"handleSearch($event)\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select\r\n          fullWidth\r\n          placeholder=\"Buscar Por\"\r\n          shape=\"round\"\r\n          (selectedChange)=\"handleFilter($event)\"\r\n        >\r\n          <nb-option selected value=\"grades\">Calificaciones </nb-option>\r\n          <nb-option selected value=\"updatedAt\">Fecha</nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth #tabset>\r\n        <nb-tab tabTitle=\"Materias\" #tableTab>\r\n          <app-subject-table\r\n            [subjects]=\"subjects\"\r\n            mode=\"view\"\r\n            (reload)=\"handleReload()\"\r\n          ></app-subject-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Crear Materia\">\r\n          <app-subject-create (back)=\"handleReload()\"></app-subject-create\r\n        ></nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n";
+    __webpack_exports__["default"] = "<nb-card>\r\n  <nb-card-header>\r\n    Materias\r\n  </nb-card-header>\r\n  <nb-card-body>\r\n    <div class=\"row filter-bar\">\r\n      <div class=\"col-9\">\r\n        <input\r\n          type=\"text\"\r\n          nbInput\r\n          fullWidth\r\n          shape=\"round\"\r\n          placeholder=\"Busqueda...\"\r\n          (keyup)=\"handleSearch($event)\"\r\n        />\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <nb-select\r\n          fullWidth\r\n          placeholder=\"Buscar Por\"\r\n          shape=\"round\"\r\n          (selectedChange)=\"handleFilter($event)\"\r\n        >\r\n          <nb-option value=\"name\" selected>Nombre</nb-option>\r\n          <nb-option value=\"folio\">Folio</nb-option>\r\n          <nb-option value=\"grades\">Califiaciones</nb-option>\r\n        </nb-select>\r\n      </div>\r\n    </div>\r\n    <div class=\"wrapper\">\r\n      <nb-tabset fullWidth #tabset>\r\n        <nb-tab tabTitle=\"Materias\" #tableTab>\r\n          <app-subject-table\r\n            [subjects]=\"subjects\"\r\n            mode=\"view\"\r\n            (reload)=\"handleReload()\"\r\n          ></app-subject-table>\r\n        </nb-tab>\r\n        <nb-tab tabTitle=\"Crear Materia\">\r\n          <app-subject-create (back)=\"handleReload()\"></app-subject-create\r\n        ></nb-tab>\r\n      </nb-tabset>\r\n    </div>\r\n  </nb-card-body>\r\n</nb-card>\r\n";
     /***/
   },
 
@@ -3933,7 +3933,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, AcademicsComponent);
 
         this.academicsService = academicsService;
-        this.order = "";
+        this.filter = "name";
         this.stockAcademics = [];
         this.academics = [];
         setTimeout(function () {
@@ -3947,31 +3947,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AcademicsComponent, [{
         key: "handleFilter",
         value: function handleFilter(e) {
-          this.order = e;
-          this.academics = lodash__WEBPACK_IMPORTED_MODULE_3__["orderBy"](this.academics, this.order, "desc");
+          this.filter = e;
         }
       }, {
         key: "handleSearch",
         value: function handleSearch(e) {
+          var _this9 = this;
+
           var name = e.target.value;
+          var a;
+          var b = new RegExp(name.toLowerCase());
           this.academics = lodash__WEBPACK_IMPORTED_MODULE_3__["filter"](this.stockAcademics, function (obj) {
-            var a = obj.name.toLowerCase();
-            var b = new RegExp(name.toLowerCase());
-            return a.search(b) >= 0;
+            switch (_this9.filter) {
+              case "name":
+                a = obj.name.toLowerCase();
+                a = a.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                break;
+
+              case "folio":
+                a = obj.folio ? obj.folio.toLowerCase() : null;
+                break;
+
+              case "subjects":
+                a = obj.subjects ? obj.subjects.length.toString() : null;
+                break;
+            }
+
+            return a ? a.search(b) >= 0 : null;
           });
         }
       }, {
         key: "handleReload",
         value: function handleReload() {
-          var _this9 = this;
+          var _this10 = this;
 
           setTimeout(function () {
-            _this9.academicsService.findAll().subscribe(function (response) {
-              _this9.stockAcademics = response.data;
-              _this9.academics = _this9.stockAcademics;
+            _this10.academicsService.findAll().subscribe(function (response) {
+              _this10.stockAcademics = response.data;
+              _this10.academics = _this10.stockAcademics;
             });
 
-            _this9.tabset.selectTab(_this9.tableTab);
+            _this10.tabset.selectTab(_this10.tableTab);
           }, 300);
         }
       }, {
@@ -4025,7 +4041,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".auth {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n  height: calc(100vh - 76px);\n}\n.auth nb-card {\n  background: #ffffffd8;\n  -webkit-backdrop-filter: blur(10px);\n          backdrop-filter: blur(10px);\n}\n.background {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  height: calc(100vh - 76px);\n  -webkit-transition: -webkit-filter 0.3s ease-in-out;\n  transition: -webkit-filter 0.3s ease-in-out;\n  transition: filter 0.3s ease-in-out;\n  transition: filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;\n}\n.background.airport {\n  background: url(/assets/login/0.jpeg) 0 -200px/cover;\n}\n.background.plane {\n  background: url(/assets/login/1.jpeg) top/cover;\n}\n.background.city {\n  background: url(/assets/login/2.jpeg) 0 -300px/cover;\n}\n.background.forest {\n  background: url(/assets/login/3.jpeg) center/cover;\n}\n.background.snow {\n  background: url(/assets/login/4.jpeg) center/cover;\n}\n.background.blurred {\n  -webkit-filter: blur(50px);\n          filter: blur(50px);\n}\n.wrapper {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  height: calc(100vh - 76px);\n  overflow: hidden;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYXV0aC9DOlxcVXNlcnNcXE1pZ3VlbCBSb21lcm9cXERvY3VtZW50c1xcZGVsdGEtYW5ndWxhci9zcmNcXGFwcFxccGFnZXNcXGF1dGhcXGF1dGguY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2F1dGgvYXV0aC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxNQUFBO0VBQ0EsU0FBQTtFQUNBLG9CQUFBO0VBQUEsYUFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7RUFDQSx3QkFBQTtVQUFBLHVCQUFBO0VBQ0EsMEJBQUE7QUNDRjtBRENFO0VBQ0UscUJBQUE7RUFDQSxtQ0FBQTtVQUFBLDJCQUFBO0FDQ0o7QURHQTtFQWlCRSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsTUFBQTtFQUNBLFNBQUE7RUFFQSwwQkFBQTtFQUNBLG1EQUFBO0VBQUEsMkNBQUE7RUFBQSxtQ0FBQTtFQUFBLG9FQUFBO0FDakJGO0FETkU7RUFDRSxvREFBQTtBQ1FKO0FETkU7RUFDRSwrQ0FBQTtBQ1FKO0FETkU7RUFDRSxvREFBQTtBQ1FKO0FETkU7RUFDRSxrREFBQTtBQ1FKO0FETkU7RUFDRSxrREFBQTtBQ1FKO0FESUU7RUFDRSwwQkFBQTtVQUFBLGtCQUFBO0FDRko7QURNQTtFQUNFLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxNQUFBO0VBQ0EsU0FBQTtFQUNBLDBCQUFBO0VBQ0EsZ0JBQUE7QUNIRiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2F1dGgvYXV0aC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hdXRoIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgbGVmdDogMDtcclxuICByaWdodDogMDtcclxuICB0b3A6IDA7XHJcbiAgYm90dG9tOiAwO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBoZWlnaHQ6IGNhbGMoMTAwdmggLSA3NnB4KTtcclxuXHJcbiAgbmItY2FyZCB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZmZmZmZmZDg7XHJcbiAgICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoMTBweCk7XHJcbiAgfVxyXG59XHJcblxyXG4uYmFja2dyb3VuZCB7XHJcbiAgJi5haXJwb3J0IHtcclxuICAgIGJhY2tncm91bmQ6IHVybCgvYXNzZXRzL2xvZ2luLzAuanBlZykgMCAtMjAwcHggLyBjb3ZlcjtcclxuICB9XHJcbiAgJi5wbGFuZSB7XHJcbiAgICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8xLmpwZWcpIHRvcCAvIGNvdmVyOyAvL3BsYW5lXHJcbiAgfVxyXG4gICYuY2l0eSB7XHJcbiAgICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8yLmpwZWcpIDAgLTMwMHB4IC8gY292ZXI7IC8vY2l0eVxyXG4gIH1cclxuICAmLmZvcmVzdCB7XHJcbiAgICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8zLmpwZWcpIGNlbnRlciAvIGNvdmVyOyAvLyBmb3Jlc3RcclxuICB9XHJcbiAgJi5zbm93IHtcclxuICAgIGJhY2tncm91bmQ6IHVybCgvYXNzZXRzL2xvZ2luLzQuanBlZykgY2VudGVyIC8gY292ZXI7IC8vIHNub3dcclxuICB9XHJcblxyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIHRvcDogMDtcclxuICBib3R0b206IDA7XHJcbiAgLy8gdHJhbnNmb3JtOiBzY2FsZSgxLjEpO1xyXG4gIGhlaWdodDogY2FsYygxMDB2aCAtIDc2cHgpO1xyXG4gIHRyYW5zaXRpb246IGZpbHRlciAwLjNzIGVhc2UtaW4tb3V0O1xyXG5cclxuICAmLmJsdXJyZWQge1xyXG4gICAgZmlsdGVyOiBibHVyKDUwcHgpO1xyXG4gIH1cclxufVxyXG5cclxuLndyYXBwZXIge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIHRvcDogMDtcclxuICBib3R0b206IDA7XHJcbiAgaGVpZ2h0OiBjYWxjKDEwMHZoIC0gNzZweCk7XHJcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcclxufVxyXG4iLCIuYXV0aCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIHRvcDogMDtcbiAgYm90dG9tOiAwO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgaGVpZ2h0OiBjYWxjKDEwMHZoIC0gNzZweCk7XG59XG4uYXV0aCBuYi1jYXJkIHtcbiAgYmFja2dyb3VuZDogI2ZmZmZmZmQ4O1xuICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoMTBweCk7XG59XG5cbi5iYWNrZ3JvdW5kIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBsZWZ0OiAwO1xuICByaWdodDogMDtcbiAgdG9wOiAwO1xuICBib3R0b206IDA7XG4gIGhlaWdodDogY2FsYygxMDB2aCAtIDc2cHgpO1xuICB0cmFuc2l0aW9uOiBmaWx0ZXIgMC4zcyBlYXNlLWluLW91dDtcbn1cbi5iYWNrZ3JvdW5kLmFpcnBvcnQge1xuICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8wLmpwZWcpIDAgLTIwMHB4L2NvdmVyO1xufVxuLmJhY2tncm91bmQucGxhbmUge1xuICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8xLmpwZWcpIHRvcC9jb3Zlcjtcbn1cbi5iYWNrZ3JvdW5kLmNpdHkge1xuICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8yLmpwZWcpIDAgLTMwMHB4L2NvdmVyO1xufVxuLmJhY2tncm91bmQuZm9yZXN0IHtcbiAgYmFja2dyb3VuZDogdXJsKC9hc3NldHMvbG9naW4vMy5qcGVnKSBjZW50ZXIvY292ZXI7XG59XG4uYmFja2dyb3VuZC5zbm93IHtcbiAgYmFja2dyb3VuZDogdXJsKC9hc3NldHMvbG9naW4vNC5qcGVnKSBjZW50ZXIvY292ZXI7XG59XG4uYmFja2dyb3VuZC5ibHVycmVkIHtcbiAgZmlsdGVyOiBibHVyKDUwcHgpO1xufVxuXG4ud3JhcHBlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIHRvcDogMDtcbiAgYm90dG9tOiAwO1xuICBoZWlnaHQ6IGNhbGMoMTAwdmggLSA3NnB4KTtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn0iXX0= */";
+    __webpack_exports__["default"] = ".auth {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n  height: calc(100vh - 76px);\n}\n.auth nb-card {\n  background: #ffffffd8;\n  -webkit-backdrop-filter: blur(10px);\n          backdrop-filter: blur(10px);\n}\n.background {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  height: calc(100vh - 76px);\n  -webkit-transition: -webkit-filter 0.3s ease-in-out;\n  transition: -webkit-filter 0.3s ease-in-out;\n  transition: filter 0.3s ease-in-out;\n  transition: filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;\n}\n.background.airport {\n  background: url(/assets/login/0.jpeg) 0 -200px/cover;\n}\n.background.plane {\n  background: url(/assets/login/1.jpeg) top/cover;\n}\n.background.city {\n  background: url(/assets/login/2.jpeg) 0 -300px/cover;\n}\n.background.forest {\n  background: url(/assets/login/3.jpeg) center/cover;\n}\n.background.snow {\n  background: url(/assets/login/4.jpeg) center/cover;\n}\n.background.blurred {\n  -webkit-filter: blur(50px);\n          filter: blur(50px);\n}\n.wrapper {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  height: calc(100vh - 76px);\n  overflow: hidden;\n}\n.versioning-wrapper {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  padding-left: 10px;\n}\n.versioning-wrapper p {\n  margin: 0;\n  font-size: 10px;\n  background: #ffffff30;\n  padding: 0px 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYXV0aC9DOlxcVXNlcnNcXE1pZ3VlbCBSb21lcm9cXERvY3VtZW50c1xcZGVsdGEtYW5ndWxhci9zcmNcXGFwcFxccGFnZXNcXGF1dGhcXGF1dGguY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2F1dGgvYXV0aC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxNQUFBO0VBQ0EsU0FBQTtFQUNBLG9CQUFBO0VBQUEsYUFBQTtFQUNBLHlCQUFBO1VBQUEsbUJBQUE7RUFDQSx3QkFBQTtVQUFBLHVCQUFBO0VBQ0EsMEJBQUE7QUNDRjtBRENFO0VBQ0UscUJBQUE7RUFDQSxtQ0FBQTtVQUFBLDJCQUFBO0FDQ0o7QURHQTtFQWlCRSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsTUFBQTtFQUNBLFNBQUE7RUFFQSwwQkFBQTtFQUNBLG1EQUFBO0VBQUEsMkNBQUE7RUFBQSxtQ0FBQTtFQUFBLG9FQUFBO0FDakJGO0FETkU7RUFDRSxvREFBQTtBQ1FKO0FETkU7RUFDRSwrQ0FBQTtBQ1FKO0FETkU7RUFDRSxvREFBQTtBQ1FKO0FETkU7RUFDRSxrREFBQTtBQ1FKO0FETkU7RUFDRSxrREFBQTtBQ1FKO0FESUU7RUFDRSwwQkFBQTtVQUFBLGtCQUFBO0FDRko7QURNQTtFQUNFLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxNQUFBO0VBQ0EsU0FBQTtFQUNBLDBCQUFBO0VBQ0EsZ0JBQUE7QUNIRjtBRE1BO0VBQ0Usa0JBQUE7RUFDQSxTQUFBO0VBQ0EsUUFBQTtFQUNBLGtCQUFBO0FDSEY7QURJRTtFQUNFLFNBQUE7RUFDQSxlQUFBO0VBQ0EscUJBQUE7RUFDQSxpQkFBQTtBQ0ZKIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvYXV0aC9hdXRoLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmF1dGgge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIHRvcDogMDtcclxuICBib3R0b206IDA7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGhlaWdodDogY2FsYygxMDB2aCAtIDc2cHgpO1xyXG5cclxuICBuYi1jYXJkIHtcclxuICAgIGJhY2tncm91bmQ6ICNmZmZmZmZkODtcclxuICAgIGJhY2tkcm9wLWZpbHRlcjogYmx1cigxMHB4KTtcclxuICB9XHJcbn1cclxuXHJcbi5iYWNrZ3JvdW5kIHtcclxuICAmLmFpcnBvcnQge1xyXG4gICAgYmFja2dyb3VuZDogdXJsKC9hc3NldHMvbG9naW4vMC5qcGVnKSAwIC0yMDBweCAvIGNvdmVyO1xyXG4gIH1cclxuICAmLnBsYW5lIHtcclxuICAgIGJhY2tncm91bmQ6IHVybCgvYXNzZXRzL2xvZ2luLzEuanBlZykgdG9wIC8gY292ZXI7IC8vcGxhbmVcclxuICB9XHJcbiAgJi5jaXR5IHtcclxuICAgIGJhY2tncm91bmQ6IHVybCgvYXNzZXRzL2xvZ2luLzIuanBlZykgMCAtMzAwcHggLyBjb3ZlcjsgLy9jaXR5XHJcbiAgfVxyXG4gICYuZm9yZXN0IHtcclxuICAgIGJhY2tncm91bmQ6IHVybCgvYXNzZXRzL2xvZ2luLzMuanBlZykgY2VudGVyIC8gY292ZXI7IC8vIGZvcmVzdFxyXG4gIH1cclxuICAmLnNub3cge1xyXG4gICAgYmFja2dyb3VuZDogdXJsKC9hc3NldHMvbG9naW4vNC5qcGVnKSBjZW50ZXIgLyBjb3ZlcjsgLy8gc25vd1xyXG4gIH1cclxuXHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGxlZnQ6IDA7XHJcbiAgcmlnaHQ6IDA7XHJcbiAgdG9wOiAwO1xyXG4gIGJvdHRvbTogMDtcclxuICAvLyB0cmFuc2Zvcm06IHNjYWxlKDEuMSk7XHJcbiAgaGVpZ2h0OiBjYWxjKDEwMHZoIC0gNzZweCk7XHJcbiAgdHJhbnNpdGlvbjogZmlsdGVyIDAuM3MgZWFzZS1pbi1vdXQ7XHJcblxyXG4gICYuYmx1cnJlZCB7XHJcbiAgICBmaWx0ZXI6IGJsdXIoNTBweCk7XHJcbiAgfVxyXG59XHJcblxyXG4ud3JhcHBlciB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGxlZnQ6IDA7XHJcbiAgcmlnaHQ6IDA7XHJcbiAgdG9wOiAwO1xyXG4gIGJvdHRvbTogMDtcclxuICBoZWlnaHQ6IGNhbGMoMTAwdmggLSA3NnB4KTtcclxuICBvdmVyZmxvdzogaGlkZGVuO1xyXG59XHJcblxyXG4udmVyc2lvbmluZy13cmFwcGVyIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgYm90dG9tOiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIHBhZGRpbmctbGVmdDogMTBweDtcclxuICBwIHtcclxuICAgIG1hcmdpbjogMDtcclxuICAgIGZvbnQtc2l6ZTogMTBweDtcclxuICAgIGJhY2tncm91bmQ6ICNmZmZmZmYzMDtcclxuICAgIHBhZGRpbmc6IDBweCAxMHB4O1xyXG4gIH1cclxufVxyXG4iLCIuYXV0aCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIHRvcDogMDtcbiAgYm90dG9tOiAwO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgaGVpZ2h0OiBjYWxjKDEwMHZoIC0gNzZweCk7XG59XG4uYXV0aCBuYi1jYXJkIHtcbiAgYmFja2dyb3VuZDogI2ZmZmZmZmQ4O1xuICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoMTBweCk7XG59XG5cbi5iYWNrZ3JvdW5kIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBsZWZ0OiAwO1xuICByaWdodDogMDtcbiAgdG9wOiAwO1xuICBib3R0b206IDA7XG4gIGhlaWdodDogY2FsYygxMDB2aCAtIDc2cHgpO1xuICB0cmFuc2l0aW9uOiBmaWx0ZXIgMC4zcyBlYXNlLWluLW91dDtcbn1cbi5iYWNrZ3JvdW5kLmFpcnBvcnQge1xuICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8wLmpwZWcpIDAgLTIwMHB4L2NvdmVyO1xufVxuLmJhY2tncm91bmQucGxhbmUge1xuICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8xLmpwZWcpIHRvcC9jb3Zlcjtcbn1cbi5iYWNrZ3JvdW5kLmNpdHkge1xuICBiYWNrZ3JvdW5kOiB1cmwoL2Fzc2V0cy9sb2dpbi8yLmpwZWcpIDAgLTMwMHB4L2NvdmVyO1xufVxuLmJhY2tncm91bmQuZm9yZXN0IHtcbiAgYmFja2dyb3VuZDogdXJsKC9hc3NldHMvbG9naW4vMy5qcGVnKSBjZW50ZXIvY292ZXI7XG59XG4uYmFja2dyb3VuZC5zbm93IHtcbiAgYmFja2dyb3VuZDogdXJsKC9hc3NldHMvbG9naW4vNC5qcGVnKSBjZW50ZXIvY292ZXI7XG59XG4uYmFja2dyb3VuZC5ibHVycmVkIHtcbiAgZmlsdGVyOiBibHVyKDUwcHgpO1xufVxuXG4ud3JhcHBlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIHRvcDogMDtcbiAgYm90dG9tOiAwO1xuICBoZWlnaHQ6IGNhbGMoMTAwdmggLSA3NnB4KTtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuLnZlcnNpb25pbmctd3JhcHBlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgYm90dG9tOiAwO1xuICByaWdodDogMDtcbiAgcGFkZGluZy1sZWZ0OiAxMHB4O1xufVxuLnZlcnNpb25pbmctd3JhcHBlciBwIHtcbiAgbWFyZ2luOiAwO1xuICBmb250LXNpemU6IDEwcHg7XG4gIGJhY2tncm91bmQ6ICNmZmZmZmYzMDtcbiAgcGFkZGluZzogMHB4IDEwcHg7XG59Il19 */";
     /***/
   },
 
@@ -4249,12 +4265,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "login",
         value: function login() {
-          var _this10 = this;
+          var _this11 = this;
 
           if (this.user.valid) {
             this.authService.login(this.user.value.username, this.user.value.password).subscribe(function (response) {
               if (response.data && response.data.access_token) {
-                _this10.toastrService.show("Bienvenido a casa", "Hola ".concat(response.data.name), {
+                _this11.toastrService.show("Bienvenido a casa", "Hola ".concat(response.data.name), {
                   status: "success",
                   hasIcon: true,
                   destroyByClick: true,
@@ -4263,12 +4279,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                 localStorage.setItem("token", JSON.stringify(response.data.access_token));
 
-                _this10.router.navigate(["inicio"]);
+                _this11.router.navigate(["inicio"]);
 
-                _this10.authService.authenticated$.next(response.data);
+                _this11.authService.authenticated$.next(response.data);
               }
             }, function () {
-              _this10.toastrService.show("El usuario o la contraseña ingresados no son correctos", "Algo anda mal", {
+              _this11.toastrService.show("El usuario o la contraseña ingresados no son correctos", "Algo anda mal", {
                 status: "danger",
                 hasIcon: true,
                 destroyByClick: true,
@@ -4280,12 +4296,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleUsernameBlur",
         value: function handleUsernameBlur() {
-          var _this11 = this;
+          var _this12 = this;
 
           this.authService.checkUsername(this.user.value.username).subscribe(function (response) {
-            _this11.avatarUrl = response.data.avatarUrl;
+            _this12.avatarUrl = response.data.avatarUrl;
           }, function () {
-            _this11.avatarUrl = null;
+            _this12.avatarUrl = null;
           });
         }
       }]);
@@ -4401,7 +4417,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function RegisterComponent(authService, schoolService, toastrService) {
-        var _this12 = this;
+        var _this13 = this;
 
         _classCallCheck(this, RegisterComponent);
 
@@ -4409,14 +4425,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.schoolService = schoolService;
         this.toastrService = toastrService;
         this.schoolService.findAll().subscribe(function (response) {
-          _this12.schools = response.data;
+          _this13.schools = response.data;
         }, function (error) {});
       }
 
       _createClass(RegisterComponent, [{
         key: "handleRegister",
         value: function handleRegister() {
-          var _this13 = this;
+          var _this14 = this;
 
           if (this.auth.valid) {
             var requestUser = {
@@ -4431,17 +4447,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             console.log(requestUser);
             this.authService.login(this.auth.value.username, this.auth.value.password).subscribe(function (response) {
-              _this13.authService.signup(requestUser).subscribe(function (response) {
-                _this13.stepper.reset();
+              _this14.authService.signup(requestUser).subscribe(function (response) {
+                _this14.stepper.reset();
 
-                _this13.toastrService.show("Director Registado", "Director Registardo", {
+                _this14.toastrService.show("Director Registado", "Director Registardo", {
                   status: "primary",
                   hasIcon: true,
                   destroyByClick: true,
                   icon: "person-outline"
                 });
               }, function () {
-                _this13.toastrService.show("Registro Fallido", "El usuario ya existe", {
+                _this14.toastrService.show("Registro Fallido", "El usuario ya existe", {
                   status: "warning",
                   hasIcon: true,
                   destroyByClick: true,
@@ -4449,7 +4465,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 });
               });
             }, function () {
-              _this13.toastrService.show("Autorización Fallida", "No hay autorización", {
+              _this14.toastrService.show("Autorización Fallida", "No hay autorización", {
                 status: "danger",
                 hasIcon: true,
                 destroyByClick: true,
@@ -4582,14 +4598,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function FacebookComponent(facebookEnabledService) {
-        var _this14 = this;
+        var _this15 = this;
 
         _classCallCheck(this, FacebookComponent);
 
         this.facebookEnabledService = facebookEnabledService;
         this.posts = [];
         this.facebookEnabledService.getAllPosts().then(function (e) {
-          _this14.posts = e.data;
+          _this15.posts = e.data;
         });
       }
 
@@ -4726,7 +4742,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "saveFlight",
         value: function saveFlight() {
-          var _this15 = this;
+          var _this16 = this;
 
           console.log(this.informationForm.valid);
           console.log(this.descriptionForm.valid);
@@ -4741,14 +4757,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               description: this.descriptionForm.value.description
             };
             this.flightsService.createOne(flight).subscribe(function (response) {
-              _this15.toastrService.show("Exito al guardar el vuelo", "Vuelo Guardado", {
+              _this16.toastrService.show("Exito al guardar el vuelo", "Vuelo Guardado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "paper-plane-outline"
               });
 
-              _this15.back.emit();
+              _this16.back.emit();
             }, function (e) {
               console.log(e);
             });
@@ -4925,27 +4941,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleReload",
         value: function handleReload() {
-          var _this16 = this;
+          var _this17 = this;
 
           setTimeout(function () {
-            _this16.studentService.findAll().subscribe(function (response) {
-              _this16.students = response.data;
+            _this17.studentService.findAll().subscribe(function (response) {
+              _this17.students = response.data;
             });
 
-            _this16.flightsService.findAll().subscribe(function (response) {
-              _this16.flightRecruits = response.data[0].enlisted;
-              _this16.flightPilots = response.data[0].approved;
+            _this17.flightsService.findAll().subscribe(function (response) {
+              _this17.flightRecruits = response.data[0].enlisted;
+              _this17.flightPilots = response.data[0].approved;
             });
 
-            _this16.flightsService.findById(_this16.id).subscribe(function (response) {
-              _this16.flightInput = response.data;
+            _this17.flightsService.findById(_this17.id).subscribe(function (response) {
+              _this17.flightInput = response.data;
             });
           }, 300);
         }
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this17 = this;
+          var _this18 = this;
 
           this.flight = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
             name: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
@@ -4958,22 +4974,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             description: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required)
           });
           this.activatedRoute.params.subscribe(function (params) {
-            _this17.id = params["id"];
+            _this18.id = params["id"];
 
-            _this17.studentService.findAll().subscribe(function (response) {
-              _this17.students = response.data;
+            _this18.studentService.findAll().subscribe(function (response) {
+              _this18.students = response.data;
             });
 
-            _this17.flightsService.findAll().subscribe(function (response) {
-              _this17.flightRecruits = response.data[0].enlisted;
-              _this17.flightPilots = response.data[0].approved;
+            _this18.flightsService.findAll().subscribe(function (response) {
+              _this18.flightRecruits = response.data[0].enlisted;
+              _this18.flightPilots = response.data[0].approved;
             });
 
-            _this17.flightsService.findById(_this17.id).subscribe(function (response) {
+            _this18.flightsService.findById(_this18.id).subscribe(function (response) {
               response.data.startDate = new Date(response.data.startDate);
-              _this17.flightInput = response.data;
+              _this18.flightInput = response.data;
 
-              _this17.flight.patchValue(_this17.flightInput);
+              _this18.flight.patchValue(_this18.flightInput);
             });
           });
         }
@@ -5310,7 +5326,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function FlightComponent(activatedRoute, studentService, flightsService) {
-        var _this18 = this;
+        var _this19 = this;
 
         _classCallCheck(this, FlightComponent);
 
@@ -5322,19 +5338,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.flightPilots = [];
         this.students = [];
         this.activatedRoute.params.subscribe(function (params) {
-          _this18.id = params["id"];
+          _this19.id = params["id"];
 
-          _this18.studentService.findAll().subscribe(function (response) {
-            _this18.students = response.data;
+          _this19.studentService.findAll().subscribe(function (response) {
+            _this19.students = response.data;
           });
 
-          _this18.flightsService.findAll().subscribe(function (response) {
-            _this18.flightRecruits = response.data[0].enlisted;
-            _this18.flightPilots = response.data[0].approved;
+          _this19.flightsService.findAll().subscribe(function (response) {
+            _this19.flightRecruits = response.data[0].enlisted;
+            _this19.flightPilots = response.data[0].approved;
           });
 
-          _this18.flightsService.findById(_this18.id).subscribe(function (response) {
-            _this18.flight = response.data;
+          _this19.flightsService.findById(_this19.id).subscribe(function (response) {
+            _this19.flight = response.data;
           });
         });
       }
@@ -5342,20 +5358,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(FlightComponent, [{
         key: "handleReload",
         value: function handleReload() {
-          var _this19 = this;
+          var _this20 = this;
 
           setTimeout(function () {
-            _this19.studentService.findAll().subscribe(function (response) {
-              _this19.students = response.data;
+            _this20.studentService.findAll().subscribe(function (response) {
+              _this20.students = response.data;
             });
 
-            _this19.flightsService.findAll().subscribe(function (response) {
-              _this19.flightRecruits = response.data[0].enlisted;
-              _this19.flightPilots = response.data[0].approved;
+            _this20.flightsService.findAll().subscribe(function (response) {
+              _this20.flightRecruits = response.data[0].enlisted;
+              _this20.flightPilots = response.data[0].approved;
             });
 
-            _this19.flightsService.findById(_this19.id).subscribe(function (response) {
-              _this19.flight = response.data;
+            _this20.flightsService.findById(_this20.id).subscribe(function (response) {
+              _this20.flight = response.data;
             });
           }, 300);
         }
@@ -5460,7 +5476,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function FlightsComponent(FlightsService) {
-        var _this20 = this;
+        var _this21 = this;
 
         _classCallCheck(this, FlightsComponent);
 
@@ -5469,9 +5485,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.stockFlights = [];
         this.flights = [];
         setTimeout(function () {
-          _this20.FlightsService.findAll().subscribe(function (response) {
-            _this20.stockFlights = response.data;
-            _this20.flights = _this20.stockFlights;
+          _this21.FlightsService.findAll().subscribe(function (response) {
+            _this21.stockFlights = response.data;
+            _this21.flights = _this21.stockFlights;
           });
         }, 300);
       }
@@ -5495,15 +5511,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleReload",
         value: function handleReload() {
-          var _this21 = this;
+          var _this22 = this;
 
           setTimeout(function () {
-            _this21.FlightsService.findAll().subscribe(function (response) {
-              _this21.stockFlights = response.data;
-              _this21.flights = _this21.stockFlights;
+            _this22.FlightsService.findAll().subscribe(function (response) {
+              _this22.stockFlights = response.data;
+              _this22.flights = _this22.stockFlights;
             });
 
-            _this21.tabset.selectTab(_this21.tableTab);
+            _this22.tabset.selectTab(_this22.tableTab);
           }, 300);
         }
       }, {
@@ -5646,7 +5662,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "saveGroup",
         value: function saveGroup() {
-          var _this22 = this;
+          var _this23 = this;
 
           if (this.nameForm.valid && this.descriptionForm.valid) {
             var group = {
@@ -5654,20 +5670,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               description: this.descriptionForm.value.description
             };
             this.groupService.createOne(group).subscribe(function (response) {
-              if (_this22.upload.uploaded) {
+              if (_this23.upload.uploaded) {
                 var groupId = response.data._id;
 
-                _this22.uploadService.uploadImage(_this22.upload.file, "group", groupId).subscribe();
+                _this23.uploadService.uploadImage(_this23.upload.file, "group", groupId).subscribe();
               }
 
-              _this22.toastrService.show("Exito al guardar grupo", "Grupo Guardado", {
+              _this23.toastrService.show("Exito al guardar grupo", "Grupo Guardado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "people-outline"
               });
 
-              _this22.back.emit();
+              _this23.back.emit();
             });
           }
         }
@@ -5832,49 +5848,49 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleUpdateMetadata",
         value: function handleUpdateMetadata() {
-          var _this23 = this;
+          var _this24 = this;
 
           if (this.group.valid) {
             this.groupService.updateOne(this.id, this.group.value).subscribe(function (response) {
-              if (_this23.upload.uploaded) {
+              if (_this24.upload.uploaded) {
                 var groupId = response.data._id;
 
-                _this23.uploadService.uploadImage(_this23.upload.file, "group", groupId).subscribe();
+                _this24.uploadService.uploadImage(_this24.upload.file, "group", groupId).subscribe();
               }
 
-              _this23.toastrService.show("Exito al guardar grupo", "Grupo Actualizado", {
+              _this24.toastrService.show("Exito al guardar grupo", "Grupo Actualizado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "people-outline"
               });
 
-              _this23.router.navigate(["grupos"]);
+              _this24.router.navigate(["grupos"]);
             });
           }
         }
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this24 = this;
+          var _this25 = this;
 
           this.group = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
             name: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
             description: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required)
           });
           this.activatedRoute.params.subscribe(function (params) {
-            _this24.id = params["id"];
+            _this25.id = params["id"];
 
-            _this24.studentService.findAllInGroup(_this24.id).subscribe(function (response) {
-              _this24.members = response.data;
+            _this25.studentService.findAllInGroup(_this25.id).subscribe(function (response) {
+              _this25.members = response.data;
             });
 
-            _this24.studentService.findAll().subscribe(function (response) {
-              _this24.students = response.data;
+            _this25.studentService.findAll().subscribe(function (response) {
+              _this25.students = response.data;
             });
 
-            _this24.groupService.findById(_this24.id).subscribe(function (response) {
-              _this24.group.patchValue(response.data);
+            _this25.groupService.findById(_this25.id).subscribe(function (response) {
+              _this25.group.patchValue(response.data);
             });
           });
         }
@@ -6014,10 +6030,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteHandler",
         value: function deleteHandler(id) {
-          var _this25 = this;
+          var _this26 = this;
 
           this.groupService.deleteOne(id).subscribe(function (response) {
-            _this25.toastrService.show("Exito al eliminar grupo", "Grupo Eliminado", {
+            _this26.toastrService.show("Exito al eliminar grupo", "Grupo Eliminado", {
               status: "primary",
               hasIcon: true,
               destroyByClick: true,
@@ -6218,7 +6234,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GroupComponent(activatedRoute, groupService, studentService) {
-        var _this26 = this;
+        var _this27 = this;
 
         _classCallCheck(this, GroupComponent);
 
@@ -6226,18 +6242,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.groupService = groupService;
         this.studentService = studentService;
         this.activatedRoute.params.subscribe(function (params) {
-          _this26.id = params["id"];
+          _this27.id = params["id"];
 
-          _this26.groupService.findById(_this26.id).subscribe(function (response) {
-            _this26.group = response.data;
+          _this27.groupService.findById(_this27.id).subscribe(function (response) {
+            _this27.group = response.data;
           });
 
-          _this26.studentService.findAll().subscribe(function (response) {
-            _this26.students = response.data;
+          _this27.studentService.findAll().subscribe(function (response) {
+            _this27.students = response.data;
           });
 
-          _this26.studentService.findAllInGroup(_this26.id).subscribe(function (response) {
-            _this26.members = response.data;
+          _this27.studentService.findAllInGroup(_this27.id).subscribe(function (response) {
+            _this27.members = response.data;
           });
         });
       }
@@ -6346,18 +6362,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GroupsComponent(groupService) {
-        var _this27 = this;
+        var _this28 = this;
 
         _classCallCheck(this, GroupsComponent);
 
         this.groupService = groupService;
-        this.order = "";
-        this.stcokGroups = [];
+        this.order = "size";
+        this.stockGroups = [];
         this.groups = [];
         setTimeout(function () {
-          _this27.groupService.findAll().subscribe(function (response) {
-            _this27.stcokGroups = response.data;
-            _this27.groups = _this27.stcokGroups;
+          _this28.groupService.findAll().subscribe(function (response) {
+            _this28.stockGroups = response.data;
+            _this28.groups = _this28.stockGroups;
           });
         }, 300);
       }
@@ -6366,30 +6382,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "handleFilter",
         value: function handleFilter(e) {
           this.order = e;
-          this.groups = lodash__WEBPACK_IMPORTED_MODULE_3__["orderBy"](this.groups, this.order, "desc");
+
+          switch (this.order) {
+            case "size":
+              this.groups = lodash__WEBPACK_IMPORTED_MODULE_3__["orderBy"](this.groups, function (o) {
+                return o.members.length;
+              }, ["desc"]);
+              break;
+
+            case "name":
+              this.groups = lodash__WEBPACK_IMPORTED_MODULE_3__["orderBy"](this.groups, "name", ["asc"]);
+              break;
+          }
         }
       }, {
         key: "handleSearch",
         value: function handleSearch(e) {
           var name = e.target.value;
-          this.groups = lodash__WEBPACK_IMPORTED_MODULE_3__["filter"](this.stcokGroups, function (obj) {
+          this.groups = lodash__WEBPACK_IMPORTED_MODULE_3__["filter"](this.stockGroups, function (obj) {
             var a = obj.name.toLowerCase();
             var b = new RegExp(name.toLowerCase());
             return a.search(b) >= 0;
           });
+          this.handleFilter(this.order);
         }
       }, {
         key: "handleReload",
         value: function handleReload() {
-          var _this28 = this;
+          var _this29 = this;
 
           setTimeout(function () {
-            _this28.groupService.findAll().subscribe(function (response) {
-              _this28.stcokGroups = response.data;
-              _this28.groups = _this28.stcokGroups;
+            _this29.groupService.findAll().subscribe(function (response) {
+              _this29.stockGroups = response.data;
+              _this29.groups = _this29.stockGroups;
             });
 
-            _this28.tabset.selectTab(_this28.tableTab);
+            _this29.tabset.selectTab(_this29.tableTab);
           }, 300);
         }
       }, {
@@ -6525,7 +6553,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function HomeComponent(schoolService, studentService, groupService) {
-        var _this29 = this;
+        var _this30 = this;
 
         _classCallCheck(this, HomeComponent);
 
@@ -6534,7 +6562,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.groupService = groupService;
         this.school = {};
         this.schoolService.findOne().subscribe(function (response) {
-          _this29.school = response.data;
+          _this30.school = response.data;
         });
       }
 
@@ -6556,7 +6584,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ngAfterViewInit",
         value: function ngAfterViewInit() {
-          var _this30 = this;
+          var _this31 = this;
 
           this.studentService.findAll().subscribe(function (response) {
             var gendersGroup = lodash__WEBPACK_IMPORTED_MODULE_6__["groupBy"](response.data, "gender");
@@ -6567,9 +6595,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               genderData.push(gendersGroup[key].length);
             }
 
-            new chart_js__WEBPACK_IMPORTED_MODULE_5__(_this30.genderChart.nativeElement, {
+            new chart_js__WEBPACK_IMPORTED_MODULE_5__(_this31.genderChart.nativeElement, {
               type: "doughnut",
-              data: _this30.getData({
+              data: _this31.getData({
                 labels: Object.keys(gendersGroup),
                 data: genderData
               }),
@@ -6587,9 +6615,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               origenData.push(originGroup[_key].length);
             }
 
-            new chart_js__WEBPACK_IMPORTED_MODULE_5__(_this30.originChart.nativeElement, {
+            new chart_js__WEBPACK_IMPORTED_MODULE_5__(_this31.originChart.nativeElement, {
               type: "doughnut",
-              data: _this30.getData({
+              data: _this31.getData({
                 labels: Object.keys(originGroup),
                 data: origenData
               }),
@@ -6629,9 +6657,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
             }
 
-            new chart_js__WEBPACK_IMPORTED_MODULE_5__(_this30.groupChart.nativeElement, {
+            new chart_js__WEBPACK_IMPORTED_MODULE_5__(_this31.groupChart.nativeElement, {
               type: "bar",
-              data: _this30.getData({
+              data: _this31.getData({
                 labels: Object.keys(nameGroup),
                 data: data
               }),
@@ -7127,7 +7155,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function StudentCreateComponent(router, schoolService, authService, studentService, uploadService, toastrService, mexicoService, groupService, academicsService) {
-        var _this31 = this;
+        var _this32 = this;
 
         _classCallCheck(this, StudentCreateComponent);
 
@@ -7152,16 +7180,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
         mexicoService.getStates().subscribe(function (_ref) {
           var response = _ref.response;
-          _this31.states = response.estado.sort();
+          _this32.states = response.estado.sort();
         });
         this.groupService.findAll().subscribe(function (response) {
-          _this31.groups = response.data;
+          _this32.groups = response.data;
         });
         this.academicsService.findAll().subscribe(function (response) {
-          _this31.academics = response.data;
+          _this32.academics = response.data;
         });
         this.schoolService.findAll().subscribe(function (response) {
-          _this31.schools = response.data;
+          _this32.schools = response.data;
         });
       }
 
@@ -7181,7 +7209,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "saveStudent",
         value: function saveStudent() {
-          var _this32 = this;
+          var _this33 = this;
 
           if (this.user.valid) {
             var user = this.user.value;
@@ -7189,27 +7217,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             user.dob = new Date(this.user.value.dob).valueOf();
             user.schools = [this.user.value.schools];
             this.studentService.createOne(this.user.value).subscribe(function (response) {
-              if (_this32.upload.uploaded) {
+              if (_this33.upload.uploaded) {
                 var groupId = response.data._id;
 
-                _this32.uploadService.uploadImage(_this32.upload.file, "student", groupId).subscribe();
+                _this33.uploadService.uploadImage(_this33.upload.file, "student", groupId).subscribe();
               }
 
-              _this32.toastrService.show("Exito al guardar alumno", "Alumno Guardado", {
+              _this33.toastrService.show("Exito al guardar alumno", "Alumno Guardado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "person-outline"
               });
 
-              _this32.router.navigate(["alumnos"]);
+              _this33.router.navigate(["alumnos"]);
             });
           }
         }
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this33 = this;
+          var _this34 = this;
 
           this.user = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
             email: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].email]),
@@ -7245,21 +7273,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.user.controls.address.controls.state.valueChanges.subscribe(function (value) {
             if (value != "") {
-              _this33.user.controls.address.controls.municipality.setValue("");
+              _this34.user.controls.address.controls.municipality.setValue("");
 
-              _this33.mexicoService.getMunicipalities(value).subscribe(function (_ref2) {
+              _this34.mexicoService.getMunicipalities(value).subscribe(function (_ref2) {
                 var response = _ref2.response;
-                _this33.municipalities = response.municipios.sort();
+                _this34.municipalities = response.municipios.sort();
               });
             }
           });
           this.user.controls.address.controls.municipality.valueChanges.subscribe(function (value) {
             if (value != "") {
-              _this33.user.controls.address.controls.colony.setValue("");
+              _this34.user.controls.address.controls.colony.setValue("");
 
-              _this33.mexicoService.getColonies(value).subscribe(function (_ref3) {
+              _this34.mexicoService.getColonies(value).subscribe(function (_ref3) {
                 var response = _ref3.response;
-                _this33.cities = response.colonia.sort();
+                _this34.cities = response.colonia.sort();
               });
             }
           });
@@ -7419,7 +7447,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function StudentEditComponent(router, schoolService, authService, studentService, uploadService, activatedRoute, toastrService, mexicoService, groupService, academicsService) {
-        var _this34 = this;
+        var _this35 = this;
 
         _classCallCheck(this, StudentEditComponent);
 
@@ -7445,16 +7473,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
         mexicoService.getStates().subscribe(function (_ref4) {
           var response = _ref4.response;
-          _this34.states = response.estado.sort();
+          _this35.states = response.estado.sort();
         });
         this.groupService.findAll().subscribe(function (response) {
-          _this34.groups = response.data;
+          _this35.groups = response.data;
         });
         this.academicsService.findAll().subscribe(function (response) {
-          _this34.academics = response.data;
+          _this35.academics = response.data;
         });
         this.schoolService.findAll().subscribe(function (response) {
-          _this34.schools = response.data;
+          _this35.schools = response.data;
         });
       }
 
@@ -7474,7 +7502,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "saveStudent",
         value: function saveStudent() {
-          var _this35 = this;
+          var _this36 = this;
 
           if (this.user.valid) {
             var user = this.user.value;
@@ -7482,61 +7510,61 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             user.dob = new Date(this.user.value.dob).valueOf();
             user.schools = [this.user.value.schools];
             this.studentService.updateOne(this.id, this.user.value).subscribe(function (response) {
-              if (_this35.upload.uploaded) {
+              if (_this36.upload.uploaded) {
                 var groupId = response.data._id;
 
-                _this35.uploadService.uploadImage(_this35.upload.file, "student", groupId).subscribe();
+                _this36.uploadService.uploadImage(_this36.upload.file, "student", groupId).subscribe();
               }
 
-              _this35.toastrService.show("Exito al guardar alumno", "Alumno Guardado", {
+              _this36.toastrService.show("Exito al guardar alumno", "Alumno Guardado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "person-outline"
               });
 
-              _this35.router.navigate(["alumnos"]);
+              _this36.router.navigate(["alumnos"]);
             });
           }
         }
       }, {
         key: "handleDelete",
         value: function handleDelete() {
-          var _this36 = this;
+          var _this37 = this;
 
           this.studentService.deleteOne(this.id).subscribe(function (response) {
-            _this36.router.navigate(["alumnos"]);
+            _this37.router.navigate(["alumnos"]);
           });
         }
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this37 = this;
+          var _this38 = this;
 
           this.user = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
-            email: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].email]),
+            email: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].email]),
             username: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({
               value: "",
               disabled: true
             }),
             password: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
             name: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-            phone: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(14)]),
-            dob: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            phone: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(14)]),
+            dob: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
             gender: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-            lastSchool: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            lastSchool: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
             emergency: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
-              phone: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(14)]),
-              name: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-              relation: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-              bloodType: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required])
+              phone: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].minLength(14)]),
+              name: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
+              relation: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
+              bloodType: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("")
             }),
             address: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
               state: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-              municipality: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-              colony: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-              street: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-              zipCode: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required])
+              municipality: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
+              colony: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
+              street: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
+              zipCode: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("")
             }),
             schools: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({
               value: "",
@@ -7550,39 +7578,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               value: "",
               disabled: true
             }),
-            enrolled: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
-            enrollmentId: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required])
+            enrolled: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](""),
+            enrollmentId: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("")
           });
           this.user.controls.address.controls.state.valueChanges.subscribe(function (value) {
             if (value != "") {
-              _this37.user.controls.address.controls.municipality.setValue("");
+              _this38.user.controls.address.controls.municipality.setValue("");
 
-              _this37.mexicoService.getMunicipalities(value).subscribe(function (_ref5) {
+              _this38.mexicoService.getMunicipalities(value).subscribe(function (_ref5) {
                 var response = _ref5.response;
-                _this37.municipalities = response.municipios.sort();
+                _this38.municipalities = response.municipios.sort();
               });
             }
           });
           this.user.controls.address.controls.municipality.valueChanges.subscribe(function (value) {
             if (value != "") {
-              _this37.user.controls.address.controls.colony.setValue("");
+              _this38.user.controls.address.controls.colony.setValue("");
 
-              _this37.mexicoService.getColonies(value).subscribe(function (_ref6) {
+              _this38.mexicoService.getColonies(value).subscribe(function (_ref6) {
                 var response = _ref6.response;
-                _this37.cities = response.colonia.sort();
+                _this38.cities = response.colonia.sort();
               });
             }
           });
           this.activatedRoute.params.subscribe(function (params) {
-            _this37.id = params["id"];
+            _this38.id = params["id"];
 
-            _this37.studentService.findById(_this37.id).subscribe(function (response) {
+            _this38.studentService.findById(_this38.id).subscribe(function (response) {
               var schools = {
                 schools: response.data.schools[0]
               };
               var data = Object.assign({}, response.data, schools);
 
-              _this37.user.patchValue(data);
+              _this38.user.patchValue(data);
             });
           });
         }
@@ -7731,34 +7759,34 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleDelete",
         value: function handleDelete() {
-          var _this38 = this;
+          var _this39 = this;
 
           this.studentService.deleteOne(this.id).subscribe(function (response) {
-            _this38.router.navigate(["alumnos"]);
+            _this39.router.navigate(["alumnos"]);
           });
         }
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this39 = this;
+          var _this40 = this;
 
           this.activatedRoute.params.subscribe(function (params) {
-            _this39.id = params["id"];
+            _this40.id = params["id"];
 
-            _this39.studentService.findById(_this39.id).subscribe(function (response) {
-              _this39.schoolService.findById(response.data.schools[0]).subscribe(function (subresponse) {
+            _this40.studentService.findById(_this40.id).subscribe(function (response) {
+              _this40.schoolService.findById(response.data.schools[0]).subscribe(function (subresponse) {
                 response.data.schools[0] = subresponse.data.name;
               });
 
-              _this39.groupService.findById(response.data.group).subscribe(function (subresponse) {
+              _this40.groupService.findById(response.data.group).subscribe(function (subresponse) {
                 response.data.group = subresponse.data.name;
               });
 
-              _this39.academicsService.findById(response.data.program).subscribe(function (subresponse) {
+              _this40.academicsService.findById(response.data.program).subscribe(function (subresponse) {
                 response.data.program = subresponse.data.name;
               });
 
-              _this39.student = response.data;
+              _this40.student = response.data;
             });
           });
         }
@@ -8104,28 +8132,84 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _services_student_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ../../services/student.service */
     "./src/app/services/student.service.ts");
+    /* harmony import */
+
+
+    var lodash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! lodash */
+    "./node_modules/lodash/lodash.js");
+    /* harmony import */
+
+
+    var lodash__WEBPACK_IMPORTED_MODULE_3___default =
+    /*#__PURE__*/
+    __webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_3__);
 
     var StudentsComponent =
     /*#__PURE__*/
     function () {
       function StudentsComponent(studentService) {
-        var _this40 = this;
+        var _this41 = this;
 
         _classCallCheck(this, StudentsComponent);
 
         this.studentService = studentService;
+        this.filter = "name";
+        this.stockStudents = [];
+        this.stockGraduates = [];
         setTimeout(function () {
           studentService.findAll(false).subscribe(function (response) {
-            _this40.students = response.data;
-            console.log(response.data);
+            _this41.stockStudents = response.data;
+            _this41.students = _this41.stockStudents;
           });
           studentService.findAll(true).subscribe(function (response) {
-            _this40.graduates = response.data;
+            _this41.stockGraduates = response.data;
+            _this41.graduates = _this41.stockGraduates;
           });
-        }, 300);
+        }, 100);
       }
 
       _createClass(StudentsComponent, [{
+        key: "handleFilter",
+        value: function handleFilter(e) {
+          this.filter = e;
+        }
+      }, {
+        key: "handleSearch",
+        value: function handleSearch(e) {
+          var _this42 = this;
+
+          var name = e.target.value;
+          var a;
+          var b = new RegExp(name.toLowerCase());
+          this.students = lodash__WEBPACK_IMPORTED_MODULE_3__["filter"](this.stockStudents, function (obj) {
+            switch (_this42.filter) {
+              case "name":
+                a = obj.name.toLowerCase();
+                a = a.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                break;
+
+              case "group":
+                a = obj.group ? obj.group.name.toLowerCase() : null;
+                break;
+
+              case "enrollmentId":
+                a = obj.enrollmentId ? obj.enrollmentId.toLowerCase() : null;
+                break;
+
+              case "phone":
+                a = obj.phone ? obj.phone.replace(/[() -]/g, "") : null;
+                break;
+
+              case "payments":
+                a = obj.payments ? obj.payments.length.toString() : null;
+                break;
+            }
+
+            return a ? a.search(b) >= 0 : null;
+          });
+        }
+      }, {
         key: "ngOnInit",
         value: function ngOnInit() {}
       }]);
@@ -8265,7 +8349,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "saveSubject",
         value: function saveSubject() {
-          var _this41 = this;
+          var _this43 = this;
 
           if (this.informationForm.valid && this.descriptionForm.valid && this.contactForm.valid) {
             var subject = {
@@ -8275,20 +8359,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               email: this.contactForm.value.email
             };
             this.subjectsService.createOne(subject).subscribe(function (response) {
-              if (_this41.upload.uploaded) {
+              if (_this43.upload.uploaded) {
                 var subjectId = response.data._id;
 
-                _this41.uploadService.uploadImage(_this41.upload.file, "subject", subjectId).subscribe();
+                _this43.uploadService.uploadImage(_this43.upload.file, "subject", subjectId).subscribe();
               }
 
-              _this41.toastrService.show("Exito al guardar la materia", "Materia Guardada", {
+              _this43.toastrService.show("Exito al guardar la materia", "Materia Guardada", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "book-open-outline"
               });
 
-              _this41.back.emit();
+              _this43.back.emit();
             });
           }
         }
@@ -8453,14 +8537,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleUpdate",
         value: function handleUpdate() {
-          var _this42 = this;
+          var _this44 = this;
 
           if (this.subject.valid) {
             this.subjectService.updateOne(this.id, this.subject.value).subscribe(function (response) {
-              if (_this42.upload.uploaded) {
+              if (_this44.upload.uploaded) {
                 var subjectId = response.data._id;
 
-                _this42.uploadService.uploadImage(_this42.upload.file, "subject", subjectId).subscribe();
+                _this44.uploadService.uploadImage(_this44.upload.file, "subject", subjectId).subscribe();
               }
             });
             this.toastrService.show("Exito al guardar la materia", "Materia Guardada", {
@@ -8486,7 +8570,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this43 = this;
+          var _this45 = this;
 
           this.subject = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
             folio: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]({
@@ -8499,10 +8583,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             email: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required)
           });
           this.activatedRoute.params.subscribe(function (params) {
-            _this43.id = params["id"];
+            _this45.id = params["id"];
 
-            _this43.subjectService.findById(_this43.id).subscribe(function (response) {
-              _this43.subject.patchValue(response.data);
+            _this45.subjectService.findById(_this45.id).subscribe(function (response) {
+              _this45.subject.patchValue(response.data);
             });
           });
         }
@@ -8637,26 +8721,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addSubject",
         value: function addSubject(subjectId) {
-          var _this44 = this;
+          var _this46 = this;
 
           if (!this.isAdded && this.academicId != "") {
             this.isAdding = true;
             this.academicsService.addSubject(this.academicId, subjectId).subscribe(function (response) {
-              _this44.isAdded = true;
+              _this46.isAdded = true;
 
-              _this44.reload.emit(true);
+              _this46.reload.emit(true);
             });
           }
         }
       }, {
         key: "removeSubject",
         value: function removeSubject(subjectId) {
-          var _this45 = this;
+          var _this47 = this;
 
           if (!this.isRemoving) {
             this.isRemoving = true;
             this.academicsService.removeSubject(this.academicId, subjectId).subscribe(function (response) {
-              _this45.reload.emit(true);
+              _this47.reload.emit(true);
             });
           }
         }
@@ -8890,15 +8974,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(SubjectComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this46 = this;
+          var _this48 = this;
 
           this.activatedRoute.params.subscribe(function (params) {
-            _this46.id = params["id"];
+            _this48.id = params["id"];
 
-            _this46.subjectService.findById(_this46.id).subscribe(function (response) {
-              _this46.subject = response.data;
-              return _this46.gradesService.findAllInSubject(_this46.id).subscribe(function (response) {
-                _this46.grades = response.data;
+            _this48.subjectService.findById(_this48.id).subscribe(function (response) {
+              _this48.subject = response.data;
+              return _this48.gradesService.findAllInSubject(_this48.id).subscribe(function (response) {
+                _this48.grades = response.data;
               });
             });
           });
@@ -9004,18 +9088,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function SubjectsComponent(subjectsService) {
-        var _this47 = this;
+        var _this49 = this;
 
         _classCallCheck(this, SubjectsComponent);
 
         this.subjectsService = subjectsService;
-        this.order = "";
+        this.filter = "name";
         this.stockSubjects = [];
         this.subjects = [];
         setTimeout(function () {
-          _this47.subjectsService.findAll().subscribe(function (response) {
-            _this47.stockSubjects = response.data;
-            _this47.subjects = _this47.stockSubjects;
+          _this49.subjectsService.findAll().subscribe(function (response) {
+            _this49.stockSubjects = response.data;
+            _this49.subjects = _this49.stockSubjects;
           });
         }, 300);
       }
@@ -9023,31 +9107,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(SubjectsComponent, [{
         key: "handleFilter",
         value: function handleFilter(e) {
-          this.order = e;
-          this.subjects = lodash__WEBPACK_IMPORTED_MODULE_3__["orderBy"](this.subjects, this.order, "desc");
+          this.filter = e;
         }
       }, {
         key: "handleSearch",
         value: function handleSearch(e) {
+          var _this50 = this;
+
           var name = e.target.value;
+          var a;
+          var b = new RegExp(name.toLowerCase());
           this.subjects = lodash__WEBPACK_IMPORTED_MODULE_3__["filter"](this.stockSubjects, function (obj) {
-            var a = obj.name.toLowerCase();
-            var b = new RegExp(name.toLowerCase());
-            return a.search(b) >= 0;
+            switch (_this50.filter) {
+              case "name":
+                a = obj.name.toLowerCase();
+                a = a.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                break;
+
+              case "folio":
+                a = obj.folio ? obj.folio.toLowerCase() : null;
+                break;
+
+              case "grades":
+                a = obj.grades ? obj.grades.length.toString() : null;
+                break;
+            }
+
+            return a ? a.search(b) >= 0 : null;
           });
         }
       }, {
         key: "handleReload",
         value: function handleReload() {
-          var _this48 = this;
+          var _this51 = this;
 
           setTimeout(function () {
-            _this48.subjectsService.findAll().subscribe(function (response) {
-              _this48.stockSubjects = response.data;
-              _this48.subjects = _this48.stockSubjects;
+            _this51.subjectsService.findAll().subscribe(function (response) {
+              _this51.stockSubjects = response.data;
+              _this51.subjects = _this51.stockSubjects;
             });
 
-            _this48.tabset.selectTab(_this48.tableTab);
+            _this51.tabset.selectTab(_this51.tableTab);
           }, 300);
         }
       }, {
@@ -9165,7 +9265,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GradeItemComponent(subjectsService, gradesService, toastrService) {
-        var _this49 = this;
+        var _this52 = this;
 
         _classCallCheck(this, GradeItemComponent);
 
@@ -9177,14 +9277,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.reload = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"](true);
         this.subjects = [];
         this.subjectsService.findAll().subscribe(function (response) {
-          _this49.subjects = response.data;
+          _this52.subjects = response.data;
         });
       }
 
       _createClass(GradeItemComponent, [{
         key: "handleAddSubject",
         value: function handleAddSubject() {
-          var _this50 = this;
+          var _this53 = this;
 
           if (this.subject.valid && this.studentId != "") {
             var grade = {
@@ -9193,9 +9293,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               grade: 0
             };
             this.gradesService.createOne(grade).subscribe(function (response) {
-              _this50.reload.emit(true);
+              _this53.reload.emit(true);
 
-              _this50.toastrService.show("Exito al guardar materia", "Materia Asignada", {
+              _this53.toastrService.show("Exito al guardar materia", "Materia Asignada", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
@@ -9207,12 +9307,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleDelete",
         value: function handleDelete() {
-          var _this51 = this;
+          var _this54 = this;
 
           this.gradesService.deleteOne(this.gradeInput._id).subscribe(function () {
-            _this51.reload.emit(true);
+            _this54.reload.emit(true);
 
-            _this51.toastrService.show("Exito al eliminar calificacion", "Calificacion Deasignada", {
+            _this54.toastrService.show("Exito al eliminar calificacion", "Calificacion Deasignada", {
               status: "primary",
               hasIcon: true,
               destroyByClick: true,
@@ -9223,14 +9323,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleUpdate",
         value: function handleUpdate() {
-          var _this52 = this;
+          var _this55 = this;
 
           if (this.grade.valid && this.studentId != "") {
             var grade = {
               grade: this.grade.value.grade
             };
             this.gradesService.updateOne(this.gradeInput._id, grade).subscribe(function (response) {
-              _this52.toastrService.show("Exito al guardar calificacion", "Calificacion Asignada", {
+              _this55.toastrService.show("Exito al guardar calificacion", "Calificacion Asignada", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
@@ -9358,7 +9458,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GradesComponent(gradesService, studentService, activatedRoute, router) {
-        var _this53 = this;
+        var _this56 = this;
 
         _classCallCheck(this, GradesComponent);
 
@@ -9369,10 +9469,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.grades = [];
         this.id = "";
         this.activatedRoute.params.subscribe(function (params) {
-          _this53.id = params["id"];
+          _this56.id = params["id"];
 
-          _this53.gradesService.findAllInStudent(_this53.id).subscribe(function (response) {
-            _this53.grades = response.data;
+          _this56.gradesService.findAllInStudent(_this56.id).subscribe(function (response) {
+            _this56.grades = response.data;
           });
         });
       }
@@ -9380,11 +9480,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(GradesComponent, [{
         key: "handleReload",
         value: function handleReload() {
-          var _this54 = this;
+          var _this57 = this;
 
           setTimeout(function () {
-            _this54.gradesService.findAllInStudent(_this54.id).subscribe(function (response) {
-              _this54.grades = response.data;
+            _this57.gradesService.findAllInStudent(_this57.id).subscribe(function (response) {
+              _this57.grades = response.data;
             });
           }, 300);
         }
@@ -9580,7 +9680,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function NotesComponent(router, activatedRoute, studentService, toastrService) {
-        var _this55 = this;
+        var _this58 = this;
 
         _classCallCheck(this, NotesComponent);
 
@@ -9589,9 +9689,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.studentService = studentService;
         this.toastrService = toastrService;
         this.activatedRoute.params.subscribe(function (params) {
-          _this55.studentService.findById(params["id"]).subscribe(function (response) {
-            _this55.student = response.data;
-            console.log(_this55.student);
+          _this58.studentService.findById(params["id"]).subscribe(function (response) {
+            _this58.student = response.data;
+            console.log(_this58.student);
             var note;
 
             try {
@@ -9600,7 +9700,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               note = {};
             }
 
-            _this55.editor = new _editorjs_editorjs__WEBPACK_IMPORTED_MODULE_2___default.a({
+            _this58.editor = new _editorjs_editorjs__WEBPACK_IMPORTED_MODULE_2___default.a({
               holder: "codex-editor",
               tools: {
                 header: {
@@ -9647,23 +9747,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "saveNote",
         value: function saveNote() {
-          var _this56 = this;
+          var _this59 = this;
 
           this.editor.save().then(function (outputData) {
-            _this56.student.note = JSON.stringify(outputData);
+            _this59.student.note = JSON.stringify(outputData);
 
-            _this56.studentService.updateOne(_this56.student._id, _this56.student).subscribe(function (response) {
-              _this56.toastrService.show("Exito al guardar nota", "Nota Guardada", {
+            _this59.studentService.updateOne(_this59.student._id, _this59.student).subscribe(function (response) {
+              _this59.toastrService.show("Exito al guardar nota", "Nota Guardada", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "file-add-outline"
               });
 
-              _this56.router.navigate(["alumnos", _this56.student._id]);
+              _this59.router.navigate(["alumnos", _this59.student._id]);
             });
           }).catch(function (error) {
-            _this56.toastrService.show("Algo anda mal, no se logro al guardar nota", "Intentar en otro momento", {
+            _this59.toastrService.show("Algo anda mal, no se logro al guardar nota", "Intentar en otro momento", {
               status: "warning",
               hasIcon: true,
               destroyByClick: true,
@@ -9796,7 +9896,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PaymentItemComponent, [{
         key: "handleCreate",
         value: function handleCreate() {
-          var _this57 = this;
+          var _this60 = this;
 
           if (this.payment.valid && this.studentId != "") {
             var payment = Object.assign({}, this.payment.value, {
@@ -9804,11 +9904,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
             payment.deadLine = new Date(payment.deadLine).valueOf();
             this.paymentsService.createOne(payment).subscribe(function () {
-              _this57.payment.reset();
+              _this60.payment.reset();
 
-              _this57.reload.emit(true);
+              _this60.reload.emit(true);
 
-              _this57.toastrService.show("Exito al generar pago", "Pago Asignado", {
+              _this60.toastrService.show("Exito al generar pago", "Pago Asignado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
@@ -9825,13 +9925,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleDelete",
         value: function handleDelete() {
-          var _this58 = this;
+          var _this61 = this;
 
           if (this.paymentInput) {
             this.paymentsService.deleteOne(this.paymentInput._id).subscribe(function () {
-              _this58.reload.emit(true);
+              _this61.reload.emit(true);
 
-              _this58.toastrService.show("Exito al eliminar pago", "Pago Eliminado", {
+              _this61.toastrService.show("Exito al eliminar pago", "Pago Eliminado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
@@ -9843,20 +9943,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handlePay",
         value: function handlePay() {
-          var _this59 = this;
+          var _this62 = this;
 
           if (this.paymentInput && !this.isPayed) {
             this.isPaying = true;
             this.paymentInput.completed = true;
             this.paymentsService.updateOne(this.paymentInput._id, this.paymentInput).subscribe(function () {
-              _this59.toastrService.show("Exito al completar pago", "Pago Registrado", {
+              _this62.toastrService.show("Exito al completar pago", "Pago Registrado", {
                 status: "primary",
                 hasIcon: true,
                 destroyByClick: true,
                 icon: "credit-card-outline"
               });
 
-              _this59.isPayed = true;
+              _this62.isPayed = true;
             });
           }
         }
@@ -9983,7 +10083,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function PaymentsComponent(router, activatedRoute, studentService, paymentsService, toastrService) {
-        var _this60 = this;
+        var _this63 = this;
 
         _classCallCheck(this, PaymentsComponent);
 
@@ -9994,10 +10094,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.toastrService = toastrService;
         this.payments = [];
         this.activatedRoute.params.subscribe(function (params) {
-          _this60.id = params["id"];
+          _this63.id = params["id"];
           setTimeout(function () {
-            _this60.paymentsService.findAllInStudent(_this60.id).subscribe(function (response) {
-              _this60.payments = response.data;
+            _this63.paymentsService.findAllInStudent(_this63.id).subscribe(function (response) {
+              _this63.payments = response.data;
             });
           }, 300);
         });
@@ -10006,11 +10106,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PaymentsComponent, [{
         key: "handleReload",
         value: function handleReload() {
-          var _this61 = this;
+          var _this64 = this;
 
           setTimeout(function () {
-            _this61.paymentsService.findAllInStudent(_this61.id).subscribe(function (response) {
-              _this61.payments = response.data;
+            _this64.paymentsService.findAllInStudent(_this64.id).subscribe(function (response) {
+              _this64.payments = response.data;
             });
           }, 300);
         }
@@ -10107,7 +10207,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function AcademicsService(http, authService) {
-        var _this62 = this;
+        var _this65 = this;
 
         _classCallCheck(this, AcademicsService);
 
@@ -10119,8 +10219,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this62.headers.Authorization = "bearer ".concat(status.access_token);
-          _this62.schoolId = status.schools[0];
+          _this65.headers.Authorization = "bearer ".concat(status.access_token);
+          _this65.schoolId = status.schools[0];
         });
       } ////////////////////////////////////////
       //         FIND FUNCTIONS
@@ -10489,7 +10589,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function FlightsService(http, authService) {
-        var _this63 = this;
+        var _this66 = this;
 
         _classCallCheck(this, FlightsService);
 
@@ -10501,8 +10601,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this63.headers.Authorization = "bearer ".concat(status.access_token);
-          _this63.schoolId = status.schools[0];
+          _this66.headers.Authorization = "bearer ".concat(status.access_token);
+          _this66.schoolId = status.schools[0];
         });
       }
 
@@ -10660,7 +10760,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GradesService(http, authService) {
-        var _this64 = this;
+        var _this67 = this;
 
         _classCallCheck(this, GradesService);
 
@@ -10672,8 +10772,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this64.headers.Authorization = "bearer ".concat(status.access_token);
-          _this64.schoolId = status.schools[0];
+          _this67.headers.Authorization = "bearer ".concat(status.access_token);
+          _this67.schoolId = status.schools[0];
         });
       }
 
@@ -10807,7 +10907,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GroupService(http, authService) {
-        var _this65 = this;
+        var _this68 = this;
 
         _classCallCheck(this, GroupService);
 
@@ -10819,8 +10919,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this65.headers.Authorization = "bearer ".concat(status.access_token);
-          _this65.schoolId = status.schools[0];
+          _this68.headers.Authorization = "bearer ".concat(status.access_token);
+          _this68.schoolId = status.schools[0];
         });
       }
 
@@ -11128,7 +11228,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function PaymentsService(http, authService) {
-        var _this66 = this;
+        var _this69 = this;
 
         _classCallCheck(this, PaymentsService);
 
@@ -11140,8 +11240,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this66.headers.Authorization = "bearer ".concat(status.access_token);
-          _this66.schoolId = status.schools[0];
+          _this69.headers.Authorization = "bearer ".concat(status.access_token);
+          _this69.schoolId = status.schools[0];
         });
       }
 
@@ -11287,7 +11387,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function SchoolService(http, authService) {
-        var _this67 = this;
+        var _this70 = this;
 
         _classCallCheck(this, SchoolService);
 
@@ -11300,8 +11400,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
         authService.authenticated$.subscribe(function (status) {
           if (!lodash__WEBPACK_IMPORTED_MODULE_5__["isEmpty"](status)) {
-            _this67.headers.Authorization = "bearer ".concat(status.access_token);
-            _this67.schoolId = status.schools[0];
+            _this70.headers.Authorization = "bearer ".concat(status.access_token);
+            _this70.schoolId = status.schools[0];
           }
         });
       }
@@ -11401,7 +11501,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function StudentService(http, authService) {
-        var _this68 = this;
+        var _this71 = this;
 
         _classCallCheck(this, StudentService);
 
@@ -11413,8 +11513,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this68.headers.Authorization = "bearer ".concat(status.access_token);
-          _this68.schoolId = status.schools[0];
+          _this71.headers.Authorization = "bearer ".concat(status.access_token);
+          _this71.schoolId = status.schools[0];
         });
       }
 
@@ -11541,7 +11641,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function SubjectsService(http, authService) {
-        var _this69 = this;
+        var _this72 = this;
 
         _classCallCheck(this, SubjectsService);
 
@@ -11553,8 +11653,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this69.headers.Authorization = "bearer ".concat(status.access_token);
-          _this69.schoolId = status.schools[0];
+          _this72.headers.Authorization = "bearer ".concat(status.access_token);
+          _this72.schoolId = status.schools[0];
         });
       }
 
@@ -11688,7 +11788,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function UploadService(http, authService) {
-        var _this70 = this;
+        var _this73 = this;
 
         _classCallCheck(this, UploadService);
 
@@ -11699,7 +11799,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           Authorization: ""
         };
         authService.authenticated$.subscribe(function (status) {
-          _this70.headers.Authorization = "bearer ".concat(status.access_token);
+          _this73.headers.Authorization = "bearer ".concat(status.access_token);
         });
       }
 
