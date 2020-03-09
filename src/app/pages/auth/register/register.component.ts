@@ -49,8 +49,6 @@ export class RegisterComponent implements OnInit, AfterViewInit {
         schools: [this.meta.value.school]
       };
 
-      console.log(requestUser);
-
       this.authService
         .login(this.auth.value.username, this.auth.value.password)
         .subscribe(
